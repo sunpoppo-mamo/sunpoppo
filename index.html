@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>さんぽっぽ | 森의 呼吸</title>
+    <style>
+        /* 🎨 Norm Architectsの思想を体現するベース設定 */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #F9F6F0; /* サンドベージュ */
+            color: #3E3A36;            /* 炭色 */
+            font-family: "Times New Roman", "Yu Mincho", "遊明朝", serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth; /* スーッと心地よくスクロールする魔法 */
+        }
+
+        /* 🗺️ 右上の静かなナビゲーション */
+        .nav-header {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            z-index: 10;
+        }
+        .nav-header a {
+            color: #3E3A36;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            margin-left: 30px;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        .nav-header a:hover {
+            opacity: 1;
+        }
+
+        /* 📸 ファーストビュー（最初の画面） */
+        .hero-section {
+            width: 100%;
+            height: 100vh; /* 画面ぴったり1枚分 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* 🤖 写真がスワイプ（スライド）する外枠 */
+        .slider-container {
+            width: 100%;
+            max-width: 900px;
+            height: 55vh;
+            overflow-x: auto; /* 横スクロール（スワイプ）を許可 */
+            display: flex;
+            scroll-snap-type: x mandatory; /* ピタッと写真が止まる設定 */
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            cursor: pointer; /* クリックできることがわかるように */
+            margin-bottom: 40px;
+        }
+        /* スクロールバーを非表示にしてノイズを削る */
+        .slider-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* スライドする各写真の部屋 */
+        .slide {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            scroll-snap-align: start;
+            position: relative;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 画像を綺麗に枠に収める */
+            filter: grayscale(20%); /* ほんのりノスタルジックに */
+        }
+        /* 写真の上の小さな文字ラベル */
+        .slide-label {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: #ffffff;
+            background: rgba(0,0,0,0.3);
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* ✍️ タイトルエリア */
+        .brand-title {
+            font-size: 1.5rem;
+            letter-spacing: 0.2em;
+            font-weight: normal;
+            margin: 0 0 10px 0;
+        }
+        .brand-sub {
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            opacity: 0.6;
+            margin: 0;
+        }
+
+        /* ↓ スクロールを促す静かな矢印 */
+        .scroll-down-indicator {
+            position: absolute;
+            bottom: 30px;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            opacity: 0.4;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.2; }
+            50% { opacity: 0.6; }
+            100% { opacity: 0.2; }
+        }
+
+        /* 🧱 下にスクロールした後の「簡易施設案内」エリア */
+        .info-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 120px 20px; /* たっぷりとした贅沢な余白 */
+            text-align: left;
+        }
+        .section-title {
+            font-size: 1.2rem;
+            letter-spacing: 0.2em;
+            color: #8BC34A; /* ぽっぽ動物病院のグリーン */
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        .facility-grid {
+            display: flex;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        .facility-card {
+            flex: 1;
+        }
+        .facility-card h3 {
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            font-weight: normal;
+            border-bottom: 1px solid rgba(62, 58, 54, 0.2);
+            padding-bottom: 10px;
+        }
+        .facility-card p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🗺️ 右上のナビゲーション（各部屋へのリンク、または下へのスクロールリンク） -->
+    <nav class="nav-header">
+        <a href="#summary">施設案内</a>
+        <a href="run.html">ドッグラン</a>
+        <a href="hotel.html">ペットホテル</a>
+    </nav>
+
+    <!-- 📸 ファーストビュー -->
+    <section class="hero-section">
+        <!-- 左右にスワイプできる写真エリア（クリックで下の案内へ） -->
+        <div class="slider-container" onclick="location.href='#summary'">
+            <!-- スライド1: ドッグランのイメージ -->
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=1200" alt="ドッグラン">
+                <div class="slide-label">DOGRUN / 森のひろば</div>
+            </div>
+            <!-- スライド2: ペットホテルのイメージ -->
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&q=80&w=1200" alt="ペットホテル">
+                <div class="slide-label">HOTEL / 安心の個室</div>
+            </div>
+        </div>
+
+        <h1 class="brand-title">さんぽっぽ</h1>
+        <p class="brand-sub">森の呼吸、犬のあしあと。</p>
+        
+        <div class="scroll-down-indicator">SCROLL</div>
+    </section>
+
+    <!-- 🧱 ページ下の「簡易施設案内」 -->
+    <section id="summary" class="info-section">
+        <h2 class="section-title">FACILITIES</h2>
+        
+        <div class="facility-grid">
+            <div class="facility-card">
+                <h3>ドッグラン</h3>
+                <p>鳥の声と爽やかな風が通り抜ける、自然のままの広場。愛犬とただ一緒に、心地よい時間を過ごすための空間です。</p>
+            </div>
+            <div class="facility-card">
+                <h3>ペットホテル</h3>
+                <p>預かるのではなく、健やかに過ごす場所。隣接するぽっぽ動物病院の獣医師と連携し、一頭一頭に寄り添ってお預かりします。</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
