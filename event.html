@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>施設内覧会のご案内 | さんぽっぽ</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Serif+JP:wght@200;300;400;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       🎨 全体共通スタイル（トップページと統一）
+       ========================================================================== */
+    :root {
+      --bg-color: #fcfbf9;
+      --text-color: #2b2b2b;
+      --text-muted: #707070;
+      --accent-color: #8c8275;
+      --border-color: #e3dec3;
+      --brand-green: #8cb33e;
+      --font-serif: 'Noto Serif JP', 'Cormorant Garamond', serif;
+      --font-sans: 'Noto Sans JP', 'Montserrat', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-sans);
+      line-height: 1.8;
+      letter-spacing: 0.05em;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+
+    a:hover {
+      opacity: 0.6;
+    }
+
+    /* ==========================================================================
+       🔍 上部固定ヘッダー
+       ========================================================================== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 4%;
+      z-index: 1000;
+      background-color: var(--brand-green);
+    }
+
+    .logo {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 1.4rem;
+      letter-spacing: 0.2em;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    
+    nav a {
+      color: #ffffff !important;
+    }
+
+    /* ==========================================================================
+       📱 レスポンシブ設計（スマホ対応）
+       ========================================================================== */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 4%;
+      }
+      nav ul {
+        gap: 1.2rem;
+        font-size: 0.7rem;
+      }
+      .event-card {
+        padding: 2rem 1.5rem !important;
+      }
+      .event-title {
+        font-size: 1.8rem !important;
+      }
+      .service-tag-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       🔍 共通ヘッダー（ロゴ30pxぴったり版）
+       ========================================================================== -->
+  <header>
+    <div class="logo">
+      <a href="index_4.html">
+        <img src="https://lh3.googleusercontent.com/d/1dlCeWqHO6GHwuSD-MVBoLWziEU7zVGbg" alt="さんぽっぽ" style="height: 30px; width: auto; display: block;">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index_4.html#hotel">ホテル</a></li>
+        <li><a href="index_4.html#deli">カフェ</a></li>
+       <li><a href="about us.html">ABOUT US</a></li>
+        <li><a href="index_4.html#access">ACCESS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==========================================================================
+       📝 イベント案内メインコンテンツ
+       ========================================================================== -->
+  <main style="padding-top: 55px; padding-bottom: 3rem;">
+    <div style="max-width: 800px; margin: 0 auto; padding: 0.8rem 4%;">
+
+      <!-- 💡 画面の高さに合わせて自動伸縮するチラシ画像エリア -->
+      <div style="text-align: center; margin-bottom: 2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08); max-height: calc(100vh - 85px); display: flex; justify-content: center; align-items: center; background: #ffffff;">
+        <img src="https://lh3.googleusercontent.com/d/1VxlK_q5q7dq1Ymzr3XriB-PehZHfJt0l" alt="さんぽっぽ 内覧会案内チラシ" style="max-width: 100%; max-height: calc(100vh - 85px); width: auto; height: auto; object-fit: contain; display: block;">
+      </div>
+
+      <!-- 内覧会 詳細情報カード -->
+      <div class="event-card" style="background: #ffffff; padding: 3rem 2.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid var(--border-color); text-align: center;">
+        
+        <span style="display: inline-block; border: 1px solid var(--brand-green); color: var(--brand-green); font-size: 0.8rem; padding: 3px 16px; border-radius: 20px; font-weight: bold; letter-spacing: 0.15em; margin-bottom: 1rem;">
+          EVENT INFORMATION
+        </span>
+
+        <h1 class="event-title" style="font-family: var(--font-serif); font-size: 2.2rem; color: #2b2b2b; margin-bottom: 1.5rem; font-weight: 600;">
+          さんぽっぽ 施設内覧会
+        </h1>
+
+        <!-- 日時・時間 -->
+        <div style="background: #f7f9f2; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid var(--brand-green);">
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.3rem;">【 開催日時 】</p>
+          <p style="font-size: 1.3rem; color: var(--brand-green); font-weight: bold; font-family: var(--font-serif); margin-bottom: 0.4rem;">
+            10月10日(土) ・ 11日(日)
+          </p>
+          <p style="font-size: 1.1rem; color: #2b2b2b; font-weight: 500;">
+            時間：9:00 〜 16:00
+          </p>
+        </div>
+
+        <!-- 提供サービス一覧（チラシ内容） -->
+        <div style="margin-bottom: 2.5rem; text-align: left;">
+          <h3 style="font-size: 1.05rem; color: var(--brand-green); border-bottom: 2px solid #e3e8d8; padding-bottom: 0.5rem; margin-bottom: 1.2rem; text-align: center;">
+            内覧できる施設・サービス
+          </h3>
+          <div class="service-tag-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center;">
+            <div style="background: #fcfbf9; padding: 1rem; border-radius: 6px; border: 1px solid #eee;">
+              <span style="font-size: 1.5rem; display: block; margin-bottom: 0.3rem;">🏨</span>
+              <strong style="font-size: 0.95rem; color: #333;">ペットホテル</strong>
+            </div>
+            <div style="background: #fcfbf9; padding: 1rem; border-radius: 6px; border: 1px solid #eee;">
+              <span style="font-size: 1.5rem; display: block; margin-bottom: 0.3rem;">🎓</span>
+              <strong style="font-size: 0.95rem; color: #333;">しつけ教室</strong>
+            </div>
+            <div style="background: #fcfbf9; padding: 1rem; border-radius: 6px; border: 1px solid #eee;">
+              <span style="font-size: 1.5rem; display: block; margin-bottom: 0.3rem;">☕</span>
+              <strong style="font-size: 0.95rem; color: #333;">テイクアウトドリンク</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- 場所・アクセス案内 -->
+        <div style="text-align: center; border-top: 1px dashed var(--border-color); padding-top: 2rem;">
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.3rem;">【 開催場所 】</p>
+          <p style="font-size: 1.15rem; color: var(--brand-green); font-weight: bold; margin-bottom: 0.5rem;">
+            〒389-2104 長野県中野市永江2297-1
+          </p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            ※ 国道117号線沿い・道の駅「ふるさと豊田」や「八幡宮」「豊田赤坂農村公園 ドッグラン」のすぐ近くです。
+          </p>
+
+          <a href="index_4.html#access" style="display: inline-block; background: var(--brand-green); color: #ffffff; padding: 0.8rem 2rem; border-radius: 30px; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 12px rgba(140, 179, 62, 0.3);">
+            地図・アクセス方法を見る ➔
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       👣 共通フッター
+       ========================================================================== -->
+  <footer style="background: var(--brand-green); color: #ffffff; text-align: center; padding: 2rem 1rem; font-family: 'Noto Sans JP', 'Hiragino Sans', 'メイリオ', sans-serif;">
+    <div style="max-width: 600px; margin: 0 auto 1rem; font-size: 0.95rem; line-height: 1.8;">
+      <p style="margin: 0; font-weight: 500;">〒389-2104 長野県中野市永江2297-1</p>
+      <p style="margin: 0;">
+        TEL: <a href="tel:0269380775" style="color: #ffffff; font-weight: bold; text-decoration: underline;">0269-38-0775</a>
+      </p>
+    </div>
+    <p style="font-size: 0.8rem; margin: 0; opacity: 0.9;">&copy; 2026 さんぽっぽ. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABOUT US | さんぽっぽ</title>
+  
+  <!-- Google Fonts: 優しい印象のまる文字フォント＆明朝体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       🎨 全体共通スタイル
+       ========================================================================== */
+    :root {
+      --bg-color: #fcfbf9;
+      --text-color: #333333;
+      --text-muted: #666666;
+      --accent-color: #8c8275;
+      --border-color: #e3dec3;
+      --brand-green: #8cb33e;
+      --font-soft: 'Zen Maru Gothic', 'Shippori Mincho', sans-serif;
+      --font-serif: 'Shippori Mincho', serif;
+      --font-sans: 'Montserrat', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-soft);
+      line-height: 2.1;
+      letter-spacing: 0.06em;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+
+    a:hover {
+      opacity: 0.6;
+    }
+
+    /* ==========================================================================
+       🔍 上部固定ヘッダー（統一・ロゴ30px）
+       ========================================================================== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 4%;
+      z-index: 1000;
+      background-color: var(--brand-green);
+    }
+
+    .logo {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 1.4rem;
+      letter-spacing: 0.2em;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    
+    nav a {
+      color: #ffffff !important;
+    }
+
+    /* ==========================================================================
+       📱 レスポンシブ設計（スマホ対応）
+       ========================================================================== */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 4%;
+      }
+      nav ul {
+        gap: 1.2rem;
+        font-size: 0.7rem;
+      }
+      .about-hero h1 {
+        font-size: 1.4rem !important;
+      }
+      .story-card {
+        padding: 2rem 1.5rem !important;
+      }
+      .story-text p {
+        font-size: 0.95rem !important;
+      }
+      /* 店舗概要・動物取扱業標識のスマホ表示最適化 */
+      .info-dl {
+        grid-template-columns: 1fr !important;
+        gap: 0.2rem 0 !important;
+      }
+      .info-dl dt {
+        margin-top: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       🔍 共通ヘッダー
+       ========================================================================== -->
+  <header>
+    <div class="logo">
+      <a href="index_4.html">
+        <img src="https://lh3.googleusercontent.com/d/1dlCeWqHO6GHwuSD-MVBoLWziEU7zVGbg" alt="さんぽっぽ" style="height: 30px; width: auto; display: block;">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index_4.html#hotel">ホテル</a></li>
+        <li><a href="index_4.html#deli">カフェ</a></li>
+       <li><a href="#">ABOUT US</a></li>
+        <li><a href="index_4.html#access">ACCESS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==========================================================================
+       📝 ABOUT US メインコンテンツ
+       ========================================================================== -->
+  <main style="padding-top: 0; padding-bottom: 5rem; min-height: 80vh;">
+    
+    <!-- ページタイトルエリア -->
+    <section class="about-hero" style="text-align: center; padding: 5rem 4% 2.2rem; background: #f7f9f2; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem;">
+      <h1 style="font-family: var(--font-serif); font-size: 1.7rem; font-weight: 600; color: var(--brand-green); letter-spacing: 0.1em; margin: 0;">
+        さんぽっぽの想いと由来
+      </h1>
+    </section>
+
+    <div style="max-width: 820px; margin: 0 auto; padding: 0 4%;">
+
+      <!-- ストーリーカード（文章エリア） -->
+      <div class="story-card" style="background: #ffffff; padding: 3.5rem 3rem; border-radius: 16px; border: 1px solid var(--border-color); box-shadow: 0 6px 25px rgba(0,0,0,0.03); margin-bottom: 4rem;">
+        
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">☀️ 🐾</span>
+          <h2 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--brand-green); font-weight: 600; line-height: 1.6;">
+            「さんぽっぽ」に込めた願い
+          </h2>
+        </div>
+
+       <div class="story-text" style="color: #3b3b3b; font-size: 1.02rem; text-align: justify; word-break: break-all;">
+          <p style="margin-bottom: 1.8rem;">
+            ぽっぽ動物病院は、開院以来、地域の飼い主さんとわんちゃん・ねこちゃんの暮らしに寄りそいながら診療を続けてきました。そして来年 2027 年 5 月、私たちは 10 周年というひとつの節目を迎えます。
+          </p>
+          <p style="margin-bottom: 1.8rem;">
+            この節目に向けて、「病院に来る日だけでなく、もっと日常のそばでお役に立てる場所をつくりたい」という思いが、少しずつふくらんでいきました。
+          </p>
+          <p style="margin-bottom: 1.8rem;">
+            毎日のさんぽ道、季節の変化、いつもの公園、近所の方とのあいさつ。<br>
+            飼い主さんとわんちゃんの暮らしの真ん中には、そんな何気ない「さんぽの時間」があります。
+          </p>
+          <p style="margin-bottom: 1.8rem;">
+            もしもご家族が旅行やお忙しい日でも、その延長線上にあるような、明るくて安心できる居場所をつくれないだろうかと考え、「さんぽっぽ」を思い立ちました。
+          </p>
+          <p style="margin-bottom: 1.8rem;">
+            名前の由来は、「さんぽ」と「ぽっぽ動物病院」をひとつに重ねて、「さんぽっぽ」としました。<br>
+            さらに英語表記では、この「さん」に太陽を意味する <strong>sun</strong> のイメージも重ねて、<strong>Sunpoppo</strong> という名前にしています。<br>
+            太陽の光の下でのお散歩のように、明るく、あたたかく、のびのびと過ごしてほしい。さんぽっぽには、そんな願いが込められています。
+          </p>
+          <p style="margin-bottom: 2rem;">
+            そんな願いを込めて、さんぽっぽは、<strong>2026 年 10 月</strong>、地域のみなさまに開いたドッグパーク＆ペットホテルとしてスタートします。
+          </p>
+
+          <p style="margin: 0; font-weight: 500; color: var(--brand-green); font-size: 1.02rem; text-align: left; line-height: 2; background: #f7f9f2; padding: 1.8rem 2rem; border-radius: 10px; border-left: 4px solid var(--brand-green);">
+            さんぽっぽは、ぽっぽ動物病院の経験と医療の安心感を土台にしながら、「いつものさんぽの続きのように過ごせる、地域のもうひとつのおうち」を目指して歩きはじめます。
+          </p>
+        </div>
+<!-- 院長先生の写真＆プロフィール -->
+        <div style="margin-top: 3rem; text-align: center; border-top: 1px dashed var(--border-color); padding-top: 2.5rem;">
+          <div style="max-width: 280px; margin: 0 auto 1.2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid var(--border-color);">
+            <img src="https://lh3.googleusercontent.com/d/1hRyrFF1vifZ8IIF5s3CPiME7-1SEbg5B" alt="さんぽっぽ 総支配人・ぽっぽ動物病院 院長 松川 恵" style="width: 100%; height: auto; display: block;">
+          </div>
+          <p style="font-size: 0.9rem; color: var(--brand-green); font-weight: 500; letter-spacing: 0.08em; margin-bottom: 0.3rem;">
+            さんぽっぽ 総支配人 ・ ぽっぽ動物病院 院長
+          </p>
+          <p style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; color: #2b2b2b; letter-spacing: 0.15em; margin: 0;">
+            松川 恵
+          </p>
+        </div>
+        </div>
+
+      </div>
+
+      <!-- 店舗概要 ＆ 第一種動物取扱業の標識（一体型） -->
+      <div style="background: #ffffff; padding: 2.5rem 2rem; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+        <h3 style="font-size: 1.2rem; color: var(--brand-green); border-bottom: 2px solid #e3e8d8; padding-bottom: 0.6rem; margin-bottom: 1.5rem; text-align: center;">
+          店舗概要・第一種動物取扱業の標識
+        </h3>
+
+        <dl class="info-dl" style="display: grid; grid-template-columns: 180px 1fr; gap: 1rem 1.5rem; font-size: 0.95rem; align-items: baseline;">
+          <dt style="font-weight: bold; color: var(--brand-green);">店名</dt>
+          <dd>さんぽっぽ （Sunpoppo）</dd>
+
+          <dt style="font-weight: bold; color: var(--brand-green);">母体医療機関</dt>
+          <dd>ぽっぽ動物病院</dd>
+
+          <dt style="font-weight: bold; color: var(--brand-green);">所在地</dt>
+          <dd>〒389-2104 長野県中野市永江2297-1</dd>
+
+          <dt style="font-weight: bold; color: var(--brand-green);">電話番号</dt>
+          <dd><a href="tel:0269380775" style="color: #2b2b2b; text-decoration: underline;">0269-38-0775</a></dd>
+
+          <dt style="font-weight: bold; color: var(--brand-green);">事業内容</dt>
+          <dd>ドッグパーク / ペットホテル / しつけ教室 / テイクアウトカフェ</dd>
+
+          <!-- 区切り線 -->
+          <div style="grid-column: 1 / -1; border-top: 1px dashed var(--border-color); margin: 0.8rem 0;"></div>
+
+          <dt style="font-weight: bold; color: var(--brand-green);">氏名（事業者名）</dt>
+          <dd>松川 恵</dd>
+
+          <dt style="font-weight: bold; color: var(--brand-green);">第一種動物取扱業の種別</dt>
+          <dd>保管 </dd>
+
+          <dt style="font-weight: bold; color: var(--brand-green);">登録番号</dt>
+          <dd>長野県長野保健所令8第88-10008302号</dd>
+
+          <dt style="font-weight: bold; color: var(--brand-green);">登録年月日</dt>
+          <dd>2026年9月24日</dd>
+
+          <dt style="font-weight: bold; color: var(--brand-green);">登録有効期間の末日</dt>
+          <dd>2031年9月23日</dd>
+
+          <dt style="font-weight: bold; color: var(--brand-green);">動物取扱責任者</dt>
+          <dd>松川 護</dd>
+
+          <!-- 💡 ここに区切り線を追加します -->
+          <div style="grid-column: 1 / -1; border-top: 1px dashed var(--border-color); margin: 1.2rem 0;"></div>
+
+          <dt style="font-weight: bold; color: var(--brand-green);">第一種動物取扱業の種別</dt>
+          <dd>訓練</dd>
+
+          <dt style="font-weight: bold; color: var(--brand-green);">登録番号</dt>
+          <dd>長野県長野保健所令8第88-10008404号</dd>
+
+          <dt style="font-weight: bold; color: var(--brand-green);">登録年月日</dt>
+          <dd>2026年9月24日</dd>
+
+          <dt style="font-weight: bold; color: var(--brand-green);">登録有効期間の末日</dt>
+          <dd>2031年9月23日</dd>
+
+          <dt style="font-weight: bold; color: var(--brand-green);">動物取扱責任者</dt>
+          <dd>田代 奈都瑠</dd>
+        </dl>
+      </div>
+  </main>
+
+  <!-- ==========================================================================
+       👣 共通フッター
+       ========================================================================== -->
+  <footer style="background: var(--brand-green); color: #ffffff; text-align: center; padding: 2rem 1rem; font-family: 'Noto Sans JP', 'Hiragino Sans', 'メイリオ', sans-serif;">
+    <div style="max-width: 600px; margin: 0 auto 1rem; font-size: 0.95rem; line-height: 1.8;">
+      <p style="margin: 0; font-weight: 500;">〒389-2104 長野県中野市永江2297-1</p>
+      <p style="margin: 0;">
+        TEL: <a href="tel:0269380775" style="color: #ffffff; font-weight: bold; text-decoration: underline;">0269-38-0775</a>
+      </p>
+    </div>
+    <p style="font-size: 0.8rem; margin: 0; opacity: 0.9;">&copy; 2026 さんぽっぽ. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
