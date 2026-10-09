@@ -344,21 +344,33 @@
     /* ==========================================================================
        📱 レスポンシブ設計（スマホ対応）
        ========================================================================== */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1.5rem 4%;
-      }
-      nav ul {
-        gap: 1.2rem;
-        font-size: 0.7rem;
-      }
+   @media (max-width: 768px) {
+  header {
+    flex-direction: row !important; /* 👈 縦並びではなく「横並び（1行）」を強制します */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 3% !important; /* 👈 緑の帯を薄くします */
+  }
+  
+  .logo img {
+    height: 20px !important; /* 👈 ロゴ画像を横一列に収まるサイズに微調整 */
+  }
+
+  nav ul {
+    gap: 0.6rem !important; /* 👈 メニュー同士の間隔をキュッと詰めます */
+    font-size: 0.68rem !important; /* 👈 スマホで収まる文字サイズにします */
+  }
+
       .hero h1 { font-size: 2.5rem; }
       .status-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+    max-width: 320px !important;  /* 👈 スマホの幅に合わせてカード幅をキュッと綺麗にします */
+    margin: 0 auto !important;
+  }
+  .status-card {
+    padding: 1.5rem 1rem !important;  /* 👈 カード内の文字の納まりを良くします */
+  }
       .service-container {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -498,8 +510,8 @@ section img {
        📍 3. アクセスセクション（Googleマップ）
        ========================================================================== -->
   <!-- 📍 アクセスセクション -->
-<section id="access" style="padding: 2.5rem 4%; text-align: center; scroll-margin-top: 80px;">
-  <h2 style="font-size: 2rem; font-weight: 300; margin-bottom: 0.5rem; letter-spacing: 0.1em;">アクセス</h2>
+<section id="access" style="padding: 1rem 4%; text-align: center; scroll-margin-top: 40px;">
+  <h2 style="font-size: 2rem; font-weight: 300; margin-bottom: 0.2rem; letter-spacing: 0.1em;">アクセス</h2>
   <p style="font-size: 1.1rem; color: #8cb33e; font-weight: bold; margin-bottom: 0.6rem; font-family: 'Noto Sans JP', 'Hiragino Sans', 'メイリオ', sans-serif;">
   〒389-2104 長野県中野市永江2297-1
 </p>
@@ -512,7 +524,7 @@ section img {
     <iframe 
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6389.476537051879!2d138.32109350871744!3d36.80082526766419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff6219a48989c93%3A0x5fd39a7ef8a54f7c!2z44GV44KT44G944Gj44G9!5e0!3m2!1sja!2sjp!4v1791268099194!5m2!1sja!2sjp" 
       width="100%" 
-      height="450" 
+      height="280" 
       style="border:0; display: block; filter: grayscale(15%) contrast(95%);" 
       allowfullscreen="" 
       loading="lazy" 
