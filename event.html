@@ -91,16 +91,22 @@
     /* ==========================================================================
        📱 レスポンシブ設計（スマホ対応）
        ========================================================================== */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem 4%;
-      }
-      nav ul {
-        gap: 1.2rem;
-        font-size: 0.7rem;
-      }
+       @media (max-width: 768px) {
+  header {
+    flex-direction: row !important; /* 👈 縦並びではなく「横並び（1行）」を強制します */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 3% !important; /* 👈 緑の帯を薄くします */
+  }
+  
+  .logo img {
+    height: 20px !important; /* 👈 ロゴ画像を横一列に収まるサイズに微調整 */
+  }
+
+  nav ul {
+    gap: 0.6rem !important; /* 👈 メニュー同士の間隔をキュッと詰めます */
+    font-size: 0.68rem !important; /* 👈 スマホで収まる文字サイズにします */
+  }
       .event-card {
         padding: 2rem 1.5rem !important;
       }
@@ -198,8 +204,7 @@
             ※ 国道117号線沿い・道の駅「ふるさと豊田」や「八幡宮」「豊田赤坂農村公園 ドッグラン」のすぐ近くです。
           </p>
 
-          <a href="index_4.html#access" style="display: inline-block; background: var(--brand-green); color: #ffffff; padding: 0.8rem 2rem; border-radius: 30px; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 12px rgba(140, 179, 62, 0.3);">
-            地図・アクセス方法を見る ➔
+          <<a href="index.html#access" style="...">地図・アクセス方法を見る ➔</a>
           </a>
         </div>
 
