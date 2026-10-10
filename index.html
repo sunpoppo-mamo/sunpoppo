@@ -346,11 +346,16 @@
        ========================================================================== */
    @media (max-width: 768px) {
   header {
-    flex-direction: row !important; /* 👈 縦並びではなく「横並び（1行）」を強制します */
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 3% !important; /* 👈 緑の帯を薄くします */
-  }
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 3% !important;
+}
+
+/* 💡 写真の上の無駄な余白を縮める設定 */
+.section-service {
+  padding: 2.5rem 4% !important;
+}
   
   .logo img {
     height: 20px !important; /* 👈 ロゴ画像を横一列に収まるサイズに微調整 */
