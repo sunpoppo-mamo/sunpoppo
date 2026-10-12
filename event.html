@@ -3,26 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>施設内覧会のご案内 | さんぽっぽ</title>
+  <title>施設内覧会のお礼とご案内 | さんぽっぽ</title>
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Noto Serif JP / Noto Sans JP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Serif+JP:wght@200;300;400;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ==========================================================================
-       🎨 全体共通スタイル（トップページと統一）
-       ========================================================================== */
     :root {
-      --bg-color: #fcfbf9;
-      --text-color: #2b2b2b;
-      --text-muted: #707070;
-      --accent-color: #8c8275;
-      --border-color: #e3dec3;
-      --brand-green: #8cb33e;
-      --font-serif: 'Noto Serif JP', 'Cormorant Garamond', serif;
-      --font-sans: 'Noto Sans JP', 'Montserrat', sans-serif;
+      --bg-color: #fcfcf9;
+      --text-color: #333333;
+      --text-muted: #777777;
+      --accent-color: #8cb33e;
+      --border-color: #e5e5e0;
+      --font-serif: 'Noto Serif JP', serif;
+      --font-sans: 'Noto Sans JP', sans-serif;
     }
 
     * {
@@ -34,191 +30,197 @@
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
-      font-family: var(--font-sans);
+      font-family: var(--font-serif);
       line-height: 1.8;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: opacity 0.3s ease;
-    }
-
-    a:hover {
-      opacity: 0.6;
-    }
-
-    /* ==========================================================================
-       🔍 上部固定ヘッダー
-       ========================================================================== */
+    /* 上部固定ヘッダー */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
+      background-color: var(--accent-color);
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.5rem 4%;
-      z-index: 1000;
-      background-color: var(--brand-green);
+      padding: 0.8rem 5%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
 
-    .logo {
-      font-family: var(--font-sans);
-      font-weight: 300;
-      font-size: 1.4rem;
-      letter-spacing: 0.2em;
+    .logo-text {
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.1em;
     }
 
     nav ul {
       display: flex;
       list-style: none;
-      gap: 2.5rem;
-      font-family: var(--font-sans);
-      font-weight: 300;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
+      gap: 1.5rem;
     }
-    
+
     nav a {
-      color: #ffffff !important;
+      color: #ffffff;
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: opacity 0.3s;
     }
 
-    /* ==========================================================================
-       📱 レスポンシブ設計（スマホ対応）
-       ========================================================================== */
-       @media (max-width: 768px) {
-  header {
-    flex-direction: row !important; /* 👈 縦並びではなく「横並び（1行）」を強制します */
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 3% !important; /* 👈 緑の帯を薄くします */
-  }
-  
-  .logo img {
-    height: 20px !important; /* 👈 ロゴ画像を横一列に収まるサイズに微調整 */
-  }
+    nav a:hover {
+      opacity: 0.8;
+    }
 
-  nav ul {
-    gap: 0.6rem !important; /* 👈 メニュー同士の間隔をキュッと詰めます */
-    font-size: 0.68rem !important; /* 👈 スマホで収まる文字サイズにします */
-  }
+    main {
+      padding-top: 90px;
+      padding-bottom: 3rem;
+    }
+
+    .event-container {
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 1rem 4%;
+    }
+
+    .event-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem 1.8rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .badge-finished {
+      display: inline-block;
+      background-color: #d9534f;
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 0.3rem 1.2rem;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-access {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: #ffffff;
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: bold;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      margin-top: 1.2rem;
+      transition: opacity 0.3s;
+    }
+
+    .btn-access:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 0.5rem 3% !important;
+      }
+
+      nav ul {
+        gap: 0.6rem !important;
+      }
+
+      nav a {
+        font-size: 0.68rem !important;
+      }
+
       .event-card {
-        padding: 2rem 1.5rem !important;
-      }
-      .event-title {
-        font-size: 1.8rem !important;
-      }
-      .service-tag-grid {
-        grid-template-columns: 1fr !important;
+        padding: 1.8rem 1.2rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- ==========================================================================
-       🔍 共通ヘッダー（ロゴ30pxぴったり版）
-       ========================================================================== -->
- <header>
-  <div class="logo">
-    <a href="index.html">
-      <img src="https://lh3.googleusercontent.com/d/1dlCeWqHO6GHwuSD-MVBoLWziEU7zVGbg" alt="さんぽっぽ" style="height: 30px; width: auto; display: block;">
-    </a>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="index.html#hotel">ホテル</a></li>
-      <li><a href="index.html#deli">カフェ</a></li>
-      <li><a href="about us.html">ABOUT US</a></li>
-      <li><a href="index.html#access">ACCESS</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- 固定ヘッダー -->
+  <header>
+    <a href="index.html" class="logo-text">さんぽっぽ</a>
+    <nav>
+      <ul>
+        <li><a href="index.html#hotel">ホテル</a></li>
+        <li><a href="index.html#deli">カフェ</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="index.html#access">ACCESS</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- ==========================================================================
-       📝 イベント案内メインコンテンツ
-       ========================================================================== -->
-  <main style="padding-top: 55px; padding-bottom: 3rem;">
-    <div style="max-width: 800px; margin: 0 auto; padding: 0.8rem 4%;">
-
-<!-- 💡 チラシ画像の上に「終了いたしました」を重ねるエリア -->
-    <div style="position: relative; max-width: 650px; margin: 0 auto 1.5rem; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-
-      <!-- 赤色の「内覧会は終了いたしました」バナー -->
-      <div style="position: absolute; top: 0; left: 0; width: 100%; background-color: rgba(217, 83, 79, 0.92); color: #ffffff; text-align: center; padding: 0.8rem 0; font-size: 1.15rem; font-weight: bold; letter-spacing: 0.1em; font-family: 'Noto Sans JP', sans-serif; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-        【 内覧会は終了いたしました 】
-      </div>
-
-      <!-- チラシ画像（ファイル名を完全に一致させています） -->
-      <img src="さんぽっぽ内覧会案内.png" alt="さんぽっぽ内覧会案内" style="width: 100%; height: auto; display: block;">
-    </div>
-
-    <!-- 💡 画像下の案内カード（感謝・随時受付・注意点） -->
-    <div class="event-card" style="background: #ffffff; border: 1px solid #e5e5e0; border-radius: 12px; padding: 2rem 1.5rem; max-width: 650px; margin: 0 auto; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-      
-      <span style="display: inline-block; border: 1px solid #8cb33e; color: #8cb33e; font-size: 0.75rem; padding: 0.2rem 0.8rem; border-radius: 20px; font-family: 'Noto Sans JP', sans-serif; font-weight: bold; margin-bottom: 0.8rem;">
-        THANK YOU
-      </span>
-
-      <h1 class="event-title" style="font-size: 1.4rem; font-weight: 400; color: #333333; margin-bottom: 0.8rem; font-family: 'Noto Serif JP', serif;">
-        ご来場誠にありがとうございました
-      </h1>
-
-      <p style="font-size: 0.9rem; color: #555555; line-height: 1.8; margin-bottom: 1.2rem; font-family: 'Noto Sans JP', sans-serif;">
-        10月10日(土)・11日(日)開催の施設内覧会は、無事に終了いたしました。<br>
-        たくさんのご来場、心より感謝申し上げます。
-      </p>
-
-      <div style="border-top: 1px dashed #e5e5e0; padding-top: 1.2rem; margin-top: 1.2rem;">
-        <p style="font-size: 1rem; color: #8cb33e; font-weight: bold; margin-bottom: 0.5rem; font-family: 'Noto Sans JP', sans-serif;">
-          【 施設内覧は随時受け付けております 】
+  <main>
+    <div class="event-container">
+      <div class="event-card">
+        <!-- 終了バナー -->
+        <span class="badge-finished">【 施設内覧会は終了いたしました 】</span>
+        
+        <h1 style="font-size: 1.4rem; font-weight: 400; color: #333333; margin-bottom: 1rem; font-family: var(--font-serif);">
+          ご来場誠にありがとうございました
+        </h1>
+        
+        <p style="font-family: var(--font-sans); font-size: 0.9rem; color: #555555; line-height: 1.8; margin-bottom: 1.5rem;">
+          10月10日(土)・11日(日)に開催いたしました「さんぽっぽ 施設内覧会」は、無事に終了いたしました。<br>
+          たくさんのご来場と温かいお言葉をいただき、スタッフ一同心より感謝申し上げます。
         </p>
-        <p style="font-size: 0.88rem; color: #444444; line-height: 1.7; margin-bottom: 0.8rem; font-family: 'Noto Sans JP', sans-serif;">
-          見学をご希望の方は、お気軽にスタッフまでお声がけください。
-        </p>
-        <p style="font-size: 0.78rem; color: #888888; line-height: 1.6; font-family: 'Noto Sans JP', sans-serif; background: #f9f9f6; padding: 0.8rem; border-radius: 6px;">
-          ※混雑状況やワンちゃんの利用状況により、内覧をお断りする場合やお待ちいただく場合がございます。あらかじめご了承ください。
-        </p>
-      </div>
 
-    </div>
-        </div>
-
-        <!-- 場所・アクセス案内 -->
-        <div style="text-align: center; border-top: 1px dashed var(--border-color); padding-top: 2rem;">
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.3rem;">【 開催場所 】</p>
-          <p style="font-size: 1.15rem; color: var(--brand-green); font-weight: bold; margin-bottom: 0.5rem;">
-            〒389-2104 長野県中野市永江2297-1
-          </p>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-            ※ 国道117号線沿い・道の駅「ふるさと豊田」や「八幡宮」「豊田赤坂農村公園 ドッグラン」のすぐ近くです。
+        <!-- 随時内覧のご案内 -->
+        <div style="border-top: 1px dashed var(--border-color); padding-top: 1.5rem; margin-top: 1.5rem;">
+          <h2 style="font-size: 1.1rem; color: var(--accent-color); font-weight: bold; margin-bottom: 0.6rem; font-family: var(--font-sans);">
+            【 施設の内覧は随時受け付けております 】
+          </h2>
+          
+          <p style="font-family: var(--font-sans); font-size: 0.88rem; color: #444444; line-height: 1.8; margin-bottom: 1rem;">
+            内覧会にお越しいただけなかった方や、ペットホテルの事前見学をご希望の方は、お気軽にスタッフまでお声がけいただくか、お電話にてお問い合わせください。
           </p>
 
-          <<a href="index.html#access" style="...">地図・アクセス方法を見る ➔</a>
-          </a>
+          <!-- 注意書き -->
+          <p style="font-size: 0.78rem; color: #777777; line-height: 1.6; font-family: var(--font-sans); background: #f9f9f6; padding: 0.8rem; border-radius: 6px; text-align: left; margin-bottom: 1.2rem;">
+            ※混雑状況やワンちゃんの利用状況（預かり状況）により、内覧をお断りする場合やお待ちいただく場合がございます。あらかじめご了承ください。
+          </p>
+
+          <!-- 場所・アクセス案内 -->
+          <div style="margin-top: 1.5rem;">
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.3rem;">【 所在地・お問い合わせ 】</p>
+            <p style="font-size: 0.95rem; color: var(--accent-color); font-weight: bold; font-family: var(--font-sans); margin-bottom: 0.3rem;">
+              〒389-2104 長野県中野市永江2297-1
+            </p>
+            <p style="font-size: 1rem; color: #333333; font-weight: bold; font-family: var(--font-sans); margin-bottom: 1rem;">
+              TEL: <a href="tel:0269380775" style="color: var(--accent-color); text-decoration: none;">0269-38-0775</a>
+            </p>
+
+            <a href="index.html#access" class="btn-access">📍 アクセスマップを見る</a>
+          </div>
         </div>
 
       </div>
-
     </div>
   </main>
 
-  <!-- ==========================================================================
-       👣 共通フッター
-       ========================================================================== -->
-  <footer style="background: var(--brand-green); color: #ffffff; text-align: center; padding: 2rem 1rem; font-family: 'Noto Sans JP', 'Hiragino Sans', 'メイリオ', sans-serif;">
-    <div style="max-width: 600px; margin: 0 auto 1rem; font-size: 0.95rem; line-height: 1.8;">
+  <!-- フッター -->
+  <footer style="background: #8cb33e; color: #ffffff; text-align: center; padding: 2rem 1rem; font-family: var(--font-sans);">
+    <div style="max-width: 600px; margin: 0 auto 1rem; font-size: 0.9rem; line-height: 1.8;">
       <p style="margin: 0; font-weight: 500;">〒389-2104 長野県中野市永江2297-1</p>
       <p style="margin: 0;">
         TEL: <a href="tel:0269380775" style="color: #ffffff; font-weight: bold; text-decoration: underline;">0269-38-0775</a>
       </p>
     </div>
-    <p style="font-size: 0.8rem; margin: 0; opacity: 0.9;">&copy; 2026 さんぽっぽ. All Rights Reserved.</p>
+    <p style="font-size: 0.75rem; margin: 0; opacity: 0.9;">&copy; 2026 さんぽっぽ. All Rights Reserved.</p>
   </footer>
 
 </body>
