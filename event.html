@@ -146,52 +146,47 @@
   <main style="padding-top: 55px; padding-bottom: 3rem;">
     <div style="max-width: 800px; margin: 0 auto; padding: 0.8rem 4%;">
 
-      <!-- 💡 画面の高さに合わせて自動伸縮するチラシ画像エリア -->
-      <div style="text-align: center; margin-bottom: 2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08); max-height: calc(100vh - 85px); display: flex; justify-content: center; align-items: center; background: #ffffff;">
-        <img src="https://lh3.googleusercontent.com/d/1VxlK_q5q7dq1Ymzr3XriB-PehZHfJt0l" alt="さんぽっぽ 内覧会案内チラシ" style="max-width: 100%; max-height: calc(100vh - 85px); width: auto; height: auto; object-fit: contain; display: block;">
+<!-- 💡 チラシ画像の上に「終了いたしました」を重ねるエリア -->
+    <div style="position: relative; max-width: 650px; margin: 0 auto 1.5rem; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+
+      <!-- 赤色の「内覧会は終了いたしました」バナー -->
+      <div style="position: absolute; top: 0; left: 0; width: 100%; background-color: rgba(217, 83, 79, 0.92); color: #ffffff; text-align: center; padding: 0.8rem 0; font-size: 1.15rem; font-weight: bold; letter-spacing: 0.1em; font-family: 'Noto Sans JP', sans-serif; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+        【 内覧会は終了いたしました 】
       </div>
 
-      <!-- 内覧会 詳細情報カード -->
-      <div class="event-card" style="background: #ffffff; padding: 3rem 2.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid var(--border-color); text-align: center;">
-        
-        <span style="display: inline-block; border: 1px solid var(--brand-green); color: var(--brand-green); font-size: 0.8rem; padding: 3px 16px; border-radius: 20px; font-weight: bold; letter-spacing: 0.15em; margin-bottom: 1rem;">
-          EVENT INFORMATION
-        </span>
+      <!-- チラシ画像 -->
+      <img src="https://lh3.googleusercontent.com/d/1Vx1K_q5q7dq1Ymzr3XriB-PehZHfJt0l" alt="さんぽっぽ 内覧会案内チラシ" style="width: 100%; height: auto; display: block;">
+    </div>
 
-        <h1 class="event-title" style="font-family: var(--font-serif); font-size: 2.2rem; color: #2b2b2b; margin-bottom: 1.5rem; font-weight: 600;">
-          さんぽっぽ 施設内覧会
-        </h1>
+    <!-- 💡 画像下の案内カード（感謝・随時受付・注意点） -->
+    <div class="event-card" style="background: #ffffff; border: 1px solid #e5e5e0; border-radius: 12px; padding: 2rem 1.5rem; max-width: 650px; margin: 0 auto; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+      
+      <span style="display: inline-block; border: 1px solid #8cb33e; color: #8cb33e; font-size: 0.75rem; padding: 0.2rem 0.8rem; border-radius: 20px; font-family: 'Noto Sans JP', sans-serif; font-weight: bold; margin-bottom: 0.8rem;">
+        THANK YOU
+      </span>
 
-        <!-- 日時・時間 -->
-        <div style="background: #f7f9f2; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid var(--brand-green);">
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.3rem;">【 開催日時 】</p>
-          <p style="font-size: 1.3rem; color: var(--brand-green); font-weight: bold; font-family: var(--font-serif); margin-bottom: 0.4rem;">
-            10月10日(土) ・ 11日(日)
-          </p>
-          <p style="font-size: 1.1rem; color: #2b2b2b; font-weight: 500;">
-            時間：9:00 〜 16:00
-          </p>
-        </div>
+      <h1 class="event-title" style="font-size: 1.4rem; font-weight: 400; color: #333333; margin-bottom: 0.8rem; font-family: 'Noto Serif JP', serif;">
+        ご来場誠にありがとうございました
+      </h1>
 
-        <!-- 提供サービス一覧（チラシ内容） -->
-        <div style="margin-bottom: 2.5rem; text-align: left;">
-          <h3 style="font-size: 1.05rem; color: var(--brand-green); border-bottom: 2px solid #e3e8d8; padding-bottom: 0.5rem; margin-bottom: 1.2rem; text-align: center;">
-            内覧できる施設・サービス
-          </h3>
-          <div class="service-tag-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center;">
-            <div style="background: #fcfbf9; padding: 1rem; border-radius: 6px; border: 1px solid #eee;">
-              <span style="font-size: 1.5rem; display: block; margin-bottom: 0.3rem;">🏨</span>
-              <strong style="font-size: 0.95rem; color: #333;">ペットホテル</strong>
-            </div>
-            <div style="background: #fcfbf9; padding: 1rem; border-radius: 6px; border: 1px solid #eee;">
-              <span style="font-size: 1.5rem; display: block; margin-bottom: 0.3rem;">🎓</span>
-              <strong style="font-size: 0.95rem; color: #333;">しつけ教室</strong>
-            </div>
-            <div style="background: #fcfbf9; padding: 1rem; border-radius: 6px; border: 1px solid #eee;">
-              <span style="font-size: 1.5rem; display: block; margin-bottom: 0.3rem;">☕</span>
-              <strong style="font-size: 0.95rem; color: #333;">テイクアウトドリンク</strong>
-            </div>
-          </div>
+      <p style="font-size: 0.9rem; color: #555555; line-height: 1.8; margin-bottom: 1.2rem; font-family: 'Noto Sans JP', sans-serif;">
+        10月10日(土)・11日(日)開催の施設内覧会は、無事に終了いたしました。<br>
+        たくさんのご来場、心より感謝申し上げます。
+      </p>
+
+      <div style="border-top: 1px dashed #e5e5e0; padding-top: 1.2rem; margin-top: 1.2rem;">
+        <p style="font-size: 1rem; color: #8cb33e; font-weight: bold; margin-bottom: 0.5rem; font-family: 'Noto Sans JP', sans-serif;">
+          【 施設内覧は随時受け付けております 】
+        </p>
+        <p style="font-size: 0.88rem; color: #444444; line-height: 1.7; margin-bottom: 0.8rem; font-family: 'Noto Sans JP', sans-serif;">
+          見学をご希望の方は、お気軽にスタッフまでお声がけください。
+        </p>
+        <p style="font-size: 0.78rem; color: #888888; line-height: 1.6; font-family: 'Noto Sans JP', sans-serif; background: #f9f9f6; padding: 0.8rem; border-radius: 6px;">
+          ※混雑状況やワンちゃんの利用状況により、内覧をお断りする場合やお待ちいただく場合がございます。あらかじめご了承ください。
+        </p>
+      </div>
+
+    </div>
         </div>
 
         <!-- 場所・アクセス案内 -->
