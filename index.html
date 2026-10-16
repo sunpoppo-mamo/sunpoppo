@@ -3,12 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>さんぽっぽ | SUNPOPPO</title>
   
-  <!-- Google Fonts: Norm風の洗練された文字（明朝体とシンプルなゴシック体）を読み込み -->
+  <!-- 🔍 ① 裏側SEO設定（豊田飯山IC・北信スキー場・観光・一時預かり・宿泊対応） -->
+  <title>さんぽっぽ | ドッグパーク＆ペットホテル</title>
+  <meta name="description" content="豊田飯山IC（飯山IC）すぐ！小布施・湯田中渋温泉・志賀高原・野沢温泉エリアへの観光やスキー中も安心。ぽっぽ動物病院併設のペットホテル・日帰り一時預かり・カフェ「さんぽっぽ」です。">
+  <meta name="keywords" content="さんぽっぽ, 豊田飯山IC ペットホテル, 飯山IC ペット預かり, 北信 ペットホテル, 志賀高原 ペットホテル, 野沢温泉 ペットホテル, 小布施 ペット預かり, 湯田中温泉 ペットホテル, 竜王スキーパーク ペット, 中野市 ペットホテル, ぽっぽ動物病院">
+  <link rel="canonical" href="https://sanpoppo.com/index.html">
+
+  <!-- 📱 ② OGP設定（LINEやSNSシェア用） -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="さんぽっぽ | 豊田飯山ICすぐ・北信観光＆スキー旅行に">
+  <meta property="og:description" content="小布施・湯田中渋温泉・志賀高原・野沢温泉への観光やスキー中も安心。ぽっぽ動物病院運営のペットホテル＆日帰り一時預かり「さんぽっぽ」。">
+  <meta property="og:url" content="https://sanpoppo.com/index.html">
+  <meta property="og:site_name" content="さんぽっぽ">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1dlCeWqHO6GHwuSD-MVBoLWziEU7zVGbg">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- 🖼️ ③ ファビコン設定 -->
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Google Fonts: ブランド共通フォントを網羅 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Serif+JP:wght@200;300;400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&family=Noto+Serif+JP:wght@200;300;400&family=Shippori+Mincho:wght@400;500;600&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- 🏷️ ④ Google検索エンジン・MEO専用の構造化データ（JSON-LD） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PetStore",
+    "name": "さんぽっぽ",
+    "image": "https://lh3.googleusercontent.com/d/1dlCeWqHO6GHwuSD-MVBoLWziEU7zVGbg",
+    "description": "豊田飯山IC（飯山IC）近く。小布施、湯田中渋温泉郷、志賀高原、野沢温泉、地獄谷野猿公苑など北信エリアへの観光・ドライブ・温泉・スキー利用時の「ペット宿泊ホテル」および「日帰り一時預かり（ショートステイ）」。ぽっぽ動物病院併設。",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "永江2297-1",
+      "addressLocality": "中野市",
+      "addressRegion": "長野県",
+      "postalCode": "389-2104",
+      "addressCountry": "JP"
+    },
+    "telephone": "+81-269-38-0775",
+    "priceRange": "¥¥",
+    "areaServed": [
+      "北信エリア",
+      "中野市",
+      "小布施町",
+      "山ノ内町（湯田中渋温泉郷・志賀高原）",
+      "飯山市",
+      "野沢温泉村",
+      "豊田飯山IC",
+      "飯山IC"
+      "長野県"
+    ],
+    "knowsAbout": [
+      "観光客向けペット日帰り一時預かり",
+      "温泉街・観光地散策中のペット一時預かり",
+      "スキー客向けペット一時預かり",
+      "旅行者向け宿泊ペットホテル",
+      "動物病院運営ペットホテル",
+      "ドッグパーク"
+    ]
+  }
+  </script>
 
   <style>
     /* ==========================================================================
@@ -20,6 +78,8 @@
       --text-muted: #707070;    /* 薄いグレー：補足説明用 */
       --accent-color: #8c8275;  /* アースカラー：上品なグレージュ（アクセント） */
       --border-color: #e3dec3;  /* 境界線 */
+      --brand-green: #8cb33e;   /* ブランドグリーン */
+      --font-soft: 'Zen Maru Gothic', 'Shippori Mincho', sans-serif;
       --font-serif: 'Cormorant Garamond', 'Noto Serif JP', serif;
       --font-sans: 'Montserrat', sans-serif;
     }
@@ -33,7 +93,7 @@
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
-      font-family: var(--font-serif);
+      font-family: var(--font-soft);
       line-height: 1.8;
       letter-spacing: 0.08em;
       overflow-x: hidden;
@@ -53,23 +113,32 @@
        🔍 上部固定ヘッダー（ナビゲーション）
        ========================================================================== */
     header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.2rem 4%; /* 👈 上下の余白を小さくして帯の太さを抑えます */
-  z-index: 1000;
-  background-color: #8cb33e;
-}
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4rem 4%;
+      z-index: 1000;
+      background-color: var(--brand-green);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
 
     .logo {
-      font-family: var(--font-sans);
-      font-weight: 300;
-      font-size: 1.4rem;
-      letter-spacing: 0.2em;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 38px;
+      width: auto;
+      display: block;
+      background: #ffffff;
+      padding: 2px 6px;
+      border-radius: 6px;
+      object-fit: contain;
     }
 
     nav ul {
@@ -78,13 +147,35 @@
       gap: 2.5rem;
       font-family: var(--font-sans);
       font-weight: 300;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
     }
+    
     nav a {
-  color: #ffffff !important;
-}
+      color: #ffffff !important;
+    }
+
+    /* ==========================================================================
+       🔤 スマホでも必ず1行に収まる共通見出しスタイル
+       ========================================================================== */
+    .page-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 4.5vw, 1.7rem);
+      font-weight: 600;
+      color: var(--brand-green);
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      margin: 0;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      font-weight: 300;
+      white-space: nowrap;
+      letter-spacing: 0.1em;
+    }
 
     /* ==========================================================================
        🖼️ メインビジュアル（全画面写真エリア）
@@ -99,9 +190,9 @@
       position: relative;
       background-color: #eae6df;
       overflow: hidden;
+      padding-top: 50px;
     }
 
-    /* ★【写真の差し替え】：現在はUnsplashから仮のおしゃれな犬の写真を読み込んでいます */
     .hero-bg {
       position: absolute;
       top: 0;
@@ -111,7 +202,7 @@
       background-image: url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=2069&auto=format&fit=crop');
       background-size: cover;
       background-position: center;
-      opacity: 0.85; /* 写真を少し柔らかい印象にするために透過 */
+      opacity: 0.85;
       z-index: 1;
     }
 
@@ -120,45 +211,31 @@
       z-index: 2;
       color: #ffffff;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      padding: 0 4%;
+      width: 100%;
     }
 
     .hero h1 {
-      font-size: 4rem;
-      font-weight: 300;
-      letter-spacing: 0.25em;
-      margin-bottom: 1rem;
+      font-family: var(--font-soft);
+      font-size: clamp(2rem, 6vw, 4rem);
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.5rem;
+      white-space: nowrap;
     }
 
     .hero p {
-      font-size: 1.2rem;
+      font-size: clamp(0.95rem, 3vw, 1.2rem);
       font-weight: 300;
       letter-spacing: 0.15em;
     }
 
-    /* スクロールを促す静かな矢印 */
-    .scroll-indicator {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      color: #ffffff;
-      font-size: 1.5rem;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-      40% { transform: translateY(-10px) translateX(-50%); }
-      60% { transform: translateY(-5px) translateX(-50%); }
-    }
-
     /* ==========================================================================
-       📢 本日のさんぽっぽ（アイデアB：ステータスエリア）
+       📢 本日のさんぽっぽ（ステータスエリア）
        ========================================================================== */
     .today-status-section {
-      padding: 6rem 4%;
-      background-color: #f3eff5; /* 他の背景と差別化するための少しクールなグレージュ */
+      padding: 5rem 4%;
+      background-color: #f3eff5;
       border-bottom: 1px solid var(--border-color);
       text-align: center;
     }
@@ -170,35 +247,37 @@
 
     .status-date {
       font-family: var(--font-sans);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       letter-spacing: 0.2em;
       color: var(--accent-color);
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       display: block;
     }
 
     .status-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     .status-card {
       background: white;
-      padding: 2.5rem 1.5rem;
-      border-radius: 4px;
+      padding: 2rem 1.5rem;
+      border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-      border: 1px solid rgba(140, 130, 117, 0.1);
+      border: 1px solid rgba(140, 130, 117, 0.15);
       transition: transform 0.3s ease;
     }
 
     .status-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-3px);
     }
 
     .status-icon {
       font-size: 2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     .status-title {
@@ -207,12 +286,12 @@
       font-weight: 400;
       color: var(--text-muted);
       letter-spacing: 0.15em;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .status-value {
-      font-size: 1.1rem;
-      font-weight: 400;
+      font-size: 1.05rem;
+      font-weight: 500;
       color: var(--text-color);
     }
 
@@ -220,188 +299,133 @@
        🧱 各サービス紹介エリア（スクロールセクション）
        ========================================================================== */
     .section-service {
-      padding: 8rem 4%;
+      padding: 6rem 4%;
       display: flex;
       justify-content: center;
       align-items: center;
       border-bottom: 1px solid var(--border-color);
     }
 
-    /* 左右交互に写真と説明文が並ぶ構造 */
     .service-container {
-      max-width: 1200px;
+      max-width: 1100px;
       width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6rem;
+      gap: 5rem;
       align-items: center;
     }
 
-    /* 偶数番目のセクションは、左右を反転させる */
     .section-service:nth-child(even) .service-container {
       direction: rtl;
     }
+
     .section-service:nth-child(even) .service-text-content {
-      direction: ltr; /* テキストの読み方向は元に戻す */
+      direction: ltr;
     }
 
     .service-image-box {
       aspect-ratio: 4 / 3;
       background-color: #eae6df;
       overflow: hidden;
-      border-radius: 2px;
+      border-radius: 8px;
     }
 
     .service-image-box img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.8s ease;
-    }
-
-    .service-container:hover .service-image-box img {
-      transform: scale(1.05);
     }
 
     .service-text-content {
-      padding: 2rem 0;
+      padding: 1rem 0;
     }
 
     .service-num {
       font-family: var(--font-sans);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--accent-color);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       display: block;
       letter-spacing: 0.2em;
     }
 
     .service-title {
-      font-size: 2.2rem;
-      font-weight: 300;
-      margin-bottom: 1.5rem;
-      position: relative;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+      color: var(--brand-green);
     }
 
     .service-desc {
       font-size: 0.95rem;
       color: var(--text-muted);
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       line-height: 2;
-    }
-
-    /* プレミアム感のある静かなリンクボタン */
-    .service-link {
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      border-bottom: 1px solid var(--text-color);
-      padding-bottom: 0.5rem;
-      display: inline-block;
-    }
-
-    /* ==========================================================================
-       📍 アクセスセクション（Googleマップ統合用）
-       ========================================================================== */
-    .access-section {
-      padding: 8rem 4%;
-      text-align: center;
-      background-color: #f7f6f2;
-    }
-
-    .access-container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .map-placeholder {
-      width: 100%;
-      height: 400px;
-      background-color: #eae6df;
-      margin-top: 3rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 4px;
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-    }
-
-    /* ==========================================================================
-       👣 フッター
-       ========================================================================== */
-    footer {
-      padding: 4rem 4%;
-      text-align: center;
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      letter-spacing: 0.15em;
-      border-top: 1px solid var(--border-color);
     }
 
     /* ==========================================================================
        📱 レスポンシブ設計（スマホ対応）
        ========================================================================== */
-   @media (max-width: 768px) {
-  header {
-  flex-direction: row !important;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 3% !important;
-}
+    @media (max-width: 768px) {
+      header {
+        padding: 0.4rem 3% !important;
+      }
+      
+      .logo img {
+        height: 32px !important;
+        padding: 2px 4px !important;
+      }
 
-/* 💡 写真の上の無駄な余白を縮める設定 */
-.section-service {
-  padding: 2.5rem 4% !important;
-}
-  
-  .logo img {
-    height: 20px !important; /* 👈 ロゴ画像を横一列に収まるサイズに微調整 */
-  }
+      nav ul {
+        gap: 0.7rem !important;
+        font-size: 0.7rem !important;
+      }
 
-  nav ul {
-    gap: 0.6rem !important; /* 👈 メニュー同士の間隔をキュッと詰めます */
-    font-size: 0.68rem !important; /* 👈 スマホで収まる文字サイズにします */
-  }
+      .section-service {
+        padding: 3rem 4% !important;
+      }
 
-      .hero h1 { font-size: 2.5rem; }
       .status-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.2rem !important;
-    max-width: 320px !important;  /* 👈 スマホの幅に合わせてカード幅をキュッと綺麗にします */
-    margin: 0 auto !important;
-  }
-  .status-card {
-    padding: 1.5rem 1rem !important;  /* 👈 カード内の文字の納まりを良くします */
-  }
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        max-width: 320px !important;
+      }
+
+      .status-card {
+        padding: 1.5rem 1rem !important;
+      }
+
       .service-container {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 2rem;
       }
+
       .section-service:nth-child(even) .service-container {
         direction: ltr;
       }
+
+      .service-title {
+        font-size: 1.5rem;
+      }
     }
-  
-  /* 画像にカーソルを乗せても拡大（ズーム）させない設定 */
-.service-image-box img,
-section img {
-    transform: none !important;
-    transition: none !important;
-}
-</style>
+
+    /* 画像の自動拡大（ホバーエフェクト）を防止 */
+    .service-image-box img,
+    section img {
+      transform: none !important;
+      transition: none !important;
+    }
+  </style>
 </head>
 <body>
 
   <!-- ==========================================================================
-       🔍 上部固定ヘッダー：ここをタップすると各ページへ飛びます[cite: 2]
+       🔍 統一共通ヘッダー（新ロゴ sunpoppo_logo.jpg 適用）
        ========================================================================== -->
   <header>
     <div class="logo">
-      <a href="index.html">
-        <img src="https://lh3.googleusercontent.com/d/1dlCeWqHO6GHwuSD-MVBoLWziEU7zVGbg" alt="さんぽっぽ" style="height: 30px; width: auto; display: block;">
+      <a href="index.html" style="display: flex; align-items: center;">
+        <img src="sunpoppo_logo.jpg" alt="さんぽっぽ sunpoppo.com">
       </a>
     </div>
     <nav>
@@ -416,53 +440,51 @@ section img {
 
   <!-- ==========================================================================
        🖼️ メインビジュアルエリア
-       ========================================================================== */ -->
- <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <h1>さんぽっぽ</h1>
-    <p style="margin-bottom: 1.5rem;">愛犬と、寄り添う暮らしの交差点</p>
+       ========================================================================== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>さんぽっぽ</h1>
+      <p style="margin-bottom: 1.5rem;">愛犬と、寄り添う暮らしの交差点</p>
 
-   <!-- 📢 メインビジュアル上の案内カード -->
-<a href="event.html" style="text-decoration: none; color: inherit; display: block; max-width: 480px; margin: 0rem auto 0; padding: 1.8rem 1.5rem; background: rgba(255, 255, 255, 0.92); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid rgba(255, 255, 255, 0.8); backdrop-filter: blur(5px); text-align: center;">
-  
-  <span style="display: inline-block; font-size: 0.7rem; color: #8cb33e; border: 1px solid #8cb33e; padding: 0.15rem 0.8rem; border-radius: 20px; font-family: 'Noto Sans JP', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.6rem; font-weight: bold;">
-    INFORMATION
-  </span>
-  
-  <h2 style="font-size: 1.25rem; font-weight: 400; color: #333333; margin-bottom: 0.4rem; font-family: 'Noto Serif JP', serif; letter-spacing: 0.05em;">
-    施設内覧会のご礼とご案内
-  </h2>
-  
-  <p style="font-size: 0.85rem; color: #8cb33e; font-weight: bold; margin-bottom: 0.6rem; font-family: 'Noto Sans JP', sans-serif; letter-spacing: 0.03em;">
-    内覧会へのご来場ありがとうございました
-  </p>
-  
-  <p style="font-size: 0.8rem; color: #555555; line-height: 1.6; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.4rem;">
-    施設の内覧は随時受け付けております。<br>
-    お気軽にスタッフまでお声がけください。
-  </p>
+      <!-- 📢 メインビジュアル上の案内カード -->
+      <a href="event.html" style="text-decoration: none; color: inherit; display: block; max-width: 480px; margin: 0 auto; padding: 1.8rem 1.5rem; background: rgba(255, 255, 255, 0.92); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid rgba(255, 255, 255, 0.8); backdrop-filter: blur(5px); text-align: center;">
+        <span style="display: inline-block; font-size: 0.7rem; color: var(--brand-green); border: 1px solid var(--brand-green); padding: 0.15rem 0.8rem; border-radius: 20px; font-family: 'Noto Sans JP', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.6rem; font-weight: bold;">
+          INFORMATION
+        </span>
+        
+        <h2 style="font-size: 1.25rem; font-weight: 400; color: #333333; margin-bottom: 0.4rem; font-family: 'Noto Serif JP', serif; letter-spacing: 0.05em;">
+          施設内覧会のご礼とご案内
+        </h2>
+        
+        <p style="font-size: 0.85rem; color: var(--brand-green); font-weight: bold; margin-bottom: 0.6rem; font-family: 'Noto Sans JP', sans-serif; letter-spacing: 0.03em;">
+          内覧会へのご来場ありがとうございました
+        </p>
+        
+        <p style="font-size: 0.8rem; color: #555555; line-height: 1.6; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.4rem;">
+          施設の内覧は随時受け付けております。<br>
+          お気軽にスタッフまでお声がけください。
+        </p>
 
-  <p style="font-size: 0.72rem; color: #888888; line-height: 1.5; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.8rem;">
-    ※混雑状況やワンちゃんの利用状況により、内覧をお断り・お持ちいただく場合がございます。
-  </p>
-  
-  <span style="font-size: 0.85rem; color: #8cb33e; font-weight: bold; font-family: 'Noto Sans JP', sans-serif;">
-    詳細を見る ➔
-  </span>
-</a>
-
-  </div>
-</section>
+        <p style="font-size: 0.72rem; color: #888888; line-height: 1.5; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.8rem;">
+          ※混雑状況やワンちゃんの利用状況により、内覧をお断り・お持ちいただく場合がございます。
+        </p>
+        
+        <span style="font-size: 0.85rem; color: var(--brand-green); font-weight: bold; font-family: 'Noto Sans JP', sans-serif;">
+          詳細を見る ➔
+        </span>
+      </a>
+    </div>
+  </section>
 
   <!-- ==========================================================================
-       📢 本日のさんぽっぽ（アイデアB：毎日更新ステータス）
+       📢 本日のさんぽっぽ（毎日更新ステータス）
        ========================================================================== -->
- <section class="today-status-section">
+  <section class="today-status-section">
     <div class="status-container">
       <span class="status-date">TODAY'S STATUS | 本日の営業状況</span>
       
-      <div class="status-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 700px; margin: 0 auto;">
+      <div class="status-grid">
         <!-- カード1：ホテル状況 -->
         <div class="status-card">
           <div class="status-icon">🏨</div>
@@ -480,32 +502,132 @@ section img {
     </div>
   </section>
 
-  <!-- ==========================================================================
-      <!-- ==========================================================================
-       🧱 1. ホテルの紹介セクション
-       ========================================================================== -->
-  <section id="hotel" class="section-service" style="padding: \0.8rem 4%; scroll-margin-top: 50px;">
-    <div class="service-container">
-      <div class="service-image-box">
-        <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=2074&auto=format&fit=crop" alt="ドッグホテル">
-      </div>
-      <div class="service-text-content">
-        <span class="service-num">01 / HOTEL</span>
-        <h2 class="service-title">ペットホテル</h2>
-        <p class="service-desc">
+ <!-- ==========================================================================
+     🧱 1. ホテルの紹介セクション（強制順序固定版）
+     ========================================================================== -->
+<section id="hotel" class="section-service" style="scroll-margin-top: 50px;">
+  <div class="service-container" style="display: block; text-align: left; direction: ltr;">
+    
+    <!-- ① 上段：説明文（左）と写真（右） -->
+    <div style="display: flex; gap: 2.5rem; align-items: center; margin-bottom: 2.5rem; flex-wrap: wrap; direction: ltr;">
+      <div class="service-text-content" style="flex: 1; min-width: 300px; text-align: left; direction: ltr;">
+        <span class="service-num" style="display: block; text-align: left; direction: ltr;">01 / HOTEL</span>
+        <h2 class="service-title" style="text-align: left; direction: ltr;">ペットホテル</h2>
+        <p class="service-desc" style="text-align: left; line-height: 1.8; direction: ltr;">
           のびのび過ごせる「個室部屋」から落ち着く「ケージ」まで、ワンちゃんの性格に合わせて選択可能。夜間はあえてスタッフを配置せず、人の気配や物音に敏感な子も静かに休める環境を整えています。（※セキュリティシステムで安全をしっかりと見守ります）
         </p>
       </div>
+      <div class="service-image-box" style="flex: 1; min-width: 300px;">
+        <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=2074&auto=format&fit=crop" alt="さんぽっぽ ペットホテル" style="width: 100%; height: auto; border-radius: 8px;">
+      </div>
     </div>
-  </section>
+
+    <!-- ② 下段：料金表＆各種案内エリア -->
+    <div class="price-section" style="background: #ffffff; padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color, #e0deda); text-align: left; direction: ltr;">
+      
+      <!-- 宿泊料金表 見出し -->
+      <h3 style="font-size: 1.1rem; color: var(--brand-green, #8cb33e); margin-bottom: 1.2rem; border-left: 3px solid var(--brand-green, #8cb33e); padding-left: 0.6rem; font-weight: bold; text-align: left; direction: ltr;">
+        宿泊料金表（税込）
+      </h3>
+
+      <!-- 料金表テーブル -->
+<div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 1.5rem; direction: ltr;">
+  <table class="price-table" style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; direction: ltr;">
+    <thead>
+      <tr style="background-color: #fcfbf9; border-bottom: 2px solid var(--border-color, #e0deda);">
+        <th style="padding: 0.8rem; text-align: left; direction: ltr;">お部屋タイプ</th>
+        <th style="padding: 0.8rem; text-align: left; direction: ltr;">収容目安（定員）</th>
+        <th style="padding: 0.8rem; text-align: right; direction: ltr;">1泊2日 基本料金<br><span style="font-size:0.75rem; font-weight:normal; color:#707070;">(1頭分/税込)</span></th>
+        <th style="padding: 0.8rem; text-align: right; direction: ltr;">半日料金（＋0.5日）<br><span style="font-size:0.75rem; font-weight:normal; color:#707070;">(1頭分/税込)</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid #f0eddf;">
+        <td style="padding: 0.8rem; text-align: left; direction: ltr;"><strong>ケージ（小）</strong></td>
+        <td style="padding: 0.8rem; text-align: left; font-size: 0.82rem; color: var(--text-muted, #707070); direction: ltr;">小型犬・猫 1頭まで</td>
+        <td style="padding: 0.8rem; text-align: right; font-weight: bold; color: var(--brand-green, #8cb33e); direction: ltr;">¥4,400</td>
+        <td style="padding: 0.8rem; text-align: right; color: var(--text-muted, #707070); direction: ltr;">¥2,200</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #f0eddf;">
+        <td style="padding: 0.8rem; text-align: left; direction: ltr;"><strong>ケージ（大）</strong></td>
+        <td style="padding: 0.8rem; text-align: left; font-size: 0.82rem; color: var(--text-muted, #707070); direction: ltr;">小型犬・中型犬・猫 1頭まで</td>
+        <td style="padding: 0.8rem; text-align: right; font-weight: bold; color: var(--brand-green, #8cb33e); direction: ltr;">¥6,600</td>
+        <td style="padding: 0.8rem; text-align: right; color: var(--text-muted, #707070); direction: ltr;">¥3,300</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #f0eddf;">
+        <td style="padding: 0.8rem; text-align: left; direction: ltr;"><strong>個室（小）</strong></td>
+        <td style="padding: 0.8rem; text-align: left; font-size: 0.82rem; color: var(--text-muted, #707070); direction: ltr;">
+          最大：小型犬2匹 / 中型犬1匹 / 大型犬1匹 / 猫1匹<br>
+          <span style="font-size:0.78rem; color:#8cb33e;">同室2匹目は多頭割引（50%OFF）適用</span><br>
+          <span style="font-size:0.75rem; color:#999;">（猫利用の場合はキャットタワーをご持参ください）</span>
+        </td>
+        <td style="padding: 0.8rem; text-align: right; font-weight: bold; color: var(--brand-green, #8cb33e); direction: ltr;">¥8,800</td>
+        <td style="padding: 0.8rem; text-align: right; color: var(--text-muted, #707070); direction: ltr;">¥4,400</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #f0eddf;">
+        <td style="padding: 0.8rem; text-align: left; direction: ltr;"><strong>個室（大）</strong></td>
+        <td style="padding: 0.8rem; text-align: left; font-size: 0.82rem; color: var(--text-muted, #707070); direction: ltr;">
+          最大：小型犬3匹 / 中型犬2匹 / 大型犬2匹 / 猫2匹<br>
+          <span style="font-size:0.78rem; color:#8cb33e;">※同室2匹目は多頭割引（50%OFF）適用</span><br>
+          <span style="font-size:0.75rem; color:#999;">（猫利用の場合はキャットタワーをご持参ください）</span>
+        </td>
+        <td style="padding: 0.8rem; text-align: right; font-weight: bold; color: var(--brand-green, #8cb33e); direction: ltr;">¥9,900</td>
+        <td style="padding: 0.8rem; text-align: right; color: var(--text-muted, #707070); direction: ltr;">¥4,950</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+      <!-- 🐾 多頭飼い割引のご案内 -->
+<div style="background-color: #fcfbf9; padding: 1.2rem; border-radius: 6px; border: 1px dashed var(--brand-green, #8cb33e); margin: 1.5rem 0; font-size: 0.88rem; line-height: 1.8; text-align: left; direction: ltr;">
+  <div style="color: var(--brand-green, #8cb33e); font-weight: bold; font-size: 0.95rem; margin-bottom: 0.4rem; text-align: left; direction: ltr;">
+    🐾 多頭飼い割引（2匹目以降 50%OFF）
+  </div>
+  <p style="margin: 0; color: var(--text-color); text-align: left; direction: ltr;">
+    個室のお部屋で<strong>同じお部屋に同宿する場合</strong>に限り、2匹目以降の宿泊料金・半日料金は<strong>【1/2（半額）】</strong>となります。
+  </p>
+  <ul style="margin: 0.5rem 0 0 0; padding-left: 1.2rem; font-size: 0.82rem; color: var(--text-muted, #707070); text-align: left; direction: ltr;">
+    <li>※ケージタイプは安全管理のため多頭利用は不可（1頭のみ）となります。</li>
+    <li>※別々のお部屋をご利用の場合は、それぞれ通常料金（1頭あたり）となります。</li>
+    <li>※お預かり中に喧嘩や相性不良等で同室での滞在が困難と判断した場合、ワンちゃんの安全のため別々のお部屋へ移動させていただきます。（その際は<strong>別途お部屋の通常料金が発生</strong>いたします）</li>
+    <li>※満室等により別のお部屋が確保できない場合は、<strong>急遽お引き取りをお願いすることがございます</strong>。環境の変化による相性や体調がご心配な場合は、<strong>あらかじめ頭数分（別部屋）でのご予約</strong>をおすすめいたします。</li>
+  </ul>
+</div>
+
+      <!-- ⏰ お時間計算のルール -->
+      <div class="rule-box" style="background-color: #faf8f5; padding: 1.2rem; border-radius: 6px; border: 1px solid var(--border-color, #e0deda); font-size: 0.88rem; line-height: 1.8; text-align: left; direction: ltr;">
+        <h4 style="font-size: 0.95rem; color: var(--brand-green, #8cb33e); margin-bottom: 0.5rem; font-weight: bold; text-align: left; direction: ltr;">■ お時間計算のルール</h4>
+        <p style="margin-bottom: 0.3rem; text-align: left; direction: ltr;"><strong>【1泊2日の基本枠】</strong></p>
+        <ul style="margin: 0 0 0.8rem 0; padding-left: 1.2rem; text-align: left; direction: ltr;">
+          <li><strong>チェックイン</strong>：午後（PM）</li>
+          <li><strong>チェックアウト</strong>：翌日 午前（AM）</li>
+        </ul>
+
+        <p style="margin-bottom: 0.3rem; text-align: left; direction: ltr;"><strong>【午前イン / 午後アウトをご希望の場合】</strong></p>
+        <p style="margin-bottom: 0.5rem; text-align: left; direction: ltr;">基本の1泊料金に<strong>「半日料金（＋0.5日分）」</strong>が加算となります。</p>
+
+        <div style="background-color: #ffffff; padding: 0.8rem; border-radius: 4px; border-left: 3px solid var(--brand-green, #8cb33e); font-size: 0.85rem; text-align: left; direction: ltr;">
+          <strong>【ご利用例】</strong>
+          <ul style="margin: 0.3rem 0 0 0; padding-left: 1.2rem; text-align: left; direction: ltr;">
+            <li><strong>午前チェックイン ➔ 翌午前チェックアウト</strong>：1泊料金 ＋ 半日料金</li>
+            <li><strong>午後チェックイン ➔ 翌午後チェックアウト</strong>：1泊料金 ＋ 半日料金</li>
+            <li><strong>午前チェックイン ➔ 翌午後チェックアウト</strong>：1泊料金 ＋ 半日料金×2（＝実質2泊分）</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
   <!-- ==========================================================================
        🧱 2. テイクアウトカフェの紹介セクション
        ========================================================================== -->
-  <section id="deli" class="section-service"style="padding: 0.8rem 4%; scroll-margin-top: 50px;">
+  <section id="deli" class="section-service" style="scroll-margin-top: 50px;">
     <div class="service-container">
       <div class="service-image-box">
-        <img src="https://lh3.googleusercontent.com/d/1fhU7CZw6iZJRuTNjBa_xxxEQccLnqmJA" alt="テイクアウトカフェ" style="width: 100%; height: auto; border-radius: 4px;">
+        <img src="https://lh3.googleusercontent.com/d/1fhU7CZw6iZJRuTNjBa_xxxEQccLnqmJA" alt="さんぽっぽ テイクアウトカフェ">
       </div>
       <div class="service-text-content">
         <span class="service-num">02 / TAKE OUT CAFE</span>
@@ -516,45 +638,45 @@ section img {
       </div>
     </div>
   </section>
+
   <!-- ==========================================================================
        📍 3. アクセスセクション（Googleマップ）
        ========================================================================== -->
-  <!-- 📍 アクセスセクション -->
-<section id="access" style="padding: 1rem 4%; text-align: center; scroll-margin-top: 40px;">
-  <h2 style="font-size: 2rem; font-weight: 300; margin-bottom: 0.2rem; letter-spacing: 0.1em;">アクセス</h2>
-  <p style="font-size: 1.1rem; color: #8cb33e; font-weight: bold; margin-bottom: 0.6rem; font-family: 'Noto Sans JP', 'Hiragino Sans', 'メイリオ', sans-serif;">
-  〒389-2104 長野県中野市永江2297-1
-</p>
-<p style="font-size: 1.15rem; color: #8cb33e; font-weight: bold; margin-bottom: 1.8rem; font-family: 'Noto Sans JP', 'Hiragino Sans', 'メイリオ', sans-serif;">
-  TEL: <a href="tel:0269380775" style="color: #8cb33e; text-decoration: none;">0269-38-0775</a>
-</p>
+  <section id="access" style="padding: 4rem 4%; text-align: center; scroll-margin-top: 50px; background-color: #f7f6f2;">
+    <h2 class="section-title" style="margin-bottom: 0.5rem;">アクセス</h2>
+    <p style="font-size: 1.1rem; color: var(--brand-green); font-weight: bold; margin-bottom: 0.4rem; font-family: 'Noto Sans JP', sans-serif;">
+      〒389-2104 長野県中野市永江2297-1
+    </p>
+    <p style="font-size: 1.15rem; color: var(--brand-green); font-weight: bold; margin-bottom: 2rem; font-family: 'Noto Sans JP', sans-serif;">
+      TEL: <a href="tel:0269380775" style="color: var(--brand-green); text-decoration: underline;">0269-38-0775</a>
+    </p>
 
-  <!-- 🗺️️ Googleマップ表示枠 -->
-  <div style="max-width: 900px; margin: 0 auto; overflow: hidden; border-radius: 6px; border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6389.476537051879!2d138.32109350871744!3d36.80082526766419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff6219a48989c93%3A0x5fd39a7ef8a54f7c!2z44GV44KT44G944Gj44G9!5e0!3m2!1sja!2sjp!4v1791268099194!5m2!1sja!2sjp" 
-      width="100%" 
-      height="280" 
-      style="border:0; display: block; filter: grayscale(15%) contrast(95%);" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="strict-origin-when-cross-origin">
-    </iframe>
-  </div>
-</section>
+    <!-- 🗺 Googleマップ表示枠 -->
+    <div style="max-width: 900px; margin: 0 auto; overflow: hidden; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6389.476537051879!2d138.32109350871744!3d36.80082526766419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff6219a48989c93%3A0x5fd39a7ef8a54f7c!2z44GV44KT44G944Gj44G9!5e0!3m2!1sja!2sjp!4v1791268099194!5m2!1sja!2sjp" 
+        width="100%" 
+        height="320" 
+        style="border:0; display: block; filter: grayscale(10%) contrast(95%);" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </div>
+  </section>
 
   <!-- ==========================================================================
-       👣 フッター
+       👣 統一共通フッター
        ========================================================================== -->
- <footer style="background: #8cb33e; color: #ffffff; text-align: center; padding: 2rem 1rem; font-family: 'Noto Sans JP', 'Hiragino Sans', 'メイリオ', sans-serif;">
-  <div style="max-width: 600px; margin: 0 auto 1rem; font-size: 0.95rem; line-height: 1.8;">
-    <p style="margin: 0; font-weight: 500;">〒389-2104 長野県中野市永江2297-1</p>
-    <p style="margin: 0;">
-      TEL: <a href="tel:0269380775" style="color: #ffffff; font-weight: bold; text-decoration: underline;">0269-38-0775</a>
-    </p>
-  </div>
-  <p style="font-size: 0.8rem; margin: 0; opacity: 0.9;">&copy; 2026 さんぽっぽ. All Rights Reserved.</p>
-</footer>
+  <footer style="background: var(--brand-green); color: #ffffff; text-align: center; padding: 2rem 1rem; font-family: sans-serif;">
+    <div style="max-width: 600px; margin: 0 auto 1rem; font-size: 0.95rem; line-height: 1.8;">
+      <p style="margin: 0; font-weight: 500;">〒389-2104 長野県中野市永江2297-1</p>
+      <p style="margin: 0;">
+        TEL: <a href="tel:0269380775" style="color: #ffffff; font-weight: bold; text-decoration: underline;">0269-38-0775</a>
+      </p>
+    </div>
+    <p style="font-size: 0.8rem; margin: 0; opacity: 0.9;">&copy; 2026 さんぽっぽ. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
