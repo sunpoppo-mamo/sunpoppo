@@ -808,6 +808,91 @@
     </div>
     <p style="font-size: 0.8rem; margin: 0; opacity: 0.9;">&copy; 2026 さんぽっぽ. All Rights Reserved.</p>
   </footer>
+<!-- ==========================================================================
+     🚂 トップに戻るボタン（sunpoppo_logo.jpg 使用）
+     ========================================================================== -->
+<button id="back-to-top" aria-label="ページの先頭へ戻る">
+  <span class="back-to-top-arrow">▲</span>
+  <img src="sunpoppo_logo.jpg" alt="トップへ戻る" class="back-to-top-logo">
+</button>
 
+<style>
+  /* ボタン全体の固定位置とデザイン */
+  #back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 58px;
+    height: 58px;
+    background-color: #ffffff;
+    border: 2px solid var(--brand-green, #8cb33e);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  /* 上矢印（▲）のデザイン */
+  .back-to-top-arrow {
+    font-size: 0.65rem;
+    color: var(--brand-green, #8cb33e);
+    line-height: 1;
+    margin-bottom: 2px;
+    font-weight: bold;
+  }
+
+  /* ロゴ画像のデザイン */
+  .back-to-top-logo {
+    width: 38px;
+    height: auto;
+    max-height: 24px;
+    object-fit: contain;
+  }
+
+  /* ホバー（パソコン）＆タップ（スマホ）時のアニメーション */
+  #back-to-top:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  #back-to-top:active {
+    transform: translateY(0) scale(0.95);
+  }
+
+  /* 画面を少しスクロールしたら表示させるクラス */
+  #back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+</style>
+
+<script>
+  const backToTopBtn = document.getElementById('back-to-top');
+
+  // 300px以上スクロールしたらボタンをふわっと表示
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('is-visible');
+    } else {
+      backToTopBtn.classList.remove('is-visible');
+    }
+  });
+
+  // タップしたらスムーズに一番上へ移動
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
 </body>
 </html>
