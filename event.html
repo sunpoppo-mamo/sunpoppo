@@ -4,29 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>施設内覧会のお礼とご案内 | さんぽっぽ</title>
-  
+ 
   <!-- Google Fonts: Noto Serif JP / Noto Sans JP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --bg-color: #fcfcf9;
       --text-color: #333333;
       --text-muted: #777777;
       --accent-color: #8cb33e;
+      --brand-green: #8cb33e;
       --border-color: #e5e5e0;
       --font-serif: 'Noto Serif JP', serif;
       --font-sans: 'Noto Sans JP', sans-serif;
     }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
@@ -35,61 +33,87 @@
       letter-spacing: 0.08em;
       overflow-x: hidden;
     }
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+    a:hover {
+      opacity: 0.6;
+    }
 
-    /* 上部固定ヘッダー */
+    /* ==========================================================================
+       🔍 上部固定ヘッダー（index.htmlと完全同一）
+       ========================================================================== */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background-color: var(--accent-color);
-      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.8rem 5%;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 0.4rem 4%;
+      z-index: 1000;
+      background-color: var(--brand-green);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
-
-    .logo-text {
-      color: #ffffff;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      letter-spacing: 0.1em;
-    }
-
-    nav ul {
+    .logo {
       display: flex;
-      list-style: none;
-      gap: 1.5rem;
+      align-items: center;
+    }
+    .logo img {
+      height: 38px;
+      width: auto;
+      display: block;
+      background: #ffffff;
+      padding: 2px 6px;
+      border-radius: 6px;
+      object-fit: contain;
     }
 
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      transition: opacity 0.3s;
+    /* PC画面（769px以上）での表示設定 */
+    @media (min-width: 769px) {
+      .hamburger-btn {
+        display: none !important;
+      }
+      .site-nav {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        background-color: transparent !important;
+      }
+      .site-nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 2.5rem !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      .site-nav a {
+        color: #ffffff !important;
+      }
     }
 
-    nav a:hover {
-      opacity: 0.8;
-    }
-
+    /* メインコンテンツ位置調整 */
     main {
       padding-top: 90px;
       padding-bottom: 3rem;
     }
-
     .event-container {
       max-width: 650px;
       margin: 0 auto;
       padding: 1rem 4%;
     }
-
     .event-card {
       background: #ffffff;
       border: 1px solid var(--border-color);
@@ -98,7 +122,6 @@
       text-align: center;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
     }
-
     .badge-finished {
       display: inline-block;
       background-color: #d9534f;
@@ -111,7 +134,6 @@
       margin-bottom: 1.2rem;
       letter-spacing: 0.05em;
     }
-
     .btn-access {
       display: inline-block;
       background-color: var(--accent-color);
@@ -125,36 +147,167 @@
       margin-top: 1.2rem;
       transition: opacity 0.3s;
     }
-
     .btn-access:hover {
       opacity: 0.9;
     }
 
+    /* ==========================================================================
+       📱 レスポンシブ設計（スマホ対応）
+       ========================================================================== */
     @media (max-width: 768px) {
       header {
-        padding: 0.5rem 3% !important;
+        padding: 0.4rem 3% !important;
       }
-
-      nav ul {
-        gap: 0.6rem !important;
+      .logo img {
+        height: 32px !important;
+        padding: 2px 4px !important;
       }
-
-      nav a {
-        font-size: 0.68rem !important;
-      }
-
       .event-card {
         padding: 1.8rem 1.2rem;
       }
+      
+      /* 三本線ボタン（右上に配置） */
+      .hamburger-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+        margin-left: auto !important;
+      }
+      .hamburger-btn span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+      .hamburger-btn.is-active span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
+      .hamburger-btn.is-active span:nth-child(2) { opacity: 0; }
+      .hamburger-btn.is-active span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
+
+      /* 下から降りてくるスライドメニュー */
+      .site-nav {
+        position: absolute;
+        top: calc(100% - 1px) !important;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: #8cb33e !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18) !important;
+        padding: 10px 0 20px !important;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 999;
+      }
+      .site-nav.is-active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .site-nav ul {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
+      }
+      .site-nav li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      }
+      .site-nav li:last-child {
+        border-bottom: none;
+      }
+      .site-nav a {
+        display: block !important;
+        padding: 16px 28px !important;
+        font-size: 1.05rem !important;
+        font-weight: 600 !important;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        letter-spacing: 0.1em !important;
+        font-family: "Kiwi Maru", "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "メイリオ", sans-serif !important;
+        transition: background 0.2s ease;
+      }
+      .site-nav a:active {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+    }
+
+    /* ==========================================================================
+       🚂 トップに戻るボタン（常に画面右下に表示するよう修正）
+       ========================================================================== */
+    #back-to-top {
+      position: fixed !important;
+      bottom: 20px !important;
+      right: 20px !important;
+      width: 58px !important;
+      height: 58px !important;
+      background-color: #ffffff !important;
+      border: 2px solid var(--brand-green, #8cb33e) !important;
+      border-radius: 50% !important;
+      cursor: pointer !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 5px !important;
+      opacity: 1 !important;          /* 最初から常時表示 */
+      visibility: visible !important;/* 最初から常時表示 */
+      z-index: 999 !important;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .back-to-top-arrow {
+      font-size: 0.65rem !important;
+      color: var(--brand-green, #8cb33e) !important;
+      line-height: 1 !important;
+      margin-bottom: 2px !important;
+      font-weight: bold !important;
+    }
+    .back-to-top-logo {
+      width: 38px !important;
+      height: auto !important;
+      max-height: 24px !important;
+      object-fit: contain !important;
+    }
+    #back-to-top:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+    }
+    #back-to-top:active {
+      transform: translateY(0) scale(0.95);
     }
   </style>
 </head>
 <body>
-
-  <!-- 固定ヘッダー -->
+  <!-- ==========================================================================
+       🔍 統一共通ヘッダー（新ロゴ sunpoppo_logo.jpg 適用）
+       ========================================================================== -->
   <header>
-    <a href="index.html" class="logo-text">さんぽっぽ</a>
-    <nav>
+    <div class="logo">
+      <a href="index.html" style="display: flex; align-items: center;">
+        <img src="sunpoppo_logo.jpg" alt="さんぽっぽ sunpoppo.com">
+      </a>
+    </div>
+    <!-- スマホ用ハンバーガーボタン -->
+    <button type="button" class="hamburger-btn" id="js-hamburger" aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <!-- ナビゲーションメニュー -->
+    <nav class="site-nav" id="js-nav">
       <ul>
         <li><a href="index.html#hotel">ホテル</a></li>
         <li><a href="index.html#deli">カフェ</a></li>
@@ -162,38 +315,45 @@
         <li><a href="index.html#access">ACCESS</a></li>
       </ul>
     </nav>
+    <!-- 背景カバー -->
+    <div class="menu-overlay" id="js-overlay"></div>
   </header>
 
+  <!-- ==========================================================================
+       📝 イベントメインコンテンツ（原文のまま完全保持）
+       ========================================================================== -->
   <main>
     <div class="event-container">
       <div class="event-card">
         <!-- 終了バナー -->
         <span class="badge-finished">【 施設内覧会は終了いたしました 】</span>
-        
-        <h1 style="font-size: 1.4rem; font-weight: 400; color: #333333; margin-bottom: 1rem; font-family: var(--font-serif);">
+       
+        <h1 style="font-size: clamp(1rem, 4.5vw, 1.4rem); font-weight: 400; color: #333333; margin-bottom: 1rem; font-family: var(--font-serif); white-space: nowrap; word-break: keep-all;">
           ご来場誠にありがとうございました
         </h1>
-        
-        <p style="font-family: var(--font-sans); font-size: 0.9rem; color: #555555; line-height: 1.8; margin-bottom: 1.5rem;">
+       
+        <!-- お礼メッセージ（文章のみ左寄せ） -->
+        <p style="font-family: var(--font-sans); font-size: 0.9rem; color: #555555; line-height: 1.8; margin-bottom: 1.5rem; text-align: left;">
           10月10日(土)・11日(日)に開催いたしました「さんぽっぽ 施設内覧会」は、無事に終了いたしました。<br>
           たくさんのご来場と温かいお言葉をいただき、スタッフ一同心より感謝申し上げます。
         </p>
 
         <!-- 随時内覧のご案内 -->
         <div style="border-top: 1px dashed var(--border-color); padding-top: 1.5rem; margin-top: 1.5rem;">
-          <h2 style="font-size: 1.1rem; color: var(--accent-color); font-weight: bold; margin-bottom: 0.6rem; font-family: var(--font-sans);">
+          
+          <!-- 見出し（中央揃え） -->
+          <h2 style="font-size: clamp(0.85rem, 3.8vw, 1.1rem); color: var(--accent-color); font-weight: bold; margin-bottom: 0.6rem; font-family: var(--font-sans); text-align: center; white-space: nowrap; word-break: keep-all;">
             【 施設の内覧は随時受け付けております 】
           </h2>
-          
-          <p style="font-family: var(--font-sans); font-size: 0.88rem; color: #444444; line-height: 1.8; margin-bottom: 1rem;">
+         
+          <!-- ご案内文章（左寄せ） -->
+          <p style="font-family: var(--font-sans); font-size: 0.88rem; color: #444444; line-height: 1.8; margin-bottom: 1rem; text-align: left;">
             内覧会にお越しいただけなかった方や、ペットホテルの事前見学をご希望の方は、お気軽にスタッフまでお声がけいただくか、お電話にてお問い合わせください。
           </p>
-
           <!-- 注意書き -->
           <p style="font-size: 0.78rem; color: #777777; line-height: 1.6; font-family: var(--font-sans); background: #f9f9f6; padding: 0.8rem; border-radius: 6px; text-align: left; margin-bottom: 1.2rem;">
             ※混雑状況やワンちゃんの利用状況（預かり状況）により、内覧をお断りする場合やお待ちいただく場合がございます。あらかじめご了承ください。
           </p>
-
           <!-- 場所・アクセス案内 -->
           <div style="margin-top: 1.5rem;">
             <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.3rem;">【 所在地・お問い合わせ 】</p>
@@ -203,16 +363,16 @@
             <p style="font-size: 1rem; color: #333333; font-weight: bold; font-family: var(--font-sans); margin-bottom: 1rem;">
               TEL: <a href="tel:0269380775" style="color: var(--accent-color); text-decoration: none;">0269-38-0775</a>
             </p>
-
             <a href="index.html#access" class="btn-access">📍 アクセスマップを見る</a>
           </div>
         </div>
-
       </div>
     </div>
   </main>
 
-  <!-- フッター -->
+  <!-- ==========================================================================
+       👣 統一共通フッター
+       ========================================================================== -->
   <footer style="background: #8cb33e; color: #ffffff; text-align: center; padding: 2rem 1rem; font-family: var(--font-sans);">
     <div style="max-width: 600px; margin: 0 auto 1rem; font-size: 0.9rem; line-height: 1.8;">
       <p style="margin: 0; font-weight: 500;">〒389-2104 長野県中野市永江2297-1</p>
@@ -223,5 +383,56 @@
     <p style="font-size: 0.75rem; margin: 0; opacity: 0.9;">&copy; 2026 さんぽっぽ. All Rights Reserved.</p>
   </footer>
 
+  <!-- ==========================================================================
+       🚂 トップに戻るボタン（sunpoppo_logo.jpg 使用）
+       ========================================================================== -->
+  <button id="back-to-top" aria-label="ページの先頭へ戻る">
+    <span class="back-to-top-arrow">▲</span>
+    <img src="sunpoppo_logo.jpg" alt="トップへ戻る" class="back-to-top-logo">
+  </button>
+
+  <!-- ==========================================================================
+       JavaScript（トップへ戻る & ハンバーガーメニュー開閉）
+       ========================================================================== -->
+  <script>
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+      // タップしたらスムーズに1番上へスクロール
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    const hamburger = document.getElementById('js-hamburger');
+    const nav = document.getElementById('js-nav');
+    const overlay = document.getElementById('js-overlay');
+
+    function toggleMenu() {
+      hamburger.classList.toggle('is-active');
+      nav.classList.toggle('is-active');
+      if (overlay) overlay.classList.toggle('is-active');
+    }
+
+    if (hamburger) {
+      hamburger.addEventListener('click', toggleMenu);
+    }
+    if (overlay) {
+      overlay.addEventListener('click', toggleMenu);
+    }
+
+    if (nav) {
+      const navLinks = nav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (nav.classList.contains('is-active')) {
+            toggleMenu();
+          }
+        });
+      });
+    }
+  </script>
 </body>
 </html>
