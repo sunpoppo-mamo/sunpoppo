@@ -169,6 +169,17 @@
 
     /* スマホ画面 */
     @media (max-width: 768px) {
+      .hero {
+        padding-top: 65px !important;
+        padding-bottom: 15px !important;
+        gap: 1rem !important;
+      }
+      .hero h1 {
+        font-size: 2.2rem !important;
+      }
+      .hero p {
+        font-size: 0.9rem !important;
+      }
       header {
         padding: 0.4rem 3% !important;
       }
@@ -273,17 +284,18 @@
        🖼️ メインビジュアル（タイトル位置を真ん中に調整）
        ========================================================================== */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      background-color: #eae6df;
-      overflow: hidden;
-      padding: 60px 4% 20px;
-    }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 👈 space-between から center に変更して中央寄せ */
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background-color: #eae6df;
+  overflow: hidden;
+  padding: 70px 4% 20px; /* 👈 上のパディングを少し調整 */
+  gap: 3.8rem; /* 👈 タイトルとカードの間の固定スキマを設定 */
+}
     .hero-bg {
       position: absolute;
       top: 0;
@@ -299,15 +311,15 @@
     
     /* タイトル部（margin-top: auto で中央付近へ配置） */
     .hero-title-area {
-      position: relative;
-      z-index: 2;
-      color: #ffffff;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
-      padding: 0 4%;
-      width: 100%;
-      margin-top: auto;
-      margin-bottom: auto; /* 下のカードとの間も自動調整し、中間へ納めます */
-    }
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  padding: 0 4%;
+  width: 100%;
+  margin-top: 1rem; /* 👈 auto をやめてマージンを小さく設定 */
+  margin-bottom: 5rem;
+}
     .hero h1 {
       font-family: var(--font-soft);
       font-size: clamp(2.2rem, 6vw, 4.2rem);
@@ -357,36 +369,47 @@
       margin-bottom: 0.5rem;
     }
     .status-card {
-      background: rgba(252, 251, 249, 0.9);
-      padding: 0.45rem 0.6rem;
-      border-radius: 6px;
-      border: 1px solid rgba(140, 130, 117, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-    .status-icon {
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-    .status-text-group {
-      text-align: left;
-    }
-    .status-title {
-      font-family: var(--font-sans);
-      font-size: 0.65rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      letter-spacing: 0.02em;
-      line-height: 1.2;
-    }
-    .status-value {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--text-color);
-      line-height: 1.2;
-    }
+  background: rgba(252, 251, 249, 0.9);
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(140, 130, 117, 0.15);
+  display: flex;
+  align-items: center;    /* 👈 アイコンとテキスト全体を上下中央揃え */
+  justify-content: center; /* 👈 左右中央揃え */
+  gap: 0.6rem;
+  min-height: 62px;       /* 👈 高さを固定して左右のカードの高さを完全に統一 */
+}
+
+.status-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;    /* アイコン自体も中央配置 */
+}
+
+.status-text-group {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 👈 枠の中でテキスト群を上下中央配置 */
+}
+
+.status-title {
+  font-family: var(--font-sans);
+  font-size: 0.63rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin-bottom: 2px;     /* 見出し下の微調整 */
+}
+
+.status-value {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.25;      /* 行間を整えて整列 */
+}
 
    /* 下段：さんぽっぽ周辺の天気（上下パディングを詰めてコンパクト化） */
     .weather-full-card {
@@ -426,19 +449,28 @@
     }
 
     .weather-toggle-btn {
-      width: 100%;
-      padding: 0.5rem 0.8rem;
-      background: #fdfcf7;
-      border: none;
-      font-size: 0.78rem;
-      font-weight: bold;
-      color: var(--brand-green);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  background: #fdfcf7;
+  border: none;
+  font-size: 0.78rem;
+  font-weight: bold;
+  color: var(--brand-green);
+  display: flex;
+  justify-content: center; /* 👈 space-between から center に変更 */
+  align-items: center;
+  position: relative; /* 👈 矢印を右端に固定するため追加 */
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* 矢印アイコン（▲/▼）だけを右端に配置するスタイルを追加 */
+.weather-toggle-btn .toggle-icon {
+  position: absolute;
+  right: 12px;
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
 
     .weather-toggle-btn:hover {
       background: #f5f2e3;
@@ -461,31 +493,34 @@
     }
 
     .weather-content.is-open {
-      max-height: 300px;
+      max-height: 350px;
       padding: 0.6rem 0.8rem 0.8rem;
     }
 
     /* 1時間毎の予報表示（スマホ対応） */
-    .weather-hourly-container {
-      display: flex;
-      justify-content: space-between;
-      gap: 2px;
-      overflow-x: visible;
-      padding-bottom: 0.3rem;
-      margin-bottom: 0.4rem;
-      border-bottom: 1px dashed #e0deda;
-    }
+   .weather-hourly-container {
+  display: flex;
+  justify-content: flex-start; /* 👈 左詰めに変更 */
+  gap: 6px; /* 👈 各予報枠の間隔を少し広げる */
+  overflow-x: auto; /* 👈 はみ出た分を横スクロール可能にする */
+  -webkit-overflow-scrolling: touch; /* スマホで滑らかにスクロール */
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px dashed #e0deda;
+}
 
-    .hourly-item {
-      flex: 1;
-      min-width: 0;
-      background: #ffffff;
-      padding: 0.25rem 0.1rem;
-      border-radius: 4px;
-      border: 1px solid #f0eddf;
-      text-align: center;
-    }
+/* 各予報アイテムの最小幅を指定 */
+.hourly-item {
+  flex: 0 0 calc((100% - 30px) / 5); /* 👈 5個がぴったり画面内に収まる幅を自動計算 */
+  min-width: calc((100% - 30px) / 5);
+  background: #ffffff;
+  padding: 0.25rem 0.1rem;
+  border-radius: 4px;
+  border: 1px solid #f0eddf;
+  text-align: center;
+}
 
+   
     .hourly-time {
       color: var(--text-muted);
       font-size: 0.62rem;
@@ -559,6 +594,48 @@
       text-align: center;
     }
 
+   /* 週間予報コンテナ */
+.weather-weekly-container {
+  display: flex;
+  justify-content: space-between; /* 均等配置 */
+  gap: 6px;
+  overflow-x: auto; /* はみ出た時だけ横スクロール */
+  -webkit-overflow-scrolling: touch;
+  padding: 0.2rem 0 0.5rem;
+  width: 100%;
+}
+
+/* 週間予報カード */
+.weekly-item {
+  flex: 1 1 0; /* 画面が広い時は全幅を均等に分け合う */
+  min-width: 68px; /* 画面が狭くなっても68px以下には縮まない（崩れ防止） */
+  background: #ffffff;
+  padding: 0.35rem 0.1rem;
+  border-radius: 6px;
+  border: 1px solid #f0eddf;
+  text-align: center;
+  font-size: 0.65rem;
+  white-space: nowrap; /* 気温などが改行されるのを防止 */
+}
+.weekly-date {
+  color: var(--brand-green);
+  font-weight: bold;
+  font-size: 0.6rem;
+  margin-bottom: 0.1rem;
+}
+.weekly-icon {
+  font-size: 0.9rem;
+  margin: 0.1rem 0;
+  line-height: 1.1;
+}
+.weekly-temp-max {
+  color: #d9534f;
+  font-weight: bold;
+}
+.weekly-temp-min {
+  color: #428bca;
+  font-weight: bold;
+}
     /* スマホ表示（画面幅576px以下）の時だけ2行縦並びにする */
     @media (max-width: 576px) {
       .weather-tomorrow-box {
@@ -835,22 +912,21 @@
       
       <!-- 上段：ペットホテル ＆ カフェ -->
       <div class="status-grid-top">
-        <div class="status-card">
-          <div class="status-icon">🏨</div>
-          <div class="status-text-group">
-            <div class="status-title">ペットホテル状況</div>
-            <div class="status-value">お問合せ受付中</div>
-          </div>
-        </div>
-
-        <div class="status-card">
-          <div class="status-icon">☕</div>
-          <div class="status-text-group">
-            <div class="status-title">テイクアウトカフェ</div>
-            <div class="status-value">準備中（10/10〜）</div>
-          </div>
-        </div>
-      </div>
+  <div class="status-card">
+    <div class="status-icon">🏨</div>
+    <div class="status-text-group">
+      <div class="status-title">ペットホテル状況</div>
+      <div class="status-value">お問合せ受付中</div>
+    </div>
+  </div>
+  <div class="status-card">
+    <div class="status-icon">☕</div>
+    <div class="status-text-group">
+      <div class="status-title">テイクアウトカフェ</div>
+      <div class="status-value">準備中（10/10〜）</div>
+    </div>
+  </div>
+</div>
 
       <!-- 天気予報エリア（アコーディオン） -->
         <div class="weather-accordion">
@@ -876,6 +952,13 @@
               <span id="js-tomorrow-label">📅 明日の天気予報</span>
               <span id="tomorrow-info-text">：読み込み中...</span>
             </div>
+            <!-- 🗓️ 週間予報（明後日以降） -->
+            <div style="font-size: 0.7rem; color: var(--text-muted); margin: 0.6rem 0 0.3rem; font-weight: bold; text-align: center; border-top: 1px dashed #e0deda; padding-top: 0.4rem;">
+              🗓️ 週間予報（明後日以降）
+            </div>
+            <div class="weather-weekly-container" id="weather-weekly-box">
+              <!-- JSで自動挿入 -->
+            </div>
           </div>
         </div>
   </section>
@@ -884,33 +967,33 @@
        📢 施設内覧会のご案内
        ========================================================================== -->
   <section style="padding: 4rem 4%; background-color: #f7f6f2; border-bottom: 1px solid var(--border-color); text-align: center;">
-    <div style="max-width: 600px; margin: 0 auto;">
-      <a href="event.html" style="text-decoration: none; color: inherit; display: block; padding: 2.2rem 1.8rem; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid var(--border-color);">
-        <span style="display: inline-block; font-size: 0.75rem; color: var(--brand-green); border: 1px solid var(--brand-green); padding: 0.2rem 0.9rem; border-radius: 20px; font-family: 'Noto Sans JP', sans-serif; letter-spacing: 0.1em; margin-bottom: 0.8rem; font-weight: bold;">
-          INFORMATION
-        </span>
-       
-        <h2 style="font-size: 1.35rem; font-weight: 500; color: #333333; margin-bottom: 0.5rem; font-family: 'Noto Serif JP', serif; letter-spacing: 0.05em;">
-          施設内覧会のご礼とご案内
-        </h2>
-       
-        <p style="font-size: 0.9rem; color: var(--brand-green); font-weight: bold; margin-bottom: 0.8rem; font-family: 'Noto Sans JP', sans-serif;">
-          内覧会へのご来場ありがとうございました
-        </p>
-       
-        <p style="font-size: 0.85rem; color: #555555; line-height: 1.7; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem; text-align: left;">
-          施設の内覧は随時受け付けております。<br>
-          お気軽にスタッフまでお声がけください。
-        </p>
-        <p style="font-size: 0.75rem; color: #888888; line-height: 1.5; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 1.2rem; text-align: left;">
-          ※混雑状況やワンちゃんの利用状況により、内覧をお断り・お待ちいただく場合がございます。
-        </p>
-       
-        <span style="font-size: 0.9rem; color: var(--brand-green); font-weight: bold; font-family: 'Noto Sans JP', sans-serif;">
-          詳細を見る ➔
-        </span>
-      </a>
-    </div>
+    <div style="background: #ffffff; border-radius: 12px; padding: 1.8rem 1.2rem; border: 1px solid #f0eddf; text-align: center; max-width: 600px; margin: 0 auto;">
+  <span style="font-size: 0.75rem; color: var(--brand-green); border: 1px solid var(--brand-green); padding: 0.2rem 0.8rem; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 1rem;">
+    INFORMATION
+  </span>
+
+  <h2 style="font-size: clamp(1.05rem, 4.5vw, 1.35rem); font-weight: 500; color: #333333; margin-bottom: 0.6rem; font-family: 'Noto Serif JP', serif; letter-spacing: 0.03em; white-space: nowrap; text-align: center;">
+    施設内覧会のご礼とご案内
+  </h2>
+
+  <p style="font-size: clamp(0.78rem, 3.8vw, 0.9rem); color: var(--brand-green); font-weight: bold; margin-bottom: 1rem; font-family: 'Noto Sans JP', sans-serif; white-space: nowrap; text-align: center;">
+    内覧会へのご来場ありがとうございました
+  </p>
+
+  <p style="font-size: 0.82rem; color: #555555; line-height: 1.6; margin-bottom: 0.8rem; text-align: center;">
+    施設の内覧は随時受け付けております。<br>
+    お気軽にスタッフまでお声がけください。
+  </p>
+
+  <p style="font-size: 0.72rem; color: #888888; line-height: 1.5; margin-bottom: 1.2rem; text-align: center;">
+    ※ 混雑状況やワンちゃんの利用状況により、<br>
+    内覧をお断り・お待ちいただく場合がございます。
+  </p>
+
+  <a href="#" style="font-size: 0.85rem; color: var(--brand-green); font-weight: bold; text-decoration: none; display: inline-block;">
+    詳細を見る ➔
+  </a>
+</div>
   </section>
 
   <!-- ==========================================================================
@@ -1120,9 +1203,9 @@
             <li><strong>チェックアウト</strong>：翌日 午前（AM）</li>
           </ul>
           <p style="margin-bottom: 0.2rem; text-align: left; direction: ltr; font-size: 0.78rem; letter-spacing: -0.02em;">
-            <strong>【午前イン / 午後アウトをご希望の場合】</strong>
+            <strong>【午前イン / 翌午後アウトをご希望の場合】</strong>
           </p>
-          <p style="margin-bottom: 0.4rem; text-align: left; direction: ltr;">基本の1泊料金に<strong>「半日料金（＋0.5日分）」</strong>が加算となります。</p>
+          <p style="margin-bottom: 0.4rem; text-align: left; direction: ltr;">基本の1泊料金に<strong>「半日料金×2」</strong>が加算となります。</p>
           <div style="background-color: #ffffff; padding: 0.7rem; border-radius: 4px; border-left: 3px solid var(--brand-green, #8cb33e); font-size: 0.78rem; text-align: left; direction: ltr;">
             <strong>【ご利用例】</strong>
             <ul style="margin: 0.2rem 0 0 0; padding-left: 1.1rem; text-align: left; direction: ltr;">
@@ -1314,7 +1397,6 @@
       const today = new Date();
       const tomorrow = new Date();
       tomorrow.setDate(today.getDate() + 1);
-
       const todayMonth = today.getMonth() + 1;
       const todayDate = today.getDate();
       const dayOfWeek = today.getDay(); // 0:日, 1:月, 2:火, 3:水, 4:木, 5:金, 6:土
@@ -1324,23 +1406,27 @@
       // 1️⃣ ペットホテルお電話受付時間の判定（水・木は10〜13時 / その他は9〜17時）
       let isHotelOpen = false;
       let hotelHoursText = "";
-
       if (dayOfWeek === 3 || dayOfWeek === 4) {
         // 水曜・木曜の場合
         isHotelOpen = (currentHour >= 10 && currentHour < 13);
-        hotelHoursText = "受付時間 10:00〜13:00";
+        hotelHoursText = "電話受付時間 10:00〜13:00";
       } else {
         // 金〜火曜の場合
         isHotelOpen = (currentHour >= 9 && currentHour < 17);
         hotelHoursText = "受付時間 9:00〜17:00";
       }
 
-      // 店舗全体のOPEN/CLOSEDバッジ判定
-      let statusBadge = isHotelOpen 
-        ? `<span style="color: var(--brand-green); font-weight: bold; margin-left: 0.4rem;">【OPEN】</span>` 
-        : `<span style="color: #888888; font-weight: bold; margin-left: 0.4rem;">【CLOSED】</span>`;
+      // 店舗全体のバッジ表示判定
+      let statusBadge = "";
+      if (dayOfWeek === 3 || dayOfWeek === 4) {
+        statusBadge = `<span style="color: #d9534f; font-weight: bold; margin-left: 0.4rem;">【カフェ定休日】</span>`;
+      } else if (isHotelOpen) {
+        statusBadge = `<span style="color: var(--brand-green); font-weight: bold; margin-left: 0.4rem;">【OPEN】</span>`;
+      } else {
+        statusBadge = `<span style="color: #888888; font-weight: bold; margin-left: 0.4rem;">【CLOSED】</span>`;
+      }
 
-      // 2️⃣ メインタイトルの更新（センタリング対応）
+      // 2️⃣ メインタイトルの更新
       const todayTitleEl = document.getElementById('js-status-today-date');
       if (todayTitleEl) {
         todayTitleEl.innerHTML = `
@@ -1355,9 +1441,11 @@
       const hotelValueEl = document.querySelector('.status-card:nth-child(1) .status-value');
       if (hotelValueEl) {
         if (isHotelOpen) {
-          hotelValueEl.innerHTML = `<span style="color: var(--brand-green);">お電話にて受付中</span>`;
+          // 電話受付時間内：受付中であること＋時間帯を表示
+          hotelValueEl.innerHTML = `<span style="color: var(--brand-green); font-weight: bold; font-size: 0.82rem;">お電話にて受付中<br><span style="font-size: 0.72rem; color: #707070; font-weight: normal;">（${hotelHoursText}）</span></span>`;
         } else {
-          hotelValueEl.innerHTML = `<span style="color: #888888; font-size: 0.8rem;">電話受付時間外<br><span style="font-size: 0.72rem;">（${hotelHoursText}）</span></span>`;
+          // 電話受付時間外：お預け・お迎え可＋時間帯を表示
+          hotelValueEl.innerHTML = `<span style="color: #333333; font-size: 0.82rem;">ご予約のお預け・お迎え可<br><span style="font-size: 0.72rem; color: #707070;">（${hotelHoursText}）</span></span>`;
         }
       }
 
@@ -1365,15 +1453,12 @@
       const cafeValueEl = document.querySelector('.status-card:nth-child(2) .status-value');
       if (cafeValueEl) {
         if (dayOfWeek === 3 || dayOfWeek === 4) {
-          // 水曜・木曜はカフェ定休日
           cafeValueEl.innerHTML = `<span style="color: #d9534f;">本日定休日</span>`;
         } else {
-          // カフェ営業時間：10:00 〜 15:00
           let isCafeOpen = (currentHour >= 10 && currentHour < 15);
           if (isCafeOpen) {
             cafeValueEl.innerHTML = `<span style="color: var(--brand-green);">OPEN（10:00〜15:00）</span>`;
           } else {
-            // 時間外の表記（明確に「営業時間」と明記）
             cafeValueEl.innerHTML = `<span style="color: #888888; font-size: 0.8rem;">CLOSED<br><span style="font-size: 0.72rem;">（営業時間 10:00〜15:00）</span></span>`;
           }
         }
@@ -1383,7 +1468,6 @@
       const tomMonth = tomorrow.getMonth() + 1;
       const tomDate = tomorrow.getDate();
       const tomDayStr = weekDays[tomorrow.getDay()];
-
       const tomorrowLabelEl = document.getElementById('js-tomorrow-label');
       if (tomorrowLabelEl) {
         tomorrowLabelEl.textContent = `📅 明日 ${tomMonth}/${tomDate}(${tomDayStr}) の天気予報`;
@@ -1432,24 +1516,73 @@
         if (startIndex === -1) startIndex = 0;
 
         const hourlyBox = document.getElementById('weather-hourly-box');
-        hourlyBox.innerHTML = ''; 
+        hourlyBox.innerHTML = '';
+    const todayDate = new Date().getDate(); // 今日の「日」を取得
 
-        for (let i = startIndex; i < startIndex + 6 && i < hourlyTimes.length; i++) {
-          const timeObj = new Date(hourlyTimes[i]);
-          const hourLabel = `${timeObj.getHours()}:00`;
-          const temp = Math.round(hourlyTemps[i]);
-          const info = getWeatherInfo(hourlyCodes[i]);
+    for (let i = startIndex; i < startIndex + 24 && i < hourlyTimes.length; i++) {
+      const timeObj = new Date(hourlyTimes[i]);
+      const hours = timeObj.getHours();
+      const month = timeObj.getMonth() + 1;
+      const date = timeObj.getDate();
+      const dayStr = weekDays[timeObj.getDay()];
+      const temp = Math.round(hourlyTemps[i]);
+      const info = getWeatherInfo(hourlyCodes[i]);
 
-          const itemHtml = `
-            <div class="hourly-item">
-              <div class="hourly-time">${hourLabel}</div>
-              <div class="hourly-icon">${info.icon}</div>
-              <div class="hourly-temp">${temp}℃</div>
-            </div>
-          `;
-          hourlyBox.insertAdjacentHTML('beforeend', itemHtml);
+      const isNextDay = (date !== todayDate);
+      const dateStr = `${month}/${date}(${dayStr})`;
+
+      // 翌日のカードには class="is-next-day" と data-date 属性を付与
+      const itemHtml = `
+        <div class="hourly-item ${isNextDay ? 'is-next-day' : ''}" data-date="${dateStr}">
+          <span class="hourly-date-label" style="display:block; font-size:0.58rem; line-height:1.1; visibility:hidden;">&nbsp;</span>
+          <div class="hourly-time">${hours}:00</div>
+          <div class="hourly-icon">${info.icon}</div>
+          <div class="hourly-temp">${temp}℃</div>
+        </div>
+      `;
+      hourlyBox.insertAdjacentHTML('beforeend', itemHtml);
+    }
+
+    // 🔄 スクロール追従処理：見えている一番左の翌日カードだけに日付を表示
+    const updateVisibleDateLabel = () => {
+      const items = hourlyBox.querySelectorAll('.hourly-item.is-next-day');
+      const containerLeft = hourlyBox.getBoundingClientRect().left;
+      
+      let firstVisibleNextDayItem = null;
+
+      // すべての翌日ラベルを一度非表示にする
+      items.forEach(item => {
+        const label = item.querySelector('.hourly-date-label');
+        if (label) {
+          label.style.visibility = 'hidden';
+          label.innerHTML = '&nbsp;';
         }
+        // カードの左端がコンテナの左端以上（＝左側が1pxも見切れていない）完全に見えている最初の翌日カードを探す
+        const rect = item.getBoundingClientRect();
+        if (!firstVisibleNextDayItem && (rect.left >= containerLeft - 2)) { // 微小な誤差を考慮して-2px
+          firstVisibleNextDayItem = item;
+        }
+      });
 
+      // 見えている一番左の翌日カードだけに日付を表示
+      if (firstVisibleNextDayItem) {
+        const label = firstVisibleNextDayItem.querySelector('.hourly-date-label');
+        const dateStr = firstVisibleNextDayItem.getAttribute('data-date');
+        if (label && dateStr) {
+          label.style.color = 'var(--brand-green)';
+          label.style.fontWeight = 'bold';
+          label.style.fontSize = '0.52rem'; // 👈 少しフォントを調整
+          label.style.letterSpacing = '-0.5px'; // 👈 文字間隔を調整
+          label.style.whiteSpace = 'nowrap'; // 👈 途中で改行しない
+          label.style.visibility = 'visible';
+          label.innerHTML = dateStr;
+        }
+      }
+    };
+
+    // スクロールイベントを設定して初回実行
+    hourlyBox.addEventListener('scroll', updateVisibleDateLabel);
+    updateVisibleDateLabel();
         // 3️⃣ 翌日（明日）の天気予報
         const tomorrowCode = data.daily.weathercode[1];
         const tomorrowMax = Math.round(data.daily.temperature_2m_max[1]);
@@ -1458,7 +1591,35 @@
 
         document.getElementById('tomorrow-info-text').innerHTML = 
   `<span class="br-sp"></span>：${tomorrowInfo.icon} <strong>${tomorrowInfo.name}</strong> <span style="font-weight:normal; font-size:0.68rem; color:#666666;">(最高 ${tomorrowMax}℃ / 最低 ${tomorrowMin}℃)</span>`;
-      } catch (error) {
+      // 4️⃣ 週間予報（明後日以降）
+        const weeklyBox = document.getElementById('weather-weekly-box');
+        if (weeklyBox && data.daily) {
+          weeklyBox.innerHTML = '';
+          const dailyTimes = data.daily.time;
+          const dailyCodes = data.daily.weathercode;
+          const dailyMax = data.daily.temperature_2m_max;
+          const dailyMin = data.daily.temperature_2m_min;
+
+          for (let i = 2; i < dailyTimes.length; i++) {
+            const dateObj = new Date(dailyTimes[i]);
+            const month = dateObj.getMonth() + 1;
+            const date = dateObj.getDate();
+            const dayStr = weekDays[dateObj.getDay()];
+            const info = getWeatherInfo(dailyCodes[i]);
+            const maxT = Math.round(dailyMax[i]);
+            const minT = Math.round(dailyMin[i]);
+
+            const weeklyHtml = `
+              <div class="weekly-item">
+                <div class="weekly-date">${month}/${date}(${dayStr})</div>
+                <div class="weekly-icon">${info.icon}</div>
+                <div><span class="weekly-temp-max">${maxT}℃</span> / <span class="weekly-temp-min">${minT}℃</span></div>
+              </div>
+            `;
+            weeklyBox.insertAdjacentHTML('beforeend', weeklyHtml);
+          }
+        }
+} catch (error) {
         document.getElementById('weather-current-text').textContent = '☀️ 晴れ (データ読み込み完了)';
       }
     }
