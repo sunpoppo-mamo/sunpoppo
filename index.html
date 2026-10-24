@@ -6,15 +6,15 @@
  
   <!-- 🔍 ① 裏側SEO設定（豊田飯山IC・北信スキー場・観光・一時預かり・宿泊対応） -->
   <title>さんぽっぽ | ドッグパーク＆ペットホテル</title>
-  <meta name="description" content="豊田飯山IC（飯山IC）すぐ！小布施・湯田中渋温泉・志賀高原・野沢温泉エリアへの観光やスキー中も安心。ぽっぽ動物病院併設のペットホテル・日帰り一時預かり・カフェ「さんぽっぽ」です。">
+  <meta name="description" content="豊田飯山IC（飯山IC）すぐ！小布施・湯田中渋温泉・志賀高原・飯山・斑尾・戸狩・栄村・野沢温泉エリアへの観光やスキー中も安心。ぽっぽ動物病院運営のペットホテル・日帰り一時預かり・カフェ「さんぽっぽ」です。">
   <meta name="keywords" content="さんぽっぽ, 豊田飯山IC ペットホテル, 飯山IC ペット預かり, 北信 ペットホテル, 志賀高原 ペットホテル, 野沢温泉 ペットホテル, 小布施 ペット預かり, 湯田中温泉 ペットホテル, 竜王スキーパーク ペット, 中野市 ペットホテル, ぽっぽ動物病院">
-  <link rel="canonical" href="https://sanpoppo.com/index.html">
+  <link rel="canonical" href="https://sunpoppo.com/index.html">
   
   <!-- 📱 ② OGP設定（LINEやSNSシェア用） -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="さんぽっぽ | 豊田飯山ICすぐ・北信観光＆スキー旅行に">
-  <meta property="og:description" content="小布施・湯田中渋温泉・志賀高原・野沢温泉への観光やスキー中も安心。ぽっぽ動物病院運営のペットホテル＆日帰り一時預かり「さんぽっぽ」。">
-  <meta property="og:url" content="https://sanpoppo.com/index.html">
+  <meta property="og:description" content="小布施・湯田中渋温泉・志賀高原・飯山・斑尾・戸狩・栄村・野沢温泉への観光やスキー中も安心。ぽっぽ動物病院運営のペットホテル＆日帰り一時預かり「さんぽっぽ」。">
+  <meta property="og:url" content="https://sunpoppo.com/index.html">
   <meta property="og:site_name" content="さんぽっぽ">
   <meta property="og:image" content="https://lh3.googleusercontent.com/d/1dlCeWqHO6GHwuSD-MVBoLWziEU7zVGbg">
   <meta property="og:locale" content="ja_JP">
@@ -56,6 +56,10 @@
       "豊田飯山IC",
       "飯山IC",
       "長野県"
+      "栄村"
+      "斑尾"
+      "戸狩"
+      "ロマンスの神様"
     ],
     "knowsAbout": [
       "観光客向けペット日帰り一時預かり",
@@ -863,6 +867,16 @@
   gtag('js', new Date());
 
   gtag('config', 'G-6QBZJ1P9JR');
+  // 🌟 index.html から飛んできた時に、該当するお部屋の個別表示を実行する処理
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      const validTypes = ['cage-s', 'cage-l', 'private-s', 'private-l'];
+      if (validTypes.includes(hash)) {
+        setTimeout(() => {
+          switchRoomAndScroll(hash);
+        }, 150);
+      }
+    });
 </script>
 </head>
 <body>
@@ -884,7 +898,7 @@
     <!-- ナビゲーションメニュー -->
     <nav class="site-nav" id="js-nav">
       <ul>
-        <li><a href="#hotel">ホテル</a></li>
+        <li><a href="pet-boarding.html">ホテル</a></li>
         <li><a href="#deli">カフェ</a></li>
         <li><a href="about_us.html">ABOUT US</a></li>
         <li><a href="#access">ACCESS</a></li>
@@ -990,7 +1004,7 @@
     内覧をお断り・お待ちいただく場合がございます。
   </p>
 
-  <a href="#" style="font-size: 0.85rem; color: var(--brand-green); font-weight: bold; text-decoration: none; display: inline-block;">
+  <a href="event.html" style="font-size: 0.85rem; color: var(--brand-green); font-weight: bold; text-decoration: none; display: inline-block;">
     詳細を見る ➔
   </a>
 </div>
@@ -1075,6 +1089,13 @@
           <p class="service-desc" style="text-align: left; line-height: 1.8; direction: ltr;">
             のびのび過ごせる「個室部屋」から落ち着く「ケージ」まで、ワンちゃんの性格に合わせて選択可能。夜間はあえてスタッフを配置せず、人の気配や物音に敏感な子も静かに休める環境を整えています。（※セキュリティシステムで安全をしっかりと見守ります）
           </p>
+          <!-- index.html の <p class="service-desc"> の直下に挿入 -->
+<div style="margin-top: 1.5rem;">
+  <a href="pet-boarding.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background-color: #ffffff; color: var(--brand-green); border: 1.5px solid var(--brand-green); padding: 0.6rem 1.5rem; border-radius: 30px; font-weight: bold; font-size: 0.88rem; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: all 0.2s ease;">
+    <span>ペットホテル詳細ページはこちら</span>
+    <span>➔</span>
+  </a>
+</div>
         </div>
         <div class="service-image-box" style="flex: 1; min-width: 280px;">
           <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=2074&auto=format&fit=crop" alt="さんぽっぽ ペットホテル" style="width: 100%; height: auto; border-radius: 8px;">
@@ -1100,9 +1121,17 @@
             </tr>
           </thead>
           <tbody>
+            <tbody>
             <!-- ケージ（小） -->
             <tr style="border-bottom: 1px solid #f0eddf;">
-              <td class="room-type" style="padding: 0.8rem; text-align: left;"><strong>ケージ（小）</strong></td>
+              <td class="room-type" style="padding: 0.8rem; text-align: left;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                  <strong>ケージ（小）</strong>
+                  <a href="pet-boarding.html#cage-s" style="display: inline-block; font-size: 0.72rem; color: var(--brand-green, #8cb33e); border: 1px solid var(--brand-green, #8cb33e); border-radius: 20px; padding: 0.15rem 0.55rem; text-decoration: none; font-weight: bold; white-space: nowrap;">
+                    お部屋を見る ➔
+                  </a>
+                </div>
+              </td>
               <td class="room-capacity" style="padding: 0.8rem; text-align: left; color: var(--text-muted, #707070);">小型犬・猫 1頭まで</td>
               <td colspan="2">
                 <div class="price-flex-container">
@@ -1117,9 +1146,17 @@
                 </div>
               </td>
             </tr>
+
             <!-- ケージ（大） -->
             <tr style="border-bottom: 1px solid #f0eddf;">
-              <td class="room-type" style="padding: 0.8rem; text-align: left;"><strong>ケージ（大）</strong></td>
+              <td class="room-type" style="padding: 0.8rem; text-align: left;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                  <strong>ケージ（大）</strong>
+                  <a href="pet-boarding.html#cage-l" style="display: inline-block; font-size: 0.72rem; color: var(--brand-green, #8cb33e); border: 1px solid var(--brand-green, #8cb33e); border-radius: 20px; padding: 0.15rem 0.55rem; text-decoration: none; font-weight: bold; white-space: nowrap;">
+                    お部屋を見る ➔
+                  </a>
+                </div>
+              </td>
               <td class="room-capacity" style="padding: 0.8rem; text-align: left; color: var(--text-muted, #707070);">小型犬・中型犬・猫 1頭まで</td>
               <td colspan="2">
                 <div class="price-flex-container">
@@ -1134,9 +1171,17 @@
                 </div>
               </td>
             </tr>
+
             <!-- 個室（小） -->
             <tr style="border-bottom: 1px solid #f0eddf;">
-              <td class="room-type" style="padding: 0.8rem; text-align: left;"><strong>個室（小）</strong></td>
+              <td class="room-type" style="padding: 0.8rem; text-align: left;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                  <strong>個室（小）</strong>
+                  <a href="pet-boarding.html#private-s" style="display: inline-block; font-size: 0.72rem; color: var(--brand-green, #8cb33e); border: 1px solid var(--brand-green, #8cb33e); border-radius: 20px; padding: 0.15rem 0.55rem; text-decoration: none; font-weight: bold; white-space: nowrap;">
+                    お部屋を見る ➔
+                  </a>
+                </div>
+              </td>
               <td class="room-capacity" style="padding: 0.8rem; text-align: left; color: var(--text-muted, #707070);">
                 最大：小型犬2匹 / 中型犬1匹 / 大型犬1匹  <br>猫1匹 <br>猫利用の場合はキャットタワーをご持参ください<br>
                 <span style="font-size:0.75rem; color:var(--brand-green, #8cb33e); font-weight: 500;">※同室2匹目は多頭割引（20%OFF）適用</span>
@@ -1154,9 +1199,17 @@
                 </div>
               </td>
             </tr>
+
             <!-- 個室（大） -->
             <tr style="border-bottom: 1px solid #f0eddf;">
-              <td class="room-type" style="padding: 0.8rem; text-align: left;"><strong>個室（大）</strong></td>
+              <td class="room-type" style="padding: 0.8rem; text-align: left;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                  <strong>個室（大）</strong>
+                  <a href="pet-boarding.html#private-l" style="display: inline-block; font-size: 0.72rem; color: var(--brand-green, #8cb33e); border: 1px solid var(--brand-green, #8cb33e); border-radius: 20px; padding: 0.15rem 0.55rem; text-decoration: none; font-weight: bold; white-space: nowrap;">
+                    お部屋を見る ➔
+                  </a>
+                </div>
+              </td>
               <td class="room-capacity" style="padding: 0.8rem; text-align: left; color: var(--text-muted, #707070);">
                 最大：小型犬3匹 / 中型犬2匹 / 大型犬2匹 <br>猫2匹<br>猫利用の場合はキャットタワーをご持参ください<br>
                 <span style="font-size:0.75rem; color:var(--brand-green, #8cb33e); font-weight: 500;">※同室2匹目以降は多頭割引（20%OFF）適用</span>
@@ -1298,7 +1351,7 @@
 
         <!-- ④ クリームソーダ -->
         <div class="menu-image-box">
-          <img src="cream_soda.png" alt="クリームソーダ メニュー">
+          <img src="cream_soda.jpg" alt="クリームソーダ メニュー">
         </div>
       </div>
 
@@ -1488,7 +1541,7 @@
     }
 
     // さんぽっぽ周辺（中野市永江）の天気取得API
-    async function fetchSanpoppoDetailedWeather() {
+    async function fetchSunpoppoDetailedWeather() {
       const lat = 36.8008; 
       const lon = 138.3211; 
       const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,weathercode&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo`;
@@ -1637,8 +1690,9 @@
     }
     window.addEventListener('DOMContentLoaded', () => {
       initDateAndWeek();            
-      fetchSanpoppoDetailedWeather(); 
+      fetchSunpoppoDetailedWeather(); 
     });
+    
   </script>
 </body>
 </html>
