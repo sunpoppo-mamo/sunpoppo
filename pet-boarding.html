@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <title>ペットホテル | さんぽっぽ</title>
+  <meta name="description" content="豊田飯山ICすぐ！ぽっぽ動物病院併設のペットホテル「さんぽっぽ」。小型犬から大型犬・猫ちゃんまで対応。お部屋タイプ・料金・ご利用の流れをご案内します。">
+  <link rel="canonical" href="https://sanpoppo.com/pet-boarding.html">
+ 
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  
+  <!-- Google Fonts: index.htmlと完全に同一のフォント設定 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&family=Noto+Serif+JP:wght@200;300;400&family=Shippori+Mincho:wght@400;500;600&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap" rel="stylesheet">
+ 
+  <style>
+    /* ==========================================================================
+       🎨 全体共通スタイル（index.htmlと完全一貫）
+       ========================================================================== */
+    :root {
+      --bg-color: #fcfbf9;
+      --text-color: #2b2b2b;
+      --text-muted: #707070;
+      --accent-color: #8c8275;
+      --border-color: #e3dec3;
+      --brand-green: #8cb33e;
+      --font-soft: 'Zen Maru Gothic', 'Shippori Mincho', sans-serif;
+      --font-serif: 'Cormorant Garamond', 'Noto Serif JP', serif;
+      --font-sans: 'Montserrat', sans-serif;
+      --font-rounded: "Kiwi Maru", "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "メイリオ", sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 29px !important;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-soft);
+      line-height: 1.8;
+      letter-spacing: 0.08em;
+      overflow-x: hidden;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+    a:hover {
+      opacity: 0.7;
+    }
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4rem 4%;
+      z-index: 1000;
+      background-color: var(--brand-green);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .logo { display: flex; align-items: center; }
+    .logo img {
+      height: 38px;
+      width: auto;
+      display: block;
+      background: #ffffff;
+      padding: 2px 6px;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+    @media (min-width: 769px) {
+      .hamburger-btn { display: none !important; }
+      .site-nav {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        background-color: transparent !important;
+      }
+      .site-nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 2.5rem !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      .site-nav a { color: #ffffff !important; }
+    }
+    @media (max-width: 768px) {
+      header { padding: 0.4rem 3% !important; }
+      .logo img { height: 32px !important; padding: 2px 4px !important; }
+      .hamburger-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+        margin-left: auto !important;
+      }
+      .hamburger-btn span {
+        display: block; width: 100%; height: 3px; background-color: #ffffff; border-radius: 2px; transition: all 0.3s ease;
+      }
+      .hamburger-btn.is-active span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
+      .hamburger-btn.is-active span:nth-child(2) { opacity: 0; }
+      .hamburger-btn.is-active span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
+      .site-nav {
+        position: absolute; top: calc(100% - 1px) !important; left: 0; width: 100%; height: auto;
+        background-color: #8cb33e !important; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18) !important;
+        padding: 10px 0 20px !important; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.3s ease; z-index: 999;
+      }
+      .site-nav.is-active { opacity: 1; visibility: visible; transform: translateY(0); }
+      .site-nav ul { display: flex !important; flex-direction: column !important; width: 100% !important; padding: 0 !important; margin: 0 !important; list-style: none !important; }
+      .site-nav li { width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
+      .site-nav li:last-child { border-bottom: none; }
+      .site-nav a { display: block !important; padding: 16px 28px !important; font-size: 1.05rem !important; font-weight: 600 !important; color: #ffffff !important; text-decoration: none !important; letter-spacing: 0.1em !important; font-family: var(--font-rounded) !important; transition: background 0.2s ease; }
+      .site-nav a:active { background-color: rgba(255, 255, 255, 0.15); }
+    }
+    .page-hero {
+      margin-top: 50px; padding: 3.5rem 1rem 2.5rem;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=2074&auto=format&fit=crop') center/cover no-repeat;
+      text-align: center; color: #ffffff; text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+    .page-hero h1 { font-family: var(--font-soft); font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 500; letter-spacing: 0.15em; margin-bottom: 0.4rem; }
+    .page-hero p { font-family: var(--font-soft); font-size: clamp(0.85rem, 2.5vw, 1rem); letter-spacing: 0.1em; opacity: 0.95; }
+    .main-container { max-width: 1100px; margin: 0 auto; padding: 2rem 4% 3rem; }
+    .hotel-card {
+      background: #ffffff; border-radius: 12px; padding: 2.5rem 2rem; border: 1px solid var(--border-color); margin-bottom: 2.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.02); scroll-margin-top: 29px !important;
+    }
+    .hotel-card.price-card-box {
+      padding: 1.2rem;
+    }
+    .section-title {
+      font-family: 'Noto Serif JP', serif; font-size: 1.35rem; color: var(--brand-green); text-align: center; margin-bottom: 1.5rem; position: relative; padding-bottom: 0.6rem; font-weight: 500;
+    }
+    .section-title::after {
+      content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 2px; background-color: var(--brand-green);
+    }
+    .room-section-container { display: flex; flex-direction: column; gap: 1.5rem; }
+    .single-price-side-card {
+      display: none; background: #faf8f5; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; height: 100%; flex-direction: column; justify-content: center;
+    }
+    .room-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem; }
+    .room-section-container.is-filtered .room-grid { grid-template-columns: 1fr; }
+    .room-section-container.is-filtered { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; align-items: stretch; }
+    .room-section-container.is-filtered .single-price-side-card { display: flex; }
+    @media (max-width: 768px) {
+      .room-grid { grid-template-columns: 1fr; }
+      .room-section-container.is-filtered { grid-template-columns: 1fr; }
+    }
+    .room-card { background: #faf8f5; border-radius: 8px; border: 1px solid var(--border-color); overflow: hidden; display: flex; flex-direction: column; transition: all 0.3s ease; }
+    .room-img-box {
+      aspect-ratio: 4 / 3; background-color: #e2ded8; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; border-bottom: 1px solid var(--border-color); cursor: pointer; overflow: hidden;
+    }
+    .room-img-box img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; position: absolute; top:0; left:0; z-index:2; }
+    .room-img-box:hover img { transform: scale(1.03); }
+    .placeholder-text { color: #666666; font-size: 0.8rem; font-weight: bold; font-family: var(--font-sans); background: rgba(255, 255, 255, 0.9); padding: 0.3rem 0.6rem; border-radius: 4px; border: 1px dashed #999999; letter-spacing: 0.03em; position: relative; z-index:1; }
+    .zoom-badge { position: absolute; bottom: 8px; right: 8px; background: rgba(0, 0, 0, 0.65); color: #ffffff; font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 12px; pointer-events: none; display: flex; align-items: center; gap: 0.3rem; backdrop-filter: blur(2px); z-index: 5; }
+    .room-info { padding: 1.2rem; display: flex; flex-direction: column; flex-grow: 1; }
+    .room-title-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; gap: 0.5rem; }
+    .room-name { font-size: 1.05rem; font-weight: bold; color: var(--brand-green); margin-bottom: 0; }
+    .room-size-badge { display: inline-block; background: #ffffff; border: 1px solid var(--border-color); font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 4px; color: #555555; margin-bottom: 0.6rem; font-family: var(--font-sans); }
+    .room-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; }
+    .card-title-price-btn { background: #ffffff; border: 1.5px solid var(--brand-green); color: var(--brand-green); font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.75rem; border-radius: 20px; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.03); cursor: pointer; white-space: nowrap; }
+    .card-title-price-btn:hover { background: var(--brand-green); color: #ffffff; }
+    .clickable-room-title {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all 0.2s ease;
+    }
+    .clickable-room-title:hover strong {
+      color: var(--brand-green);
+    }
+    .room-detail-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.72rem;
+      font-weight: bold;
+      color: var(--brand-green);
+      background-color: #f4f7eb;
+      border: 1px solid var(--brand-green);
+      padding: 0.15rem 0.55rem;
+      border-radius: 12px;
+      line-height: 1.3;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .clickable-room-title:hover .room-detail-badge {
+      background-color: var(--brand-green);
+      color: #ffffff;
+    }
+    
+    /* 💰 カード内料金枠：PC時は非表示、スマホ（768px以下）時のみ表示 */
+    .room-inline-price-box {
+      display: none; /* ← PCでは消す */
+      margin-top: 1rem;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .room-inline-price-box {
+        display: block; /* 一覧表示時はカード内に料金を出す */
+      }
+      
+      /* 🌟 部屋を絞り込んだ時はカード内料金枠を消して2重表示を防ぐ */
+      .room-section-container.is-filtered .room-inline-price-box {
+        display: none !important;
+      }
+
+      /* スマホでは重複するメインの料金テーブル・見出しを非表示 */
+      #js-main-price-table,
+      #price-title-bar {
+        display: none !important;
+      }
+    }
+    .room-inline-price-box .price-title {
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: var(--brand-green);
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px dashed #e0deda;
+      padding-bottom: 0.4rem;
+    }
+    .room-inline-price-box .capacity-badge {
+      font-size: 0.72rem;
+      font-weight: normal;
+      color: #707070;
+    }
+    .room-inline-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.4rem;
+    }
+    .room-inline-price-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .room-inline-price-item .p-label {
+      font-size: 0.7rem;
+      color: #707070;
+    }
+    .room-inline-price-item .p-val-main {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--brand-green);
+      line-height: 1.2;
+    }
+    .room-inline-price-item .p-val-sub {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #555555;
+      line-height: 1.2;
+    }
+
+    /* Modal Photo Gallery */
+    .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center; z-index: 2000; opacity: 0; visibility: hidden; transition: all 0.3s ease; padding: 1rem; }
+    .modal-overlay.is-active .modal-window { transform: translateY(0); }
+    .modal-overlay.is-active { opacity: 1; visibility: visible; }
+    .modal-window { background: #ffffff; border-radius: 12px; max-width: 580px; width: 100%; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transform: translateY(20px); transition: transform 0.3s ease; }
+    .modal-close-btn { position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; background: rgba(0, 0, 0, 0.5); color: #ffffff; border: none; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.2s ease; }
+    .modal-close-btn:hover { background: rgba(0, 0, 0, 0.8); }
+    .modal-main-img-box { width: 100%; aspect-ratio: 4 / 3; background-color: #e2ded8; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .modal-main-img-box img { width: 100%; height: 100%; object-fit: contain; display: block; position: absolute; top: 0; left: 0; z-index: 2; background-color: #e2ded8; }
+    .modal-main-img-box .placeholder-text { position: relative; z-index: 1; }
+    .modal-thumb-container { display: flex; justify-content: center; gap: 0.5rem; padding: 0.8rem 0.5rem 0.4rem; background: #f7f6f2; border-top: 1px solid var(--border-color); overflow-x: auto; }
+    .modal-thumb-item { width: 62px; height: 46px; border-radius: 6px; overflow: hidden; cursor: pointer; border: 2px solid transparent; background-color: #d8d4cd; display: flex; align-items: center; justify-content: center; position: relative; transition: all 0.2s ease; opacity: 0.6; flex-shrink: 0; }
+    .modal-thumb-item.is-active { border-color: var(--brand-green); opacity: 1; transform: scale(1.05); box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+    .modal-thumb-item img { width: 100%; height: 100%; object-fit: cover; }
+    .modal-thumb-item .thumb-text { font-size: 0.6rem; color: #555555; text-align: center; font-weight: bold; }
+    .modal-caption { padding: 0.8rem 1.2rem 1.2rem; background: #ffffff; text-align: center; }
+    .modal-title { font-size: 1.05rem; font-weight: bold; color: var(--brand-green); margin-bottom: 0.3rem; }
+    .modal-desc { font-size: 0.82rem; color: #555555; margin: 0; min-height: 1.6em; }
+    @media (max-width: 768px) {
+      .hotel-card { padding: 1.5rem 1rem; }
+      .price-table, .price-table thead, .price-table tbody, .price-table th, .price-table td, .price-table tr { display: block; }
+      .price-table thead tr { position: absolute; top: -9999px; left: -9999px; }
+      .price-table tbody tr { border: 1px solid var(--border-color) !important; border-radius: 8px; margin-bottom: 1rem; padding: 0.8rem 1rem; background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+      .price-table td { border: none !important; padding: 0.3rem 0 !important; text-align: left !important; }
+      .price-table td.room-type { font-size: 1rem; font-weight: bold; color: var(--brand-green); border-bottom: 1px dashed #e0deda !important; padding-bottom: 0.5rem !important; margin-bottom: 0.5rem; }
+      .price-table td.room-capacity { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+      .price-flex-container { display: flex; justify-content: space-between; align-items: center; background-color: #fcfbf9; padding: 0.6rem 0.8rem; border-radius: 6px; margin-top: 0.4rem; }
+      .price-item { display: flex; flex-direction: column; }
+      .price-label { font-size: 0.72rem; color: #707070; }
+      .price-value-main { font-size: 1.1rem; font-weight: bold; color: var(--brand-green); }
+      .price-value-sub { font-size: 0.95rem; font-weight: 500; color: #555555; }
+    }
+    .check-list { list-style: none; font-size: 0.88rem; }
+    .check-list li { position: relative; padding-left: 1.6rem; margin-bottom: 0.8rem; line-height: 1.6; }
+    .check-list li::before { content: '✔'; position: absolute; left: 0; color: var(--brand-green); font-weight: bold; }
+    .tel-info-box { background-color: #faf8f5; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem 1rem; text-align: center; margin-top: 1rem; }
+    .tel-number { font-size: 1.4rem; font-weight: bold; color: var(--brand-green); margin: 0.4rem 0; }
+    .tel-hours { font-size: 0.8rem; color: var(--text-muted); line-height: 1.7; }
+    #floating-menu-container { position: fixed; bottom: 20px; right: 20px; z-index: 1500; }
+    #floating-menu-btn {
+      width: 62px; height: 62px; background-color: #ffffff; border: 2px solid var(--brand-green); border-radius: 50%; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.18); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4px; transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    #floating-menu-btn:active { transform: scale(0.93); }
+    @keyframes poyonBounce {
+      0% { transform: scale(1); }
+      30% { transform: scale(1.18) translateY(-6px); }
+      50% { transform: scale(0.95) translateY(2px); }
+      70% { transform: scale(1.05) translateY(-2px); }
+      100% { transform: scale(1) translateY(0); }
+    }
+    #floating-menu-btn.is-bouncing { animation: poyonBounce 0.6s ease; }
+    .floating-btn-label { font-size: 0.62rem; font-weight: bold; color: var(--brand-green); line-height: 1; margin-bottom: 2px; letter-spacing: 0.05em; }
+    .floating-btn-logo { width: 40px; height: auto; max-height: 25px; object-fit: contain; }
+    .floating-menu-list {
+      position: absolute; bottom: 74px; right: 0; background: #ffffff; border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.18); width: 175px; padding: 0.5rem; display: flex; flex-direction: column; gap: 0.3rem; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.25s ease;
+    }
+    .floating-menu-list.is-active { opacity: 1; visibility: visible; transform: translateY(0); }
+    .floating-menu-list a { display: block; padding: 0.6rem 0.8rem; font-size: 0.82rem; font-weight: bold; color: var(--text-color); text-decoration: none; border-radius: 6px; background: #faf8f5; transition: background 0.2s ease; }
+    .floating-menu-list a:hover { background: #f0ede4; color: var(--brand-green); }
+    .floating-menu-list a.top-link { background: #f4f2eb; color: var(--brand-green); border-top: 1px solid var(--border-color); margin-top: 0.2rem; padding-top: 0.6rem; }
+    .price-guide-text { font-size: 0.8rem; font-weight: bold; color: var(--brand-green); background: #f0ede4; padding: 0.25rem 0.75rem; border-radius: 20px; display: none; }
+    .price-guide-text .arrow-pc { display: inline; }
+    .price-guide-text .arrow-sp { display: none; }
+    @media (max-width: 768px) {
+      .price-guide-text .arrow-pc { display: none; }
+      .price-guide-text .arrow-sp { display: inline; }
+    }
+    .flow-steps-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin-top: 1rem; }
+    .flow-step-card { background: #fcfbf9; border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 1rem 1.2rem; text-align: center; position: relative; display: flex; flex-direction: column; align-items: center; }
+    .step-badge { position: absolute; top: -12px; background: var(--brand-green); color: #fff; font-size: 0.75rem; font-weight: bold; padding: 0.2rem 0.8rem; border-radius: 15px; text-transform: uppercase; }
+    .step-icon-box { width: 75px; height: 75px; background: #fff; border: 2px solid #e0ddd5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0.5rem 0 0.8rem; overflow: hidden; }
+    .step-icon-box img { width: 100%; height: 100%; object-fit: cover; }
+    .step-title { font-size: 1rem; font-weight: bold; color: var(--text-color); margin-bottom: 0.5rem; }
+    .step-desc { font-size: 0.82rem; color: #666; line-height: 1.5; margin: 0; text-align: left; }
+    @media (max-width: 768px) { .flow-steps-container { grid-template-columns: 1fr; } }
+    .stay-toggle-btn { margin-top: 0.8rem; background: #f0ede4; color: var(--brand-green); border: 1px solid var(--brand-green); border-radius: 20px; padding: 0.35rem 0.8rem; font-size: 0.78rem; font-weight: bold; cursor: pointer; transition: all 0.2s; }
+    .stay-toggle-btn:hover { background: var(--brand-green); color: #fff; }
+    .stay-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; z-index: 9999; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; padding: 1rem; box-sizing: border-box; }
+    .stay-modal-overlay.is-active { opacity: 1; visibility: visible; }
+    .stay-modal-content { background: #fff; border-radius: 16px; padding: 1.5rem; width: 100%; max-width: 420px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); transform: translateY(20px); transition: transform 0.3s ease; }
+    .stay-modal-overlay.is-active .stay-modal-content { transform: translateY(0); }
+    .stay-modal-close { position: absolute; top: 10px; right: 14px; background: none; border: none; font-size: 1.8rem; color: #999; cursor: pointer; line-height: 1; padding: 0; }
+    .stay-modal-close:hover { color: #333; }
+    .stay-day-title { font-size: 1rem; font-weight: bold; color: var(--brand-green); margin-bottom: 1rem; text-align: center; }
+    .stay-timeline { display: flex; flex-direction: column; gap: 0.8rem; }
+    .stay-item { display: flex; gap: 0.8rem; background: #fcfbf9; padding: 0.8rem; border-radius: 10px; border: 1px solid #eee; text-align: left; align-items: center; }
+    .stay-icon-box {
+      width: 54px;
+      height: 54px;
+      min-width: 54px;
+      background: #ffffff;
+      border: 1.5px solid #e0ddd5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .stay-icon-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .stay-body { display: flex; flex-direction: column; flex-grow: 1; }
+    .stay-header-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem; }
+    .stay-time { background: var(--brand-green); color: #fff; font-size: 0.72rem; font-weight: bold; padding: 0.15rem 0.5rem; border-radius: 4px; height: fit-content; white-space: nowrap; }
+    .stay-title-text { font-size: 0.86rem; font-weight: bold; color: #333; margin: 0; }
+    .stay-desc-text { font-size: 0.76rem; color: #666; margin: 0; line-height: 1.45; }
+    @media (max-width: 768px) {
+      .room-inline-price-box {
+        display: block;
+      }
+      .room-section-container.is-filtered .room-inline-price-box {
+        display: none !important;
+      }
+      #js-main-price-table,
+      #price-title-bar {
+        display: none !important;
+      }
+
+      /* 🌟 スマホ時は上下メニューの「全ての部屋の料金を見る」を非表示 */
+      .all-price-nav-btn {
+        display: none !important;
+      }
+
+      /* 🌟 スマホ時は右下メニューの「宿泊料金表」を非表示 */
+      .floating-price-link {
+        display: none !important;
+      }
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QBZJ1P9JR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6QBZJ1P9JR');
+  </script>
+</head>
+<body>
+  <!-- 🔍 統一共通ヘッダー -->
+  <header>
+    <div class="logo">
+      <a href="index.html" style="display: flex; align-items: center;">
+        <img src="sunpoppo_logo.jpg" alt="さんぽっぽ sunpoppo.com">
+      </a>
+    </div>
+    
+    <button type="button" class="hamburger-btn" id="js-hamburger" aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <nav class="site-nav" id="js-nav">
+      <ul>
+        <li><a href="pet-boarding.html">ホテル</a></li>
+        <li><a href="index.html#deli">カフェ</a></li>
+        <li><a href="about_us.html">ABOUT US</a></li>
+        <li><a href="index.html#access">ACCESS</a></li>
+      </ul>
+    </nav>
+    <div class="menu-overlay" id="js-overlay"></div>
+  </header>
+  <!-- サブヒーロービジュアル -->
+  <section class="page-hero">
+    <h1>PET HOTEL</h1>
+    <p>愛犬が安心して心地よく過ごせる第二の我が家</p>
+  </section>
+  <!-- メインコンテンツ -->
+  <main class="main-container">
+    <!-- 1. 特徴・コンセプト -->
+    <section class="hotel-card">
+      <h2 class="section-title">さんぽっぽのペットホテルの特徴</h2>
+      <p style="font-size: 0.9rem; line-height: 1.9; color: #444444; text-align: justify;">
+        のびのび過ごせる「個室部屋」から落ち着く「ケージ」まで、ワンちゃんの性格に合わせてお部屋を選択いただけます。夜間はあえてスタッフを配置せず、人の気配や物音に敏感な子も静かに休める環境を整えています。（※セキュリティシステムで安全を見守ります）
+      </p>
+    </section>
+    <!-- 2. お部屋タイプのご案内 -->
+    <section class="hotel-card" id="room-type">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; position: relative;">
+        <h2 class="section-title" style="margin: 0; text-align: left;">お部屋タイプのご案内 <span id="card-filter-tag" style="font-size:0.85rem; font-weight:normal; color:#666;"></span></h2>
+        
+        <!-- 🌟 右上のボタン：「他のお部屋を選ぶ / 一覧に戻る ▼」 -->
+        <button type="button" id="top-reset-btn" onclick="toggleRoomMenuInline()" style="display: none; background: #faf8f5; border: 1px solid var(--border-color); color: var(--brand-green); font-size: 0.78rem; font-weight: bold; padding: 0.35rem 0.85rem; border-radius: 20px; cursor: pointer;">
+          🔄 他のお部屋を選ぶ / 一覧に戻る ▼
+        </button>
+        <!-- 🐾 右上ボタンから展開する部屋選択ドロップダウンメニュー -->
+        <div id="inline-room-menu" style="display:none; position: absolute; top: 100%; right: 0; z-index: 100; width: 245px; margin-top: 0.4rem; background:#ffffff; padding:0.6rem; border-radius:8px; border:1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+          <div style="display:flex; flex-direction:column; gap:0.4rem;">
+            <button type="button" onclick="switchRoomAndScroll('cage-s')" style="padding:0.45rem; background:#faf8f5; border:1px solid var(--border-color); border-radius:6px; font-size:0.78rem; font-weight:bold; color:var(--text-color); cursor:pointer; text-align:left;">ケージ（小）の料金を見る</button>
+            <button type="button" onclick="switchRoomAndScroll('cage-l')" style="padding:0.45rem; background:#faf8f5; border:1px solid var(--border-color); border-radius:6px; font-size:0.78rem; font-weight:bold; color:var(--text-color); cursor:pointer; text-align:left;">ケージ（大）の料金を見る</button>
+            <button type="button" onclick="switchRoomAndScroll('private-s')" style="padding:0.45rem; background:#faf8f5; border:1px solid var(--border-color); border-radius:6px; font-size:0.78rem; font-weight:bold; color:var(--text-color); cursor:pointer; text-align:left;">個室（小）の料金を見る</button>
+            <button type="button" onclick="switchRoomAndScroll('private-l')" style="padding:0.45rem; background:#faf8f5; border:1px solid var(--border-color); border-radius:6px; font-size:0.78rem; font-weight:bold; color:var(--text-color); cursor:pointer; text-align:left;">個室（大）の料金を見る</button>
+            <hr style="border:none; border-top:1px dashed var(--border-color); margin:0.2rem 0;">
+            <button type="button" onclick="switchRoomAndScroll('all')" style="padding: 0.5rem 0.5rem; background: #faf8f5; border: 1.5px solid var(--brand-green); color: var(--brand-green); border-radius: 8px; font-size: 0.78rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; white-space: nowrap;">
+              <img src="step3.png" alt="" style="width: 28px; height: 28px; object-fit: contain; display: inline-block; flex-shrink: 0;">
+              <span>全てのお部屋を表示する</span>
+            </button>
+            <button type="button" class="all-price-nav-btn" onclick="showAllPricesAndScroll()" style="padding: 0.5rem 0.5rem; background: #faf8f5; border: 1.5px solid var(--brand-green); color: var(--brand-green); border-radius: 8px; font-size: 0.78rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; white-space: nowrap;">
+  <span>全ての部屋の料金を見る ➔</span>
+</button>
+          </div>
+        </div>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-bottom: 1.5rem;" id="room-guide-subtext">
+        ワンちゃんの体型や性格、過ごし方に合わせてお好みのお部屋をお選びいただけます。<br>
+        <span style="font-size: 0.78rem; color: var(--brand-green); font-weight: bold;">※写真枠をクリックするとお部屋写真をご覧いただけます</span>
+      </p>
+      <!-- 絞り込み時に横並び（左：写真/説明、右：料金）になるコンテナ -->
+      <div class="room-section-container" id="js-room-container">
+        
+        <div class="room-grid">
+          <!-- ケージ（小） -->
+          <div class="room-card" id="card-cage-s">
+            <div class="room-img-box" onclick="openRoomGallery('ケージ（小） 写真ギャラリー', cageSmallPhotos)">
+              <span class="placeholder-text">📷 room_cage_s.jpg</span>
+              <img src="room_cage_s.jpg" alt="ケージ（小）" onerror="this.style.display='none';">
+              <span class="zoom-badge">🔍 写真ギャラリー（7枚）</span>
+            </div>
+            <div class="room-info">
+              <div class="room-title-bar">
+                <div class="room-name">ケージ（小）</div>
+                <button type="button" onclick="switchRoomAndScroll('cage-s')" class="card-title-price-btn">料金を見る ➔</button>
+              </div>
+              <div><span class="room-size-badge">📐 幅 56cm × 奥行 65cm × 高さ 56cm  約0.36㎡<br>📐 幅 56cm × 奥行 65cm × 高さ 77cm  約0.36㎡</span></div>
+              <p class="room-desc">
+                <strong>【ぽっぽ動物病院も採用ケージ 東京メニックス製】</strong><br>
+                オールステンレスで衛生管理はもちろん安全性の高い構造です。包み込まれるようなサイズ感で、ワンちゃん・ネコちゃんが「自分の巣穴」のようにホッと落ち着いて過ごせます。<br>
+                <span style="font-size: 0.76rem; color: #d9534f; font-weight: bold; display: block; margin-top: 0.4rem; background: #fff5f5; padding: 0.35rem 0.6rem; border-radius: 4px; border: 1px solid #ffcccc;">
+                  ⚠️ ケージのサイズ上おトイレ用ペットシーツを敷くことができないため、おむつ（マナーウェア等）を着用するお子様のお預かりとなります。<br>うちの子は室内で排泄しないよという方はご相談ください。
+                </span>
+              </p>
+
+              <!-- 💰 各部屋一体型 料金枠 -->
+              <div class="room-inline-price-box">
+                <div class="price-title">
+                  <span>💰 宿泊料金（税込）</span>
+                  <span class="capacity-badge">小型犬・猫 1頭まで</span>
+                </div>
+                <div class="room-inline-price-row">
+                  <div class="room-inline-price-item">
+                    <span class="p-label">1泊2日 基本料金 (1頭分)</span>
+                    <span class="p-val-main">¥4,400</span>
+                  </div>
+                  <div class="room-inline-price-item" style="text-align: right;">
+                    <span class="p-label">半日料金 (+0.5日)</span>
+                    <span class="p-val-sub">¥2,200</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ケージ（大） -->
+          <div class="room-card" id="card-cage-l">
+            <div class="room-img-box" onclick="openRoomGallery('ケージ（大）のご利用風景', cageLargePhotos)">
+              <span class="placeholder-text">📷 room_cage_l.jpg</span>
+              <img src="room_cage_l.jpg" alt="ケージ（大）" onerror="this.style.display='none';">
+              <span class="zoom-badge">🔍 写真ギャラリー（2枚）</span>
+            </div>
+            <div class="room-info">
+              <div class="room-title-bar">
+                <div class="room-name">ケージ（大）</div>
+                <button type="button" onclick="switchRoomAndScroll('cage-l')" class="card-title-price-btn">料金を見る ➔</button>
+              </div>
+              <div><span class="room-size-badge">📐 幅 120cm × 奥行 65cm × 高さ 77cm  約0.78㎡</span></div>
+              <p class="room-desc">
+                 <strong>【ぽっぽ動物病院も採用ケージ 東京メニックス製】</strong><br>
+                オールステンレスで衛生管理はもちろん安全性の高い構造です。ケージ小サイズの2倍の広さ。中型犬や、少しゆったりめのスペースで過ごしたい小型犬向け。清潔で通気性の良い安心感のある設計です。
+                室内でおしっこやうんちをする習慣のあるお子様も、ペットシーツを敷いて安心して過ごせます。
+              </p>
+
+              <!-- 💰 各部屋一体型 料金枠 -->
+              <div class="room-inline-price-box">
+                <div class="price-title">
+                  <span>💰 宿泊料金（税込）</span>
+                  <span class="capacity-badge">小型犬・中型犬・猫 1頭まで</span>
+                </div>
+                <div class="room-inline-price-row">
+                  <div class="room-inline-price-item">
+                    <span class="p-label">1泊2日 基本料金 (1頭分)</span>
+                    <span class="p-val-main">¥6,600</span>
+                  </div>
+                  <div class="room-inline-price-item" style="text-align: right;">
+                    <span class="p-label">半日料金 (+0.5日)</span>
+                    <span class="p-val-sub">¥3,300</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 個室（小） -->
+          <div class="room-card" id="card-private-s">
+            <div class="room-img-box" onclick="openRoomGallery('個室（小）のご利用風景', privateSmallPhotos)">
+              <span class="placeholder-text">📷 room_private_s.jpg</span>
+              <img src="room_private_s.jpg" alt="個室（小）" onerror="this.style.display='none';">
+              <span class="zoom-badge">🔍 写真ギャラリー（4枚）</span>
+            </div>
+            <div class="room-info">
+              <div class="room-title-bar">
+                <div class="room-name">個室（小）</div>
+                <button type="button" onclick="switchRoomAndScroll('private-s')" class="card-title-price-btn">料金を見る ➔</button>
+              </div>
+              <div><span class="room-size-badge">📐 幅 120cm × 奥行 166cm × 高さ 240cm 約2㎡</span></div>
+              <p class="room-desc">
+                壁で仕切られたプライベート感のある個室部屋。ケージが苦手な子や、小型犬2匹までの同室（多頭飼い）にもぴったりです。
+              </p>
+
+              <!-- 💰 各部屋一体型 料金枠 -->
+              <div class="room-inline-price-box">
+                <div class="price-title">
+                  <span>💰 宿泊料金（税込）</span>
+                  <span class="capacity-badge">最大: 小型2匹/中型1匹/大型1匹/猫1匹</span>
+                </div>
+                <div class="room-inline-price-row">
+                  <div class="room-inline-price-item">
+                    <span class="p-label">1泊2日 基本料金 (1頭分)</span>
+                    <span class="p-val-main">¥8,800</span>
+                  </div>
+                  <div class="room-inline-price-item" style="text-align: right;">
+                    <span class="p-label">半日料金 (+0.5日)</span>
+                    <span class="p-val-sub">¥4,400</span>
+                  </div>
+                </div>
+                <div style="font-size: 0.72rem; color: var(--brand-green); margin-top: 0.4rem; font-weight: bold;">
+                  ※同室2匹目は多頭割引（20%OFF）適用
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 個室（大） -->
+          <div class="room-card" id="card-private-l">
+            <div class="room-img-box" onclick="openRoomGallery('個室（大）のご利用風景', privateLargePhotos)">
+              <span class="placeholder-text">📷 room_private_l.jpg</span>
+              <img src="room_private_l.jpg" alt="個室（大）" onerror="this.style.display='none';">
+              <span class="zoom-badge">🔍 写真ギャラリー（5枚）</span>
+            </div>
+            <div class="room-info">
+              <div class="room-title-bar">
+                <div class="room-name">個室（大）</div>
+                <button type="button" onclick="switchRoomAndScroll('private-l')" class="card-title-price-btn">料金を見る ➔</button>
+              </div>
+              <div>
+  <span class="room-size-badge" style="display: inline-grid; grid-template-columns: auto auto auto auto; column-gap: 0.6rem; row-gap: 0.2rem; align-items: center; text-align: left;">
+    <span>📐 幅 120cm</span>
+    <span>× 奥行 300cm</span>
+    <span>× 高さ 240cm</span>
+    <span style="text-align: right; font-weight: 500; padding-left: 0.5rem;">約3.6㎡</span>
+
+    <span>📐 幅 167cm</span>
+    <span>× 奥行 257cm</span>
+    <span>× 高さ 240cm</span>
+    <span style="text-align: right; font-weight: 500; padding-left: 0.5rem;">約4.3㎡</span>
+  </span>
+</div>
+              <p class="room-desc">
+                広々としたスペースを確保したゆとりの完全個室。大型犬のお預かりや、多頭飼いのご家族で一緒にのびのび過ごせます。
+              </p>
+
+              <!-- 💰 各部屋一体型 料金枠 -->
+              <div class="room-inline-price-box">
+                <div class="price-title">
+                  <span>💰 宿泊料金（税込）</span>
+                  <span class="capacity-badge">最大: 小型3匹/中型2匹/大型2匹/猫2匹</span>
+                </div>
+                <div class="room-inline-price-row">
+                  <div class="room-inline-price-item">
+                    <span class="p-label">1泊2日 基本料金 (1頭分)</span>
+                    <span class="p-val-main">¥9,900</span>
+                  </div>
+                  <div class="room-inline-price-item" style="text-align: right;">
+                    <span class="p-label">半日料金 (+0.5日)</span>
+                    <span class="p-val-sub">¥4,950</span>
+                  </div>
+                </div>
+                <div style="font-size: 0.72rem; color: var(--brand-green); margin-top: 0.4rem; font-weight: bold;">
+                  ※同室2匹目以降は多頭割引（20%OFF）適用
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       <!-- 絞り込み時に右側に移動して表示される料金カード -->
+        <div class="single-price-side-card" id="js-single-price-side">
+          <h3 style="font-size: 1.05rem; color: var(--brand-green); margin-bottom: 0.8rem; border-left: 3px solid var(--brand-green); padding-left: 0.6rem; font-weight: bold;" id="side-price-title">
+            宿泊料金（税込）
+          </h3>
+          <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:1rem;" id="side-price-capacity">
+            収容目安：小型犬・猫 1頭まで
+          </div>
+          <div style="background:#ffffff; border:1px solid var(--border-color); border-radius:8px; padding:1.2rem; margin-bottom:1.2rem;">
+            <div style="margin-bottom:0.8rem; border-bottom:1px dashed #e0deda; padding-bottom:0.6rem;">
+              <span style="font-size:0.75rem; color:#707070; display:block;">1泊2日 基本料金 (1頭分/税込)</span>
+              <span style="font-size:1.4rem; font-weight:bold; color:var(--brand-green);" id="side-price-main">¥4,400</span>
+            </div>
+            <div>
+              <span style="font-size:0.75rem; color:#707070; display:block;">半日料金 (+0.5日) (1頭分/税込)</span>
+              <span style="font-size:1.15rem; font-weight:bold; color:#555555;" id="side-price-sub">¥2,200</span>
+            </div>
+          </div>
+          <!-- ⏰ 右側カード内に追加する「お時間計算のルール」 -->
+          <div style="background-color: #ffffff; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--border-color); font-size: 0.76rem; line-height: 1.6; text-align: left; margin-bottom: 1.2rem;">
+            <h4 style="font-size: 0.82rem; color: var(--brand-green); margin-bottom: 0.3rem; font-weight: bold;">■ お時間計算のルール</h4>
+            <p style="margin-bottom: 0.2rem;"><strong>【1泊2日の基本枠】</strong></p>
+            <ul style="margin: 0 0 0.4rem 0; padding-left: 1rem; color: var(--text-muted);">
+              <li>チェックイン：午後（PM）</li>
+              <li>チェックアウト：翌日 午前（AM）</li>
+            </ul>
+            <p style="margin-bottom: 0.2rem; color: #333;"><strong>【午前イン/午後アウトの場合】</strong></p>
+            <p style="margin-bottom: 0; color: var(--text-muted);">基本料金に<strong>「半日料金×2」</strong>が加算となります。</p><br>
+            <div style="background-color: #faf8f5; padding: 0.5rem 0.6rem; border-radius: 4px; border-left: 3px solid var(--brand-green); font-size: 0.72rem;">
+              <strong>【ご利用例】</strong>
+              <ul style="margin: 0.2rem 0 0 0; padding-left: 1.1rem; color: #444;">
+                <li><strong>午前チェックイン ➔ 翌午前チェックアウト</strong><br>：1泊料金 ＋ 半日料金</li>
+                <li><strong>午後チェックイン ➔ 翌午後チェックアウト</strong><br>：1泊料金 ＋ 半日料金</li>
+                <li><strong>午前チェックイン ➔ 翌午後チェックアウト</strong><br>：1泊料金 ＋ 半日料金×2（＝実質2日分）</li>
+              </ul>
+            </div>
+          </div>  
+        </div>
+        <!-- 🐾 「お部屋タイプのご案内」枠内・下部用の多頭飼い割引ボックス -->
+        <div id="room-section-multi-discount" style="grid-column: 1 / -1; background-color: #faf8f5; padding: 1rem; border-radius: 8px; border: 1px dashed var(--brand-green); font-size: 0.82rem; line-height: 1.7; text-align: left; margin-top: 1rem; display: none;">
+          <div style="color: var(--brand-green); font-weight: bold; font-size: 0.83rem; margin-bottom: 0.4rem;">
+            🐾 多頭飼い割引（2匹目以降 20%OFF）
+          </div>
+          <p style="margin: 0; color: var(--text-color);">
+            個室のお部屋で<strong>同じお部屋に同宿する場合</strong>に限り、2匹目以降の宿泊料金・半日料金は<strong>【通常料金の80%（20%OFF）】</strong>となります。
+          </p>
+          <ul style="margin: 0.4rem 0 0 0; padding-left: 1.1rem; font-size: 0.78rem; color: var(--text-muted);">
+            <li>※ケージタイプは安全管理のため多頭利用は不可（1頭のみ）となります。</li>
+            <li>※別々のお部屋をご利用の場合は、それぞれ通常料金（1頭あたり）となります。</li>
+            <li>※お預かり中に喧嘩や相性不良等で同室での滞在が困難と判断した場合、ワンちゃんの安全のため別々のお部屋へ移動させていただきます。（その際は<strong>別途お部屋の通常料金が発生</strong>いたします）</li>
+            <li>※満室等により別のお部屋が確保できない場合は、<strong>急遽お引き取りをお願いすることがございます</strong>。環境の変化による相性や体調がご心配な場合は、<strong>あらかじめ頭数分（別部屋）でのご予約</strong>をおすすめいたします。</li>
+          </ul>
+        </div>
+
+        <!-- 🌟 多頭飼い枠外に配置：部屋絞り込み時に最下部に表示される部屋選択ボタン＆メニュー -->
+        <div id="bottom-reset-area" style="grid-column: 1 / -1; display: none; text-align: center; margin-top: 2rem; position: relative;">
+          <button type="button" onclick="toggleBottomRoomMenu(event)" style="background: #faf8f5; border: 1.5px solid var(--brand-green); color: var(--brand-green); font-size: 0.85rem; font-weight: bold; padding: 0.55rem 1.6rem; border-radius: 30px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            🔄 他のお部屋を選ぶ / 一覧に戻る ▲
+          </button>
+
+          <!-- 🐾 下ボタンから上に展開するメニュー -->
+          <div id="bottom-inline-room-menu" style="display:none; position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%); z-index: 100; width: 245px; background:#ffffff; padding:0.6rem; border-radius:8px; border:1px solid var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.15); text-align: left;">
+            <div style="display:flex; flex-direction:column; gap:0.4rem;">
+              <button type="button" onclick="switchRoomAndScroll('cage-s')" style="padding:0.45rem; background:#faf8f5; border:1px solid var(--border-color); border-radius:6px; font-size:0.78rem; font-weight:bold; color:var(--text-color); cursor:pointer; text-align:left;">ケージ（小）の料金を見る</button>
+              <button type="button" onclick="switchRoomAndScroll('cage-l')" style="padding:0.45rem; background:#faf8f5; border:1px solid var(--border-color); border-radius:6px; font-size:0.78rem; font-weight:bold; color:var(--text-color); cursor:pointer; text-align:left;">ケージ（大）の料金を見る</button>
+              <button type="button" onclick="switchRoomAndScroll('private-s')" style="padding:0.45rem; background:#faf8f5; border:1px solid var(--border-color); border-radius:6px; font-size:0.78rem; font-weight:bold; color:var(--text-color); cursor:pointer; text-align:left;">個室（小）の料金を見る</button>
+              <button type="button" onclick="switchRoomAndScroll('private-l')" style="padding:0.45rem; background:#faf8f5; border:1px solid var(--border-color); border-radius:6px; font-size:0.78rem; font-weight:bold; color:var(--text-color); cursor:pointer; text-align:left;">個室（大）の料金を見る</button>
+              <hr style="border:none; border-top:1px dashed var(--border-color); margin:0.2rem 0;">
+              <button type="button" onclick="switchRoomAndScroll('all')" style="padding: 0.5rem; background: #faf8f5; border: 1.5px solid var(--brand-green); color: var(--brand-green); border-radius: 8px; font-size: 0.78rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%;">
+                <img src="step3.png" alt="" style="width: 24px; height: 24px; object-fit: contain;">
+                <span>全てのお部屋を表示する</span>
+              </button>
+              <button type="button" class="all-price-nav-btn" onclick="showAllPricesAndScroll()" style="padding: 0.5rem 0.5rem; background: #faf8f5; border: 1.5px solid var(--brand-green); color: var(--brand-green); border-radius: 8px; font-size: 0.78rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; white-space: nowrap;">
+  <span>全ての部屋の料金を見る ➔</span>
+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 3. 宿泊料金表（全体表＆ルール） -->
+    <section class="hotel-card price-card-box" id="price-list" style="text-align: left; direction: ltr;">
+      <div id="price-title-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap;">
+        <h3 style="font-size: 1.05rem; color: var(--brand-green); border-left: 3px solid var(--brand-green); padding-left: 0.6rem; font-weight: bold; margin: 0;">
+          宿泊料金表（税込）<span id="price-filter-tag" style="font-size:0.8rem; font-weight:normal; color:#666; margin-left:0.5rem;"></span>
+        </h3>
+        <button type="button" id="reset-price-btn" onclick="switchRoomAndScroll('all')" style="display: none; background: #faf8f5; border: 1px solid var(--border-color); color: var(--brand-green); font-size: 0.78rem; font-weight: bold; padding: 0.35rem 0.85rem; border-radius: 20px; cursor: pointer;">
+          🔄 全てのお部屋・料金を表示する
+        </button>
+      </div>
+      <table class="price-table" id="js-main-price-table" style="width: 100%; border-collapse: collapse; font-size: 0.88rem; text-align: left; direction: ltr; margin-bottom: 1.2rem;">
+        <thead>
+          <tr style="background-color: #fcfbf9; border-bottom: 2px solid var(--border-color);">
+            <th style="padding: 0.8rem; text-align: left; width: 20%;">お部屋タイプ</th>
+            <th style="padding: 0.8rem; text-align: left; width: 40%;">収容目安（定員）</th>
+            <th style="padding: 0.8rem; text-align: right; width: 20%;">1泊2日 基本料金<br><span style="font-size:0.72rem; font-weight:normal; color:#707070;">(1頭分/税込)</span></th>
+            <th style="padding: 0.8rem; text-align: right; width: 20%;">半日料金（＋0.5日）<br><span style="font-size:0.72rem; font-weight:normal; color:#707070;">(1頭分/税込)</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="price-cage-s" class="price-row" style="border-bottom: 1px solid #f0eddf;">
+            <td class="room-type" style="padding: 0.8rem; text-align: left;">
+              <span class="clickable-room-title" onclick="switchRoomAndScroll('cage-s')" title="ケージ（小）の詳細を見る">
+                <strong>ケージ（小）</strong>
+                <span class="room-detail-badge">お部屋を見る ➔</span>
+              </span>
+            </td>
+            <td class="room-capacity" style="padding: 0.8rem; text-align: left; color: var(--text-muted);">小型犬・猫 1頭まで</td>
+            <td colspan="2">
+              <div class="price-flex-container">
+                <div class="price-item">
+                  <span class="price-label">1泊2日基本料金</span>
+                  <span class="price-value-main">¥4,400</span>
+                </div>
+                <div class="price-item" style="text-align: right;">
+                  <span class="price-label">半日料金(+0.5日)</span>
+                  <span class="price-value-sub">¥2,200</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr id="price-cage-l" class="price-row" style="border-bottom: 1px solid #f0eddf;">
+            <td class="room-type" style="padding: 0.8rem; text-align: left;">
+              <span class="clickable-room-title" onclick="switchRoomAndScroll('cage-l')" title="ケージ（大）の詳細を見る">
+                <strong>ケージ（大）</strong>
+                <span class="room-detail-badge">お部屋を見る ➔</span>
+              </span>
+            </td>
+            <td class="room-capacity" style="padding: 0.8rem; text-align: left; color: var(--text-muted);">小型犬・中型犬・猫 1頭まで</td>
+            <td colspan="2">
+              <div class="price-flex-container">
+                <div class="price-item">
+                  <span class="price-label">1泊2日基本料金</span>
+                  <span class="price-value-main">¥6,600</span>
+                </div>
+                <div class="price-item" style="text-align: right;">
+                  <span class="price-label">半日料金(+0.5日)</span>
+                  <span class="price-value-sub">¥3,300</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr id="price-private-s" class="price-row" style="border-bottom: 1px solid #f0eddf;">
+            <td class="room-type" style="padding: 0.8rem; text-align: left;">
+              <span class="clickable-room-title" onclick="switchRoomAndScroll('private-s')" title="個室（小）の詳細を見る">
+                <strong>個室（小）</strong>
+                <span class="room-detail-badge">お部屋を見る ➔</span>
+              </span>
+            </td>
+            <td class="room-capacity" style="padding: 0.8rem; text-align: left; color: var(--text-muted);">
+              最大：小型犬2匹 / 中型犬1匹 / 大型犬1匹 <br>猫1匹 <br>猫利用の場合はキャットタワーをご持参ください<br>
+              <span style="font-size:0.75rem; color:var(--brand-green); font-weight: 500;">※同室2匹目は多頭割引（20%OFF）適用</span>
+            </td>
+            <td colspan="2">
+              <div class="price-flex-container">
+                <div class="price-item">
+                  <span class="price-label">1泊2日基本料金</span>
+                  <span class="price-value-main">¥8,800</span>
+                </div>
+                <div class="price-item" style="text-align: right;">
+                  <span class="price-label">半日料金(+0.5日)</span>
+                  <span class="price-value-sub">¥4,400</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr id="price-private-l" class="price-row" style="border-bottom: 1px solid #f0eddf;">
+            <td class="room-type" style="padding: 0.8rem; text-align: left;">
+              <span class="clickable-room-title" onclick="switchRoomAndScroll('private-l')" title="個室（大）の詳細を見る">
+                <strong>個室（大）</strong>
+                <span class="room-detail-badge">お部屋を見る ➔</span>
+              </span>
+            </td>
+            <td class="room-capacity" style="padding: 0.8rem; text-align: left; color: var(--text-muted);">
+              最大：小型犬3匹 / 中型犬2匹 / 大型犬2匹 <br>猫2匹<br>猫利用の場合はキャットタワーをご持参ください<br>
+              <span style="font-size:0.75rem; color:var(--brand-green); font-weight: 500;">※同室2匹目以降は多頭割引（20%OFF）適用</span>
+            </td>
+            <td colspan="2">
+              <div class="price-flex-container">
+                <div class="price-item">
+                  <span class="price-label">1泊2日基本料金</span>
+                  <span class="price-value-main">¥9,900</span>
+                </div>
+                <div class="price-item" style="text-align: right;">
+                  <span class="price-label">半日料金(+0.5日)</span>
+                  <span class="price-value-sub">¥4,950</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="multi-discount-box" style="background-color: #fcfbf9; padding: 1rem; border-radius: 6px; border: 1px dashed var(--brand-green); margin: 1.2rem 0; font-size: 0.82rem; line-height: 1.7; text-align: left; direction: ltr;">
+        <div style="color: var(--brand-green); font-weight: bold; font-size: 0.83rem; letter-spacing: -0.03em; margin-bottom: 0.4rem; text-align: left; direction: ltr; white-space: nowrap;">
+          🐾 多頭飼い割引（2匹目以降 20%OFF）
+        </div>
+        <p style="margin: 0; color: var(--text-color); text-align: left; direction: ltr;">
+          個室のお部屋で<strong>同じお部屋に同宿する場合</strong>に限り、2匹目以降の宿泊料金・半日料金は<strong>【通常料金の80%（20%OFF）】</strong>となります。
+        </p>
+        <ul style="margin: 0.4rem 0 0 0; padding-left: 1.1rem; font-size: 0.78rem; color: var(--text-muted); text-align: left; direction: ltr;">
+          <li>※ケージタイプは安全管理のため多頭利用は不可（1頭のみ）となります。</li>
+          <li>※別々のお部屋をご利用の場合は、それぞれ通常料金（1頭あたり）となります。</li>
+          <li>※お預かり中に喧嘩や相性不良等で同室での滞在が困難と判断した場合、ワンちゃんの安全のため別々のお部屋へ移動させていただきます。（その際は<strong>別途お部屋の通常料金が発生</strong>いたします）</li>
+          <li>※満室等により別のお部屋が確保できない場合は、<strong>急遽お引き取りをお願いすることがございます</strong>。環境の変化による相性や体調がご心配な場合は、<strong>あらかじめ頭数分（別部屋）でのご予約</strong>をおすすめいたします。</li>
+        </ul>
+      </div>
+      <div class="rule-box" style="background-color: #faf8f5; padding: 1rem; border-radius: 6px; border: 1px solid var(--border-color); font-size: 0.82rem; line-height: 1.7; text-align: left; direction: ltr;">
+        <h4 style="font-size: 0.9rem; color: var(--brand-green); margin-bottom: 0.4rem; font-weight: bold; text-align: left; direction: ltr;">■ お時間計算のルール</h4>
+        <p style="margin-bottom: 0.2rem; text-align: left; direction: ltr;"><strong>【1泊2日の基本枠】</strong></p>
+        <ul style="margin: 0 0 0.6rem 0; padding-left: 1.1rem; text-align: left; direction: ltr;">
+          <li><strong>チェックイン</strong>：午後（PM）</li>
+          <li><strong>チェックアウト</strong>：翌日 午前（AM）</li>
+        </ul>
+        <p style="margin-bottom: 0.2rem; text-align: left; direction: ltr; font-size: 0.78rem; letter-spacing: -0.02em;">
+          <strong>【午前イン / 午後アウトをご希望の場合】</strong>
+        </p>
+        <p style="margin-bottom: 0.4rem; text-align: left; direction: ltr;">基本の1泊料金に<strong>「半日料金×2」</strong>が加算となります。</p>
+        <div style="background-color: #ffffff; padding: 0.7rem; border-radius: 4px; border-left: 3px solid var(--brand-green); font-size: 0.78rem; text-align: left; direction: ltr;">
+          <strong>【ご利用例】</strong>
+          <ul style="margin: 0.2rem 0 0 0; padding-left: 1.1rem; text-align: left; direction: ltr;">
+            <li><strong>午前チェックイン ➔ 翌午前チェックアウト</strong>：1泊料金 ＋ 半日料金</li>
+            <li><strong>午後チェックイン ➔ 翌午後チェックアウト</strong>：1泊料金 ＋ 半日料金</li>
+            <li><strong>午前チェックイン ➔ 翌午後チェックアウト</strong>：1泊料金 ＋ 半日料金×2（＝実質2日分）</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- 4. ご利用の流れ -->
+    <section class="hotel-card" id="flow">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; color: var(--brand-green); display: inline-block; border-bottom: 2px solid var(--brand-green); padding-bottom: 0.3rem; margin: 0;">ご利用の流れ</h2>
+      </div>
+      <div class="flow-steps-container">
+        <div class="flow-step-card">
+          <div class="step-badge">step 01</div>
+          <div class="step-icon-box"><img src="step1.png" alt="事前のご予約"></div>
+          <h3 class="step-title">事前のご予約</h3>
+          <p class="step-desc">お電話（0269-38-0775）にて空き状況のご確認とご予約をお願いいたします。（水曜・木曜のカフェ定休日も事前予約の方のお預け・お迎えが可能です）</p>
+        </div>
+        <div class="flow-step-card">
+          <div class="step-badge">step 02</div>
+          <div class="step-icon-box"><img src="step2.png" alt="ご来店・受付"></div>
+          <h3 class="step-title">ご来店・受付</h3>
+          <p class="step-desc">ご予約のお時間にご来店いただき、ワンちゃんの健康状態やごはん・お散歩のご要望をお伺いいたします。</p>
+        </div>
+        <div class="flow-step-card">
+          <div class="step-badge">step 03</div>
+          <div class="step-icon-box"><img src="step3.png" alt="お預かり・滞在"></div>
+          <h3 class="step-title">お預かり・滞在</h3>
+          <p class="step-desc">お部屋でのリラックスタイムやドッグパークでのお散歩など、安全第一で丁寧にお世話いたします。</p>
+          <button class="stay-toggle-btn" type="button" onclick="openStayModal()" style="display: inline-flex; align-items: center; justify-content: center; gap: 5px; padding: 0.2rem 0.65rem; font-size: 0.75rem; white-space: nowrap;">
+            <img src="btn_dog.png" alt="" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover; display: inline-block; flex-shrink: 0;">
+            <span>滞在中の過ごし方を見る ➔</span>
+          </button>
+        </div>
+        <div class="flow-step-card">
+          <div class="step-badge">step 04</div>
+          <div class="step-icon-box"><img src="step4.png" alt="お迎え・お会計"></div>
+          <h3 class="step-title">お迎え・お会計</h3>
+          <p class="step-desc">お約束のお時間にお迎えにお越しいただき、滞在中の様子をお伝えしてお引き渡しとなります。</p>
+        </div>
+      </div>
+    </section>
+    <!-- 🌟 ポップアップモーダル -->
+    <div id="stay-modal" class="stay-modal-overlay" onclick="closeStayModal()">
+      <div class="stay-modal-content" onclick="event.stopPropagation();">
+        <button class="stay-modal-close" type="button" onclick="closeStayModal()">&times;</button>
+        <div class="stay-day-title">🐾 滞在中の過ごし方（一例）</div>
+        <div class="stay-timeline">
+          <!-- ① 朝・夕：お散歩・お遊び -->
+          <div class="stay-item">
+            <div class="stay-icon-box">
+              <img src="stay1.png" alt="お散歩・お遊び" onerror="this.style.display='none';">
+            </div>
+            <div class="stay-body">
+              <div class="stay-header-row">
+                <span class="stay-time">朝・夕</span>
+                <strong class="stay-title-text">ドッグパークでお散歩・お遊び</strong>
+              </div>
+              <p class="stay-desc-text">安全な状態で1頭ずつ順番にたくさんのびのび遊戯・お散歩を行います。</p>
+            </div>
+          </div>
+          <!-- ② ご飯：ご飯タイム -->
+          <div class="stay-item">
+            <div class="stay-icon-box">
+              <img src="stay2.png" alt="ご飯タイム" onerror="this.style.display='none';">
+            </div>
+            <div class="stay-body">
+              <div class="stay-header-row">
+                <span class="stay-time">ご飯</span>
+                <strong class="stay-title-text">朝・夕のご飯タイム</strong>
+              </div>
+              <p class="stay-desc-text">お持ち込みいただいたいつものご飯・おやつを指定の時間に提供します。</p>
+            </div>
+          </div>
+          <!-- ③ 夜：お部屋で就寝 -->
+          <div class="stay-item">
+            <div class="stay-icon-box">
+              <img src="stay3.png" alt="就寝" onerror="this.style.display='none';">
+            </div>
+            <div class="stay-body">
+              <div class="stay-header-row">
+                <span class="stay-time">夜</span>
+                <strong class="stay-title-text">お部屋で就寝</strong>
+              </div>
+              <p class="stay-desc-text">冷暖房完備の清潔なお部屋で、ゆっくりとお休みいただけます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 5. 持ち物・ご利用条件 -->
+    <section class="hotel-card" id="belongings">
+      <h2 class="section-title">持ち物・ご利用条件</h2>
+      <ul class="check-list">
+        <li><strong>各種予防接種証明書</strong>（狂犬病・混合ワクチンの1年以内の接種証明）</li>
+        <li><strong>普段食べているごはん・おやつ</strong>（1食分ずつ小分けにしてお持ちください）</li>
+        <li><strong>首輪・リード</strong>（お散歩時に使用いたします）</li>
+        <li><strong>飼い主様の身分証明書</strong>（初回ご利用時のみ）</li>
+        <li>お気に入りの匂いがついたタオルやおもちゃ（任意）</li>
+        <li>※個室で猫ちゃん利用の場合はキャットタワーをご持参ください 持込が難しい場合はご相談ください</li>
+      </ul>
+    </section>
+    <!-- 6. ご予約・お問い合わせ -->
+    <section class="hotel-card" id="reserve" style="text-align: center;">
+      <h2 class="section-title">ご予約・お問い合わせ</h2>
+      <p style="font-size: 0.88rem; color: #555555;">ペットホテルのご予約はお電話にて承っております。</p>
+      
+      <div class="tel-info-box">
+        <div style="font-size: 0.85rem; font-weight: bold; color: var(--brand-green);">お電話でのご予約</div>
+        <div class="tel-number" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+          <img src="tel_icon.png" alt="" style="width: 40px; height: 40px; object-fit: contain; flex-shrink: 0;">
+          <a href="tel:0269380775" style="color: var(--brand-green); text-decoration: underline;">0269-38-0775</a>
+        </div>
+        <div class="tel-hours">
+          【電話受付時間】<br>
+          金曜〜火曜：9:00 〜 17:00<br>
+          水曜・木曜（カフェ定休日）：10:00 〜 13:00
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- ポップアップギャラリー本体 -->
+  <div class="modal-overlay" id="js-room-modal" onclick="closeRoomModal()">
+    <div class="modal-window" onclick="event.stopPropagation()">
+      <button type="button" class="modal-close-btn" onclick="closeRoomModal()" aria-label="閉じる">✕</button>
+      <div class="modal-main-img-box">
+        <span class="placeholder-text" id="js-modal-main-placeholder">📷 メイン写真</span>
+        <img id="js-modal-main-img" src="" alt="メイン画像" onerror="this.style.display='none';">
+      </div>
+      <div class="modal-thumb-container" id="js-modal-thumb-box"></div>
+      <div class="modal-caption">
+        <div class="modal-title" id="js-modal-title">ご利用風景</div>
+        <p class="modal-desc" id="js-modal-desc"></p>
+      </div>
+    </div>
+  </div>
+  <!-- 統一共通フッター -->
+  <footer style="background: var(--brand-green); color: #ffffff; text-align: center; padding: 2rem 1rem; font-family: sans-serif;">
+    <div style="max-width: 600px; margin: 0 auto 1rem; font-size: 0.95rem; line-height: 1.8;">
+      <p style="margin: 0; font-weight: 500;">〒389-2104 長野県中野市永江2297-1</p>
+      <p style="margin: 0;">
+        TEL: <a href="tel:0269380775" style="color: #ffffff; font-weight: bold; text-decoration: underline;">0269-38-0775</a>
+      </p>
+    </div>
+    <p style="font-size: 0.8rem; margin: 0; opacity: 0.9;">&copy; 2026 さんぽっぽ. All Rights Reserved.</p>
+  </footer>
+  <!-- 📍 右下固定ドロワーメニュー -->
+  <div id="floating-menu-container">
+    <div class="floating-menu-list" id="js-floating-menu">
+      <a href="#room-type" onclick="toggleFloatingMenu(); switchRoomAndScroll('all');">📷 お部屋タイプ</a>
+      
+      <!-- 🌟 class="floating-price-link" を追加 -->
+      <a href="javascript:void(0);" class="floating-price-link" onclick="toggleFloatingMenu(); showAllPricesAndScroll();">💰 宿泊料金表</a>
+      
+      <a href="#flow" onclick="toggleFloatingMenu()">🐾 ご利用の流れ</a>
+      <a href="#belongings" onclick="toggleFloatingMenu()">🎒 持ち物・条件</a>
+      <a href="#reserve" onclick="toggleFloatingMenu()">📞 ご予約</a>
+      <a href="#" onclick="scrollToTop(event)" class="top-link">▲ ページの先頭へ</a>
+    </div>
+    <button type="button" id="floating-menu-btn" onclick="toggleFloatingMenu()" aria-label="ページ内メニュー">
+      <span class="floating-btn-label">メニュー</span>
+      <img src="sunpoppo_logo.jpg" alt="さんぽっぽ" class="floating-btn-logo">
+    </button>
+  </div>
+  <!-- JavaScript制御エリア -->
+  <script>
+    const priceData = {
+      'cage-s': { name: 'ケージ（小）', capacity: '収容目安：小型犬・猫 1頭まで', main: '¥4,400', sub: '¥2,200' },
+      'cage-l': { name: 'ケージ（大）', capacity: '収容目安：小型犬・中型犬・猫 1頭まで', main: '¥6,600', sub: '¥3,300' },
+      'private-s': { name: '個室（小）', capacity: '収容目安：最大 小型犬2匹 / 中型犬1匹 / 大型犬1匹', main: '¥8,800', sub: '¥4,400' },
+      'private-l': { name: '個室（大）', capacity: '収容目安：最大 小型犬3匹 / 中型犬2匹 / 大型犬2匹', main: '¥9,900', sub: '¥4,950' }
+    };
+    function openStayModal() {
+      const modal = document.getElementById('stay-modal');
+      if (modal) modal.classList.add('is-active');
+    }
+    function closeStayModal() {
+      const modal = document.getElementById('stay-modal');
+      if (modal) modal.classList.remove('is-active');
+    }
+    function toggleRoomMenuInline() {
+      const menu = document.getElementById('inline-room-menu');
+      if (menu) menu.style.display = (menu.style.display === 'none') ? 'block' : 'none';
+    }
+    // 🌟 下部メニューの開閉処理
+    function toggleBottomRoomMenu(e) {
+      if (e) e.stopPropagation();
+      const menu = document.getElementById('bottom-inline-room-menu');
+      if (menu) {
+        menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
+      }
+    }
+   // 🌟 部屋切り替え＆見やすい位置へのスムーズスクロール処理
+    function switchRoomAndScroll(type) {
+      const menu = document.getElementById('inline-room-menu');
+      if (menu) menu.style.display = 'none';
+      const bMenu = document.getElementById('bottom-inline-room-menu');
+      if (bMenu) bMenu.style.display = 'none';
+
+      // 1. まず部屋の絞り込みを実行
+      filterPriceTable(type);
+
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          // 📱 スマホ時かつ個別部屋を選んだ場合：下の料金カードが見やすい位置へスクロール
+          if (window.innerWidth <= 768 && type !== 'all') {
+            const sidePriceCard = document.getElementById('js-single-price-side');
+            if (sidePriceCard) {
+              const topPos = sidePriceCard.getBoundingClientRect().top + window.pageYOffset;
+              window.scrollTo({ top: topPos - 60, behavior: 'smooth' });
+              return;
+            }
+          }
+
+          // 💻 PC時、または「全てのお部屋」に戻る場合：お部屋エリアの最上部へスクロール
+          const roomSection = document.getElementById('room-type');
+          if (roomSection) {
+            const topPos = roomSection.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({ top: topPos - 58, behavior: 'smooth' });
+          }
+        }, 120);
+      });
+    }
+    // 🌟 絞り込みを解除して「宿泊料金表」へスクロールする処理
+    function showAllPricesAndScroll() {
+      const menu = document.getElementById('inline-room-menu');
+      if (menu) menu.style.display = 'none';
+      const bMenu = document.getElementById('bottom-inline-room-menu');
+      if (bMenu) bMenu.style.display = 'none';
+      filterPriceTable('all');
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          const priceSection = document.getElementById('price-list');
+          if (priceSection) {
+            const topPos = priceSection.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({ top: topPos - 58, behavior: 'smooth' });
+          }
+        }, 120);
+      });
+    }
+    // メニュー外をクリックした時にメニューを自動で閉じる処理
+    document.addEventListener('click', (e) => {
+      const topMenu = document.getElementById('inline-room-menu');
+      const topBtn = document.getElementById('top-reset-btn');
+      if (topMenu && topBtn && !topMenu.contains(e.target) && !topBtn.contains(e.target)) {
+        topMenu.style.display = 'none';
+      }
+
+      const bottomMenu = document.getElementById('bottom-inline-room-menu');
+      const bottomArea = document.getElementById('bottom-reset-area');
+      if (bottomMenu && bottomArea && !bottomMenu.contains(e.target) && !e.target.closest('#bottom-reset-area button')) {
+        bottomMenu.style.display = 'none';
+      }
+    });
+    // 💡 絞り込み制御スクリプト
+    function filterPriceTable(type) {
+      const roomContainer = document.getElementById('js-room-container');
+      const mainPriceTable = document.getElementById('js-main-price-table');
+      const priceSection = document.getElementById('price-list');
+      const priceTitleBar = document.getElementById('price-title-bar');
+      const roomCards = document.querySelectorAll('.room-card');
+      const priceBtns = document.querySelectorAll('.card-title-price-btn');
+      const multiBox = document.getElementById('multi-discount-box');
+      const resetBtn = document.getElementById('reset-price-btn');
+      const topResetBtn = document.getElementById('top-reset-btn');
+      const bottomResetArea = document.getElementById('bottom-reset-area');
+      const priceFilterTag = document.getElementById('price-filter-tag');
+      const cardFilterTag = document.getElementById('card-filter-tag');
+      const ruleBox = document.querySelector('.rule-box');
+      const sideCard = document.getElementById('js-single-price-side');
+      const roomMultiBox = document.getElementById('room-section-multi-discount');
+      document.querySelectorAll('.price-guide-text, .sp-back-to-room-btn').forEach(el => el.remove());
+      const inlineMenu = document.getElementById('inline-room-menu');
+      if (inlineMenu) inlineMenu.style.display = 'none';
+      const bMenu = document.getElementById('bottom-inline-room-menu');
+      if (bMenu) bMenu.style.display = 'none';
+
+      if (type === 'all') {
+        roomContainer.classList.remove('is-filtered');
+        
+        if (sideCard) sideCard.style.display = 'none';
+        if (priceSection) priceSection.style.display = '';
+        if (priceTitleBar) priceTitleBar.style.display = '';
+        if (mainPriceTable) mainPriceTable.style.display = '';
+        roomCards.forEach(c => c.style.display = '');
+        priceBtns.forEach(b => b.style.display = '');
+        if (ruleBox) ruleBox.style.display = 'block';
+        if (roomMultiBox) roomMultiBox.style.display = 'none';
+        if (resetBtn) resetBtn.style.display = 'none';
+        if (topResetBtn) topResetBtn.style.display = 'none';
+        if (bottomResetArea) bottomResetArea.style.display = 'none';
+        if (priceFilterTag) priceFilterTag.textContent = '';
+        if (cardFilterTag) cardFilterTag.textContent = '';
+      } else {
+        roomContainer.classList.add('is-filtered');
+        if (sideCard) sideCard.style.display = 'flex';
+        if (priceSection) priceSection.style.display = 'none';
+        if (priceTitleBar) priceTitleBar.style.display = 'none';
+        if (mainPriceTable) mainPriceTable.style.display = 'none';
+        roomCards.forEach(c => c.style.display = (c.id === 'card-' + type) ? '' : 'none');
+        priceBtns.forEach(b => b.style.display = 'none');
+        if (ruleBox) ruleBox.style.display = 'none';
+        if (roomMultiBox) {
+          roomMultiBox.style.display = (type === 'private-s' || type === 'private-l') ? 'block' : 'none';
+        }
+        if (bottomResetArea) bottomResetArea.style.display = 'block';
+
+        const activeCard = document.getElementById('card-' + type);
+        if (activeCard) {
+          const titleBar = activeCard.querySelector('.room-title-bar');
+          if (titleBar) {
+            const guideBtn = document.createElement('button');
+            guideBtn.type = 'button';
+            guideBtn.className = 'price-guide-text';
+            guideBtn.style.cssText = 'font-size:0.78rem; font-weight:bold; color:#ffffff; background:var(--brand-green); padding:0.3rem 0.75rem; border-radius:20px; border:none; cursor:pointer; display:inline-block;';
+            guideBtn.innerHTML = '料金はこちら <span class="arrow-pc">➔</span><span class="arrow-sp">↓</span>';
+            
+            guideBtn.onclick = () => {
+              if (window.innerWidth <= 768) {
+                const sidePriceCard = document.getElementById('js-single-price-side');
+                if (sidePriceCard) {
+                  const elementTop = sidePriceCard.getBoundingClientRect().top + window.pageYOffset;
+                  window.scrollTo({ top: elementTop - 60, behavior: 'smooth' });
+                }
+              } else {
+                const roomSection = document.getElementById('room-type');
+                if (roomSection) {
+                  const elementTop = roomSection.getBoundingClientRect().top + window.pageYOffset;
+                  window.scrollTo({ top: elementTop - 58, behavior: 'smooth' });
+                }
+              }
+            };
+            titleBar.appendChild(guideBtn);
+          }
+        }
+        const p = priceData[type];
+        if (p) {
+          document.getElementById('side-price-title').textContent = p.name + ' 宿泊料金（税込）';
+          document.getElementById('side-price-capacity').textContent = p.capacity;
+          document.getElementById('side-price-main').textContent = p.main;
+          document.getElementById('side-price-sub').textContent = p.sub;
+        }
+        if (multiBox) multiBox.style.display = type.startsWith('cage') ? 'none' : 'block';
+        if (resetBtn) resetBtn.style.display = 'inline-block';
+        if (topResetBtn) topResetBtn.style.display = 'inline-block';
+        const roomNames = { 'cage-s': '（ケージ小）', 'cage-l': '（ケージ大）', 'private-s': '（個室小）', 'private-l': '（個室大）' };
+        if (cardFilterTag) cardFilterTag.textContent = (roomNames[type] || '') + ' のみ表示中';
+      }
+    }
+    let scrollTimer = null;
+    const floatingBtn = document.getElementById('floating-menu-btn');
+    window.addEventListener('scroll', () => {
+      if (!floatingBtn) return;
+      if (!floatingBtn.classList.contains('is-bouncing')) {
+        floatingBtn.classList.add('is-bouncing');
+      }
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        floatingBtn.classList.remove('is-bouncing');
+      }, 600);
+    });
+    function toggleFloatingMenu() {
+      const menu = document.getElementById('js-floating-menu');
+      menu.classList.toggle('is-active');
+    }
+    function scrollToTop(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      toggleFloatingMenu();
+    }
+    document.addEventListener('click', (e) => {
+      const container = document.getElementById('floating-menu-container');
+      const menu = document.getElementById('js-floating-menu');
+      if (container && !container.contains(e.target) && menu.classList.contains('is-active')) {
+        menu.classList.remove('is-active');
+      }
+    });
+    const hamburger = document.getElementById('js-hamburger');
+    const nav = document.getElementById('js-nav');
+    const overlay = document.getElementById('js-overlay');
+    function toggleMenu() {
+      hamburger.classList.toggle('is-active');
+      nav.classList.toggle('is-active');
+      if (overlay) overlay.classList.toggle('is-active');
+    }
+    if (hamburger) hamburger.addEventListener('click', toggleMenu);
+    if (overlay) overlay.addEventListener('click', toggleMenu);
+    if (nav) {
+      const navLinks = nav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (nav.classList.contains('is-active')) toggleMenu();
+        });
+      });
+    }
+    const cageSmallPhotos = [
+      { src: 'room_cage_s_use_1.jpg', desc: '【1/7】ケージは上下2段にわかれています' },
+      { src: 'room_cage_s_use_2.jpg', desc: '【2/7】上段は小専用ケージ（写真は上段右側）' },
+      { src: 'room_cage_s_use_3.jpg', desc: '【3/7】上段は小専用ケージ（写真は上段左側）' },
+      { src: 'room_cage_s_use_4.jpg', desc: '【4/7】下段はケージ大に仕切りを入れてケージ小となります（写真は左側）' },
+      { src: 'room_cage_s_use_5.jpg', desc: '【5/7】下段はケージ大に仕切りを入れてケージ小となります（写真は右側)' },
+      { src: 'room_cage_s_use_6.jpg', desc: '【6/7】トイプードルのエリーちゃん(約3キロ)の使用感です' },
+      { src: 'room_cage_s_use_7.jpg', desc: '【7/7】トイプードルのレオン君(約7キロ）の使用感です' }
+    ];
+    const cageLargePhotos = [
+      { src: 'room_cage_l_use_1.jpg', desc: '【1/2】ケージ小の仕切りを外してケージ大となります' },
+      { src: 'room_cage_l_use_2.jpg', desc: '【2/2】高さも十分あり立ち上がっても圧迫感がありません。レオン君(約7Kg)' }
+    ];
+    const privateSmallPhotos = [
+      { src: 'room_private_s_use_1.jpg', desc: '【1/4】周りの視線が気にならない壁仕切りの個室部屋です。' },
+      { src: 'room_private_s_use_2.jpg', desc: '【2/4】小型犬2匹までの同室（多頭飼い）にもご利用いただけます。' },
+      { src: 'room_private_s_use_3.jpg', desc: '【3/4】ベッドやクッションを持ち込んで心地よく滞在できます。' },
+      { src: 'room_private_s_use_4.jpg', desc: '【4/4】お預け後に一緒に遊ぶこともできます。' }
+    ];
+    const privateLargePhotos = [
+      { src: 'room_private_l_use_1.jpg', desc: '【1/5】周りの視線が気にならない壁仕切りの個室部屋です。' },
+      { src: 'room_private_l_use_2.jpg', desc: '【2/5】多頭飼いのご家族も一緒にのびのび過ごせます。<br>約3.6㎡のお部屋写真' },
+      { src: 'room_private_l_use_3.jpg', desc: '【3/5】お部屋の全体像と室内での様子です。<br>約3.6㎡のお部屋写真' },
+      { src: 'room_private_l_use_4.jpg', desc: '【4/5】大きなワンちゃんも余裕で向きを変えられるスペースです。<br>約4.3㎡のお部屋写真' },
+      { src: 'room_private_l_use_5.jpg', desc: '【5/5】防音・セキュリティに配慮した快適な室内設計です。<br>約4.3㎡のお部屋写真' }
+    ];
+    let currentPhotos = [];
+    function openRoomGallery(title, photoList) {
+      currentPhotos = photoList;
+      document.getElementById('js-modal-title').textContent = title;
+      const thumbBox = document.getElementById('js-modal-thumb-box');
+      thumbBox.innerHTML = '';
+      photoList.forEach((photo, index) => {
+        const thumb = document.createElement('div');
+        thumb.className = 'modal-thumb-item' + (index === 0 ? ' is-active' : '');
+        thumb.onclick = () => switchPhoto(index);
+        thumb.innerHTML = `<img src="${photo.src}" alt="サムネイル${index+1}" onerror="this.style.display='none';"><span class="thumb-text" style="${photo.src?'display:none;':''}">${index+1}</span>`;
+        thumbBox.appendChild(thumb);
+      });
+      switchPhoto(0);
+      const modal = document.getElementById('js-room-modal');
+      modal.classList.add('is-active');
+    }
+    function switchPhoto(index) {
+      const mainImg = document.getElementById('js-modal-main-img');
+      const mainPlaceholder = document.getElementById('js-modal-main-placeholder');
+      const descEl = document.getElementById('js-modal-desc');
+      const photo = currentPhotos[index];
+      mainPlaceholder.textContent = '📷 ' + photo.src;
+      descEl.innerHTML = photo.desc;
+      mainImg.style.display = 'block';
+      mainImg.src = photo.src;
+      const thumbs = document.getElementById('js-modal-thumb-box').children;
+      Array.from(thumbs).forEach((t, i) => {
+        if (i === index) {
+          t.classList.add('is-active');
+        } else {
+          t.classList.remove('is-active');
+        }
+      });
+    }
+    function closeRoomModal() {
+      const modal = document.getElementById('js-room-modal');
+      modal.classList.remove('is-active');
+    }
+    // 🌟 index.html から飛んできた時に、該当するお部屋の個別表示を実行する処理
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      const validTypes = ['cage-s', 'cage-l', 'private-s', 'private-l'];
+      if (validTypes.includes(hash)) {
+        setTimeout(() => {
+          switchRoomAndScroll(hash);
+        }, 150);
+      }
+    });
+  </script>
+</body>
+</html>
