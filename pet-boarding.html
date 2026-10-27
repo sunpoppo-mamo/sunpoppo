@@ -358,6 +358,32 @@
     .flow-step-card { background: #fcfbf9; border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 1rem 1.2rem; text-align: center; position: relative; display: flex; flex-direction: column; align-items: center; }
     .step-badge { position: absolute; top: -12px; background: var(--brand-green); color: #fff; font-size: 0.75rem; font-weight: bold; padding: 0.2rem 0.8rem; border-radius: 15px; text-transform: uppercase; }
     .step-icon-box { width: 75px; height: 75px; background: #fff; border: 2px solid #e0ddd5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0.5rem 0 0.8rem; overflow: hidden; }
+
+/* 丸円を2つ横並びにするラッパー */
+.step-icon-wrap-double {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 22px; /* ここで文字との間隔を広げて高さを揃えます */
+}
+
+/* 他のSTEPと全く同じ丸円のサイズを維持 */
+.step-icon-wrap-double .step-icon-box {
+  width: 75px;
+  height: 75px;
+  min-width: 75px;
+  margin: 0 !important;
+}
+
+/* 丸の中の画像 */
+.step-icon-wrap-double .step-icon-box img {
+  width: 65%;        /* 丸枠の内側に収まるサイズ */
+  height: 65%;
+  object-fit: contain;
+}
     .step-icon-box img { width: 100%; height: 100%; object-fit: cover; }
     .step-title { font-size: 1rem; font-weight: bold; color: var(--text-color); margin-bottom: 0.5rem; }
     .step-desc { font-size: 0.82rem; color: #666; line-height: 1.5; margin: 0; text-align: left; }
@@ -373,7 +399,7 @@
     .stay-day-title { font-size: 1rem; font-weight: bold; color: var(--brand-green); margin-bottom: 1rem; text-align: center; }
     .stay-timeline { display: flex; flex-direction: column; gap: 0.8rem; }
     .stay-item { display: flex; gap: 0.8rem; background: #fcfbf9; padding: 0.8rem; border-radius: 10px; border: 1px solid #eee; text-align: left; align-items: center; }
-    .stay-icon-box {
+   .stay-icon-box {
       width: 54px;
       height: 54px;
       min-width: 54px;
@@ -385,11 +411,13 @@
       justify-content: center;
       overflow: hidden;
       flex-shrink: 0;
+      padding: 4px; /* 丸の内側に少しゆとりを持たせます */
+      box-sizing: border-box;
     }
     .stay-icon-box img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain; /* 端を切り取らず、絵の全体をまるごと表示 */
       display: block;
     }
     .stay-body { display: flex; flex-direction: column; flex-grow: 1; }
@@ -916,10 +944,13 @@
         </div>
         <div class="flow-step-card">
           <div class="step-badge">step 02</div>
-          <div class="step-icon-box"><img src="step2.png" alt="ご来店・受付"></div>
+          <div class="step-icon-wrap-double">
+  <div class="step-icon-box"><img src="step2_1.png" alt="ご来店"></div>
+  <div class="step-icon-box"><img src="step2_2.png" alt="受付"></div>
+</div>
           <h3 class="step-title">ご来店・受付</h3>
-          <p class="step-desc">ご予約のお時間にご来店いただき、健康状態やごはん・お散歩のご要望をお伺いいたします。</p>
-        </div>
+      <p class="step-desc">ご予約のお時間にご来店いただき、健康状態やごはん・お散歩のご要望をお伺いいたします。</p>
+    </div>
         <div class="flow-step-card">
           <div class="step-badge">step 03</div>
           <div class="step-icon-box"><img src="step3.png" alt="お預かり・滞在"></div>
