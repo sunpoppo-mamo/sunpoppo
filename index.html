@@ -1452,17 +1452,39 @@
       const todayDayStr = weekDays[dayOfWeek];
       const currentHour = today.getHours();
 
-      // 1️⃣ ペットホテルお電話受付時間の判定（水・木は10〜13時 / その他は9〜17時）
+      // 1️⃣ ペットホテルお電話受付時間の判定（水・木は10〜15時 / その他は9〜17時）
       let isHotelOpen = false;
       let hotelHoursText = "";
+      let nextPhoneText = ""; // 次回の電話受付案内用
+
       if (dayOfWeek === 3 || dayOfWeek === 4) {
-        // 水曜・木曜の場合
-        isHotelOpen = (currentHour >= 10 && currentHour < 13);
-        hotelHoursText = "電話受付時間 10:00〜13:00";
+        // 水曜・木曜の場合（10:00〜15:00）
+        isHotelOpen = (currentHour >= 10 && currentHour < 15);
+        hotelHoursText = "電話受付時間 10:00〜15:00";
+        
+        if (currentHour < 10) {
+          nextPhoneText = "本日 10:00〜15:00";
+        } else if (dayOfWeek === 3) {
+          // 水曜の15時以降 → 翌日は木曜
+          nextPhoneText = "明日 10:00〜15:00";
+        } else {
+          // 木曜の15時以降 → 翌日は金曜（通常営業 9:00〜17:00）
+          nextPhoneText = "明日 9:00〜17:00";
+        }
       } else {
-        // 金〜火曜の場合
+        // 金〜火曜の場合（9:00〜17:00）
         isHotelOpen = (currentHour >= 9 && currentHour < 17);
         hotelHoursText = "受付時間 9:00〜17:00";
+
+        if (currentHour < 9) {
+          nextPhoneText = "本日 9:00〜17:00";
+        } else if (dayOfWeek === 2) {
+          // 火曜の17時以降 → 翌日は水曜（10:00〜15:00）
+          nextPhoneText = "明日 10:00〜15:00";
+        } else {
+          // 金・土・日・月の17時以降
+          nextPhoneText = "明日 9:00〜17:00";
+        }
       }
 
       // 店舗全体のバッジ表示判定
@@ -1490,11 +1512,11 @@
       const hotelValueEl = document.querySelector('.status-card:nth-child(1) .status-value');
       if (hotelValueEl) {
         if (isHotelOpen) {
-          // 電話受付時間内：受付中であること＋時間帯を表示
-          hotelValueEl.innerHTML = `<span style="color: var(--brand-green); font-weight: bold; font-size: 0.82rem;">お電話にて受付中<br><span style="font-size: 0.72rem; color: #707070; font-weight: normal;">（${hotelHoursText}）</span></span>`;
+          // 電話受付時間内
+          hotelValueEl.innerHTML = `<span style="color: var(--brand-green); font-weight: bold; font-size: 0.82rem;">ご予約はお電話にて受付中<br><span style="font-size: 0.72rem; color: #707070; font-weight: normal;">（${hotelHoursText}）</span></span>`;
         } else {
-          // 電話受付時間外：お預け・お迎え可＋時間帯を表示
-          hotelValueEl.innerHTML = `<span style="color: #333333; font-size: 0.82rem;">ご予約のお預け・お迎え可<br><span style="font-size: 0.72rem; color: #707070;">（${hotelHoursText}）</span></span>`;
+          // 電話受付時間外（お預け・お迎え可 ＋ 次回の受付時間を明示）
+          hotelValueEl.innerHTML = `<span style="color: #333333; font-weight: bold; font-size: 0.82rem;">ご予約のお預け・お迎え可<br><span style="font-size: 0.72rem; color: #888888; font-weight: normal;">※お電話受付は${nextPhoneText}</span></span>`;
         }
       }
 
