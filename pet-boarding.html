@@ -174,13 +174,82 @@
       .room-section-container.is-filtered { grid-template-columns: 1fr; }
     }
     .room-card { background: #faf8f5; border-radius: 8px; border: 1px solid var(--border-color); overflow: hidden; display: flex; flex-direction: column; transition: all 0.3s ease; }
+    /* --- お部屋写真のスワイプコンテナ --- */
     .room-img-box {
-      aspect-ratio: 4 / 3; background-color: #e2ded8; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; border-bottom: 1px solid var(--border-color); cursor: pointer; overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background-color: #e2ded8;
+      position: relative;
+      border-bottom: 1px solid var(--border-color);
+      overflow: hidden;
+      cursor: pointer;
     }
-    .room-img-box img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; position: absolute; top:0; left:0; z-index:2; }
-    .room-img-box:hover img { transform: scale(1.03); }
-    .placeholder-text { color: #666666; font-size: 0.8rem; font-weight: bold; font-family: var(--font-sans); background: rgba(255, 255, 255, 0.9); padding: 0.3rem 0.6rem; border-radius: 4px; border: 1px dashed #999999; letter-spacing: 0.03em; position: relative; z-index:1; }
-    .zoom-badge { position: absolute; bottom: 8px; right: 8px; background: rgba(0, 0, 0, 0.65); color: #ffffff; font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 12px; pointer-events: none; display: flex; align-items: center; gap: 0.3rem; backdrop-filter: blur(2px); z-index: 5; }
+    /* 横スクロール対応ラッパー */
+    .room-slider-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none; /* Firefoxのバー非表示 */
+      -webkit-overflow-scrolling: touch;
+    }
+    .room-slider-track::-webkit-scrollbar {
+      display: none; /* Chrome/Safariのバー非表示 */
+    }
+    .room-slide-item {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      scroll-snap-align: start;
+      position: relative;
+      background-color: #e2ded8;
+    }
+    .room-slide-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none; /* スワイプ操作を邪魔しない */
+    }
+    /* スワイプ案内のドット表示 */
+    .slider-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 10px;
+      display: flex;
+      gap: 5px;
+      z-index: 6;
+      background: rgba(0, 0, 0, 0.45);
+      padding: 3px 8px;
+      border-radius: 12px;
+      backdrop-filter: blur(2px);
+    }
+    .slider-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .slider-dot.is-active {
+      background: #ffffff;
+      transform: scale(1.25);
+    }
+    .zoom-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(0, 0, 0, 0.65);
+      color: #ffffff;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      backdrop-filter: blur(2px);
+      z-index: 6;
+    }
     .room-info { padding: 1.2rem; display: flex; flex-direction: column; flex-grow: 1; }
     .room-title-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; gap: 0.5rem; }
     .room-name { font-size: 1.05rem; font-weight: bold; color: var(--brand-green); margin-bottom: 0; }
@@ -447,6 +516,20 @@
         display: none !important;
       }
     }
+    /* ポップアップ写真：PCのマウスドラッグ＆スマホのスワイプ設定 */
+    .modal-main-img-box {
+      cursor: grab;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: pan-y pinch-zoom;
+    }
+    .modal-main-img-box:active {
+      cursor: grabbing;
+    }
+    .modal-main-img-box img {
+      pointer-events: none;
+      -webkit-user-drag: none;
+    }
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QBZJ1P9JR"></script>
@@ -533,10 +616,21 @@
         <div class="room-grid">
           <!-- ケージ（小） -->
           <div class="room-card" id="card-cage-s">
-            <div class="room-img-box" onclick="openRoomGallery('ケージ（小） 写真ギャラリー', cageSmallPhotos)">
-              <span class="placeholder-text">📷 room_cage_s.jpg</span>
-              <img src="room_cage_s.jpg" alt="ケージ（小）" onerror="this.style.display='none';">
-              <span class="zoom-badge">🔍 写真ギャラリー（7枚）</span>
+            <div class="room-img-box" onclick="handleImgBoxClick(event, 'ケージ（小） 写真ギャラリー', cageSmallPhotos)">
+              <div class="room-slider-track" onscroll="updateSliderDots(this)">
+                <div class="room-slide-item"><img src="room_cage_s.jpg" alt="ケージ（小）"></div>
+                <div class="room-slide-item"><img src="room_cage_s_use_1.jpg" alt="ケージ小 使用例1"></div>
+                <div class="room-slide-item"><img src="room_cage_s_use_2.jpg" alt="ケージ小 使用例2"></div>
+                <div class="room-slide-item"><img src="room_cage_s_use_3.jpg" alt="ケージ小 使用例3"></div>
+                <div class="room-slide-item"><img src="room_cage_s_use_4.jpg" alt="ケージ小 使用例4"></div>
+                <div class="room-slide-item"><img src="room_cage_s_use_5.jpg" alt="ケージ小 使用例5"></div>
+                <div class="room-slide-item"><img src="room_cage_s_use_6.jpg" alt="ケージ小 使用例6"></div>
+                <div class="room-slide-item"><img src="room_cage_s_use_7.jpg" alt="ケージ小 使用例7"></div>
+              </div>
+              <div class="slider-dots">
+                <span class="slider-dot is-active"></span><span class="slider-dot"></span><span class="slider-dot"></span><span class="slider-dot"></span><span class="slider-dot"></span><span class="slider-dot"></span><span class="slider-dot"></span><span class="slider-dot"></span>
+              </div>
+              <span class="zoom-badge">🔍 写真一覧・詳細</span>
             </div>
             <div class="room-info">
               <div class="room-title-bar">
@@ -572,12 +666,18 @@
             </div>
           </div>
 
-          <!-- ケージ（大） -->
+         <!-- ケージ（大） -->
           <div class="room-card" id="card-cage-l">
-            <div class="room-img-box" onclick="openRoomGallery('ケージ（大）の写真ギャラリー', cageLargePhotos)">
-              <span class="placeholder-text">📷 room_cage_l.jpg</span>
-              <img src="room_cage_l.jpg" alt="ケージ（大）" onerror="this.style.display='none';">
-              <span class="zoom-badge">🔍 写真ギャラリー（2枚）</span>
+            <div class="room-img-box" onclick="handleImgBoxClick(event, 'ケージ（大）の写真ギャラリー', cageLargePhotos)">
+              <div class="room-slider-track" onscroll="updateSliderDots(this)">
+                <div class="room-slide-item"><img src="room_cage_l.jpg" alt="ケージ（大）"></div>
+                <div class="room-slide-item"><img src="room_cage_l_use_1.jpg" alt="ケージ大 使用例1"></div>
+                <div class="room-slide-item"><img src="room_cage_l_use_2.jpg" alt="ケージ大 使用例2"></div>
+              </div>
+              <div class="slider-dots">
+                <span class="slider-dot is-active"></span><span class="slider-dot"></span><span class="slider-dot"></span>
+              </div>
+              <span class="zoom-badge">🔍 写真一覧・詳細</span>
             </div>
             <div class="room-info">
               <div class="room-title-bar">
@@ -613,10 +713,18 @@
 
           <!-- 個室（小） -->
           <div class="room-card" id="card-private-s">
-            <div class="room-img-box" onclick="openRoomGallery('個室（小）の写真ギャラリー', privateSmallPhotos)">
-              <span class="placeholder-text">📷 room_private_s.jpg</span>
-              <img src="room_private_s.jpg" alt="個室（小）" onerror="this.style.display='none';">
-              <span class="zoom-badge">🔍 写真ギャラリー（4枚）</span>
+            <div class="room-img-box" onclick="handleImgBoxClick(event, '個室（小）の写真ギャラリー', privateSmallPhotos)">
+              <div class="room-slider-track" onscroll="updateSliderDots(this)">
+                <div class="room-slide-item"><img src="room_private_s.jpg" alt="個室（小）"></div>
+                <div class="room-slide-item"><img src="room_private_s_use_1.jpg" alt="個室小 使用例1"></div>
+                <div class="room-slide-item"><img src="room_private_s_use_2.jpg" alt="個室小 使用例2"></div>
+                <div class="room-slide-item"><img src="room_private_s_use_3.jpg" alt="個室小 使用例3"></div>
+                <div class="room-slide-item"><img src="room_private_s_use_4.jpg" alt="個室小 使用例4"></div>
+              </div>
+              <div class="slider-dots">
+                <span class="slider-dot is-active"></span><span class="slider-dot"></span><span class="slider-dot"></span><span class="slider-dot"></span><span class="slider-dot"></span>
+              </div>
+              <span class="zoom-badge">🔍 写真一覧・詳細</span>
             </div>
             <div class="room-info">
               <div class="room-title-bar">
@@ -653,10 +761,19 @@
 
           <!-- 個室（大） -->
           <div class="room-card" id="card-private-l">
-            <div class="room-img-box" onclick="openRoomGallery('個室（大）の写真ギャラリー', privateLargePhotos)">
-              <span class="placeholder-text">📷 room_private_l.jpg</span>
-              <img src="room_private_l.jpg" alt="個室（大）" onerror="this.style.display='none';">
-              <span class="zoom-badge">🔍 写真ギャラリー（5枚）</span>
+            <div class="room-img-box" onclick="handleImgBoxClick(event, '個室（大）の写真ギャラリー', privateLargePhotos)">
+              <div class="room-slider-track" onscroll="updateSliderDots(this)">
+                <div class="room-slide-item"><img src="room_private_l.jpg" alt="個室（大）"></div>
+                <div class="room-slide-item"><img src="room_private_l_use_1.jpg" alt="個室大 使用例1"></div>
+                <div class="room-slide-item"><img src="room_private_l_use_2.jpg" alt="個室大 使用例2"></div>
+                <div class="room-slide-item"><img src="room_private_l_use_3.jpg" alt="個室大 使用例3"></div>
+                <div class="room-slide-item"><img src="room_private_l_use_4.jpg" alt="個室大 使用例4"></div>
+                <div class="room-slide-item"><img src="room_private_l_use_5.jpg" alt="個室大 使用例5"></div>
+              </div>
+              <div class="slider-dots">
+                <span class="slider-dot is-active"></span><span class="slider-dot"></span><span class="slider-dot"></span><span class="slider-dot"></span><span class="slider-dot"></span><span class="slider-dot"></span>
+              </div>
+              <span class="zoom-badge">🔍 写真一覧・詳細</span>
             </div>
             <div class="room-info">
               <div class="room-title-bar">
@@ -1055,6 +1172,7 @@
       <div class="modal-main-img-box">
         <span class="placeholder-text" id="js-modal-main-placeholder">📷 メイン写真</span>
         <img id="js-modal-main-img" src="" alt="メイン画像" onerror="this.style.display='none';">
+        <div class="slider-dots" id="js-modal-dots"></div>
       </div>
       <div class="modal-thumb-container" id="js-modal-thumb-box"></div>
       <div class="modal-caption">
@@ -1348,10 +1466,47 @@
       { src: 'room_private_l_use_4.jpg', desc: '【4/5】大きなワンちゃんも余裕で向きを変えられるスペースです。<br>約4.3㎡のお部屋写真' },
       { src: 'room_private_l_use_5.jpg', desc: '【5/5】セキュリティに配慮した快適な室内設計です。<br>約4.3㎡のお部屋写真' }
     ];
+    // スワイプ中のドット切り替え処理
+    function updateSliderDots(track) {
+      const scrollLeft = track.scrollLeft;
+      const width = track.offsetWidth;
+      const activeIndex = Math.round(scrollLeft / width);
+      const dots = track.parentElement.querySelectorAll('.slider-dot');
+      dots.forEach((dot, idx) => {
+        if (idx === activeIndex) {
+          dot.classList.add('is-active');
+        } else {
+          dot.classList.remove('is-active');
+        }
+      });
+    }
+
+    // スワイプ操作とクリック（タップ）を判別してポップアップを開く
+    let touchStartX = 0;
+    let touchStartY = 0;
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    function handleImgBoxClick(event, title, photoList) {
+      const changedTouch = event.changedTouches ? event.changedTouches[0] : null;
+      if (changedTouch) {
+        const diffX = Math.abs(changedTouch.clientX - touchStartX);
+        const diffY = Math.abs(changedTouch.clientY - touchStartY);
+        if (diffX > 10 || diffY > 10) return; // スワイプした時はポップアップを開かない
+      }
+      openRoomGallery(title, photoList);
+    }
     let currentPhotos = [];
+    let activePhotoIndex = 0; // 現在の写真の番号
+
     function openRoomGallery(title, photoList) {
       currentPhotos = photoList;
+      activePhotoIndex = 0;
       document.getElementById('js-modal-title').textContent = title;
+      
+      // サムネイルの生成
       const thumbBox = document.getElementById('js-modal-thumb-box');
       thumbBox.innerHTML = '';
       photoList.forEach((photo, index) => {
@@ -1361,28 +1516,116 @@
         thumb.innerHTML = `<img src="${photo.src}" alt="サムネイル${index+1}" onerror="this.style.display='none';"><span class="thumb-text" style="${photo.src?'display:none;':''}">${index+1}</span>`;
         thumbBox.appendChild(thumb);
       });
+
+      // ⚪ 写真の枚数分、左下に丸印（ドット）を生成
+      const modalDotsBox = document.getElementById('js-modal-dots');
+      if (modalDotsBox) {
+        modalDotsBox.innerHTML = '';
+        photoList.forEach((_, i) => {
+          const dot = document.createElement('span');
+          dot.className = 'slider-dot' + (i === 0 ? ' is-active' : '');
+          modalDotsBox.appendChild(dot);
+        });
+      }
+
       switchPhoto(0);
       const modal = document.getElementById('js-room-modal');
       modal.classList.add('is-active');
     }
+
     function switchPhoto(index) {
+      if (!currentPhotos || currentPhotos.length === 0) return;
+      activePhotoIndex = index;
       const mainImg = document.getElementById('js-modal-main-img');
       const mainPlaceholder = document.getElementById('js-modal-main-placeholder');
       const descEl = document.getElementById('js-modal-desc');
       const photo = currentPhotos[index];
+      
       mainPlaceholder.textContent = '📷 ' + photo.src;
       descEl.innerHTML = photo.desc;
       mainImg.style.display = 'block';
       mainImg.src = photo.src;
+
+      // サムネイル枠の切り替え
       const thumbs = document.getElementById('js-modal-thumb-box').children;
       Array.from(thumbs).forEach((t, i) => {
         if (i === index) {
           t.classList.add('is-active');
+          t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         } else {
           t.classList.remove('is-active');
         }
       });
+
+      // ⚪ 丸印（ドット）の白丸を現在の写真位置へ移動
+      const modalDots = document.querySelectorAll('#js-modal-dots .slider-dot');
+      modalDots.forEach((dot, i) => {
+        if (i === index) {
+          dot.classList.add('is-active');
+        } else {
+          dot.classList.remove('is-active');
+        }
+      });
     }
+
+    // 次の写真へ
+    function nextModalPhoto() {
+      let nextIndex = activePhotoIndex + 1;
+      if (nextIndex >= currentPhotos.length) {
+        nextIndex = 0; // 最後まで行ったら最初に戻る
+      }
+      switchPhoto(nextIndex);
+    }
+
+    // 前の写真へ
+    function prevModalPhoto() {
+      let prevIndex = activePhotoIndex - 1;
+      if (prevIndex < 0) {
+        prevIndex = currentPhotos.length - 1; // 最初から戻ったら最後へ
+      }
+      switchPhoto(prevIndex);
+    }
+
+    // 🖱️ PCのマウスドラッグ ＆ 📱 スマホスワイプ ＆ 写真クリック処理
+    const modalImgBox = document.querySelector('.modal-main-img-box');
+    if (modalImgBox) {
+      let startX = 0;
+      let startY = 0;
+      let isDragging = false;
+
+      // 押し始め（マウス左クリック または 指タッチ）
+      modalImgBox.addEventListener('pointerdown', (e) => {
+        if (e.pointerType === 'mouse' && e.button !== 0) return;
+        startX = e.clientX;
+        startY = e.clientY;
+        isDragging = true;
+      });
+
+      // 離したときの判定
+      modalImgBox.addEventListener('pointerup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+
+        const diffX = e.clientX - startX;
+        const diffY = e.clientY - startY;
+
+        // 横に30px以上動かしたらスライド
+        if (Math.abs(diffX) > 30 && Math.abs(diffX) > Math.abs(diffY)) {
+          if (diffX < 0) {
+            nextModalPhoto(); // 左へスライド ➔ 次の写真
+          } else {
+            prevModalPhoto(); // 右へスライド ➔ 前の写真
+          }
+        } else if (Math.abs(diffX) <= 10 && Math.abs(diffY) <= 10) {
+          // 動かさずクリックしたら次の写真へ進む
+          nextModalPhoto();
+        }
+      });
+
+      modalImgBox.addEventListener('pointercancel', () => { isDragging = false; });
+      modalImgBox.addEventListener('pointerleave', () => { isDragging = false; });
+    }
+
     function closeRoomModal() {
       const modal = document.getElementById('js-room-modal');
       modal.classList.remove('is-active');
